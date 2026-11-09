@@ -1,0 +1,3944 @@
+{
+  "certs": [
+    {
+      "id": "java-ee-7",
+      "title": "Java EE 7 Application Developer",
+      "code": "1Z0-895",
+      "vendor": "Oracle",
+      "level": "Menengah",
+      "badge": "39 topik",
+      "status": "ready",
+      "desc": "Sertifikasi resmi Oracle untuk pengembangan aplikasi enterprise Java EE 7: dari arsitektur container, JPA, EJB, sampai WebSocket dan Batch.",
+      "facts": {
+        "Kode ujian": "1Z0-895",
+        "Jumlah soal": "65 soal",
+        "Durasi": "120 menit",
+        "Nilai lulus": "63%",
+        "Prasyarat": "Java SE + SQL dasar"
+      },
+      "roadmap": [
+        {
+          "week": "Pekan 1",
+          "goal": "Domain 1 dan 2: arsitektur, packaging, JPA entity dan JPQL."
+        },
+        {
+          "week": "Pekan 2",
+          "goal": "Domain 3 dan 4: EJB, transaksi CMT/BMT, JMS dan MDB."
+        },
+        {
+          "week": "Pekan 3",
+          "goal": "Domain 5 sampai 7: SOAP, Servlet, JSP. Latihan bikin aplikasi kecil."
+        },
+        {
+          "week": "Pekan 4",
+          "goal": "Domain 8 sampai 10: JAX-RS, WebSocket, JSF."
+        },
+        {
+          "week": "Pekan 5",
+          "goal": "Domain 11 dan 12: security, CDI lanjutan."
+        },
+        {
+          "week": "Pekan 6",
+          "goal": "Domain 13 dan 14: concurrency, batch. Ulangi semua latihan."
+        },
+        {
+          "week": "Pekan 7",
+          "goal": "Ulangi topik yang belum ditandai selesai. Ujian latihan timed."
+        },
+        {
+          "week": "Pekan 8",
+          "goal": "Review jebakan ujian per domain, lalu ambil ujian."
+        }
+      ],
+      "domains": [
+        {
+          "slug": "arsitektur",
+          "title": "Understand Java EE Architecture",
+          "topics": [
+            {
+              "id": "standar-container-api",
+              "slug": "standar-container-api",
+              "title": "Standar, container, API, dan service Java EE 7",
+              "file": "d01-t01-standar-container-api.md",
+              "minutes": 20
+            },
+            {
+              "id": "komponen-per-tier",
+              "slug": "komponen-per-tier",
+              "title": "Komponen per tier dan container",
+              "file": "d01-t02-komponen-per-tier.md",
+              "minutes": 20
+            },
+            {
+              "id": "packaging-deployment",
+              "slug": "packaging-deployment",
+              "title": "Membuat, memaketkan, dan men-deploy aplikasi",
+              "file": "d01-t03-packaging-deployment.md",
+              "minutes": 25
+            },
+            {
+              "id": "ejb-cdi-lifecycle",
+              "slug": "ejb-cdi-lifecycle",
+              "title": "Lifecycle dan scope EJB serta CDI bean",
+              "file": "d01-t04-ejb-cdi-lifecycle.md",
+              "minutes": 25
+            },
+            {
+              "id": "anotasi-injeksi-jndi",
+              "slug": "anotasi-injeksi-jndi",
+              "title": "Relasi bean, anotasi, injeksi, dan JNDI",
+              "file": "d01-t05-anotasi-injeksi-jndi.md",
+              "minutes": 22
+            }
+          ]
+        },
+        {
+          "slug": "jpa",
+          "title": "Manage Persistence using JPA Entities and Bean Validation",
+          "topics": [
+            {
+              "id": "entity-orm",
+              "slug": "entity-orm",
+              "title": "Entity dan pemetaan ORM",
+              "file": "d02-t01-entity-orm.md",
+              "minutes": 25
+            },
+            {
+              "id": "entitymanager-transaksi",
+              "slug": "entitymanager-transaksi",
+              "title": "EntityManager, transaksi, dan locking",
+              "file": "d02-t02-entitymanager-transaksi.md",
+              "minutes": 25
+            },
+            {
+              "id": "konversi-validasi-keygen",
+              "slug": "konversi-validasi-keygen",
+              "title": "Konversi, validasi, dan key generation",
+              "file": "d02-t03-konversi-validasi-keygen.md",
+              "minutes": 20
+            },
+            {
+              "id": "jpql",
+              "slug": "jpql",
+              "title": "Menulis dan menjalankan JPQL",
+              "file": "d02-t04-jpql.md",
+              "minutes": 22
+            }
+          ]
+        },
+        {
+          "slug": "ejb",
+          "title": "Implement Business Logic by Using EJBs",
+          "topics": [
+            {
+              "id": "session-bean",
+              "slug": "session-bean",
+              "title": "Session bean: sinkron, asinkron, dan interceptor",
+              "file": "d03-t01-session-bean.md",
+              "minutes": 25
+            },
+            {
+              "id": "transaksi-cmt-bmt",
+              "slug": "transaksi-cmt-bmt",
+              "title": "Transaksi container-managed vs bean-managed",
+              "file": "d03-t02-transaksi-cmt-bmt.md",
+              "minutes": 24
+            },
+            {
+              "id": "ejb-timer",
+              "slug": "ejb-timer",
+              "title": "EJB timer service",
+              "file": "d03-t03-ejb-timer.md",
+              "minutes": 20
+            }
+          ]
+        },
+        {
+          "slug": "jms",
+          "title": "Use Java Message Service API",
+          "topics": [
+            {
+              "id": "model-jms",
+              "slug": "model-jms",
+              "title": "Model messaging JMS dan message-driven bean",
+              "file": "d04-t01-model-jms.md",
+              "minutes": 24
+            },
+            {
+              "id": "transaksi-jms",
+              "slug": "transaksi-jms",
+              "title": "Transaksi pada JMS API",
+              "file": "d04-t02-transaksi-jms.md",
+              "minutes": 20
+            }
+          ]
+        },
+        {
+          "slug": "soap",
+          "title": "Implement SOAP Services by Using JAX-WS and JAXB APIs",
+          "topics": [
+            {
+              "id": "jaxws",
+              "slug": "jaxws",
+              "title": "SOAP service dan client dengan JAX-WS",
+              "file": "d05-t01-jaxws.md",
+              "minutes": 24
+            },
+            {
+              "id": "jaxb",
+              "slug": "jaxb",
+              "title": "Pemetaan Java ke XML dengan JAXB",
+              "file": "d05-t02-jaxb.md",
+              "minutes": 22
+            }
+          ]
+        },
+        {
+          "slug": "servlet",
+          "title": "Create Java Web Applications using Servlets",
+          "topics": [
+            {
+              "id": "servlet-dasar",
+              "slug": "servlet-dasar",
+              "title": "Servlet, URL mapping, dan metode HTTP",
+              "file": "d06-t01-servlet-dasar.md",
+              "minutes": 22
+            },
+            {
+              "id": "header-parameter-cookie",
+              "slug": "header-parameter-cookie",
+              "title": "Header, parameter, dan cookie",
+              "file": "d06-t02-header-parameter-cookie.md",
+              "minutes": 22
+            },
+            {
+              "id": "lifecycle-filter",
+              "slug": "lifecycle-filter",
+              "title": "Lifecycle servlet, filter, dan listener",
+              "file": "d06-t03-lifecycle-filter.md",
+              "minutes": 24
+            }
+          ]
+        },
+        {
+          "slug": "jsp",
+          "title": "Create Java Web Applications using JSPs",
+          "topics": [
+            {
+              "id": "jsp-lifecycle",
+              "slug": "jsp-lifecycle",
+              "title": "Siklus hidup JSP",
+              "file": "d07-t01-jsp-lifecycle.md",
+              "minutes": 20
+            },
+            {
+              "id": "jsp-sintaks-jstl-el",
+              "slug": "jsp-sintaks-jstl-el",
+              "title": "Sintaks JSP, JSTL, dan Expression Language",
+              "file": "d07-t02-jsp-sintaks-jstl-el.md",
+              "minutes": 22
+            },
+            {
+              "id": "error-handling",
+              "slug": "error-handling",
+              "title": "Penanganan error di servlet dan JSP",
+              "file": "d07-t03-error-handling.md",
+              "minutes": 20
+            }
+          ]
+        },
+        {
+          "slug": "jax-rs",
+          "title": "Implement REST Services using JAX-RS API",
+          "topics": [
+            {
+              "id": "rest-konvensi",
+              "slug": "rest-konvensi",
+              "title": "Konvensi REST dan desain resource",
+              "file": "d08-t01-rest-konvensi.md",
+              "minutes": 22
+            },
+            {
+              "id": "jaxrs-service-client",
+              "slug": "jaxrs-service-client",
+              "title": "Service dan client JAX-RS",
+              "file": "d08-t02-jaxrs-service-client.md",
+              "minutes": 25
+            }
+          ]
+        },
+        {
+          "slug": "websocket",
+          "title": "Create Java Applications using WebSockets",
+          "topics": [
+            {
+              "id": "websocket-konsep",
+              "slug": "websocket-konsep",
+              "title": "Konsep dan gaya komunikasi WebSocket",
+              "file": "d09-t01-websocket-konsep.md",
+              "minutes": 20
+            },
+            {
+              "id": "endpoint-handler",
+              "slug": "endpoint-handler",
+              "title": "Endpoint server dan klien JSR 356",
+              "file": "d09-t02-endpoint-handler.md",
+              "minutes": 24
+            },
+            {
+              "id": "encoder-decoder",
+              "slug": "encoder-decoder",
+              "title": "Encoder dan decoder pesan WebSocket",
+              "file": "d09-t03-encoder-decoder.md",
+              "minutes": 20
+            }
+          ]
+        },
+        {
+          "slug": "jsf",
+          "title": "Develop Web Applications using JSFs",
+          "topics": [
+            {
+              "id": "jsf-arsitektur-lifecycle",
+              "slug": "jsf-arsitektur-lifecycle",
+              "title": "Arsitektur dan lifecycle JSF",
+              "file": "d10-t01-jsf-arsitektur-lifecycle.md",
+              "minutes": 24
+            },
+            {
+              "id": "jsf-sintaks-taglib",
+              "slug": "jsf-sintaks-taglib",
+              "title": "Sintaks JSF dan tag library",
+              "file": "d10-t02-jsf-sintaks-taglib.md",
+              "minutes": 22
+            },
+            {
+              "id": "jsf-lokalisasi-pesan",
+              "slug": "jsf-lokalisasi-pesan",
+              "title": "Lokalisasi dan pesan di JSF",
+              "file": "d10-t03-jsf-lokalisasi-pesan.md",
+              "minutes": 20
+            },
+            {
+              "id": "jsf-el-cdi",
+              "slug": "jsf-el-cdi",
+              "title": "EL dan integrasi JSF dengan CDI",
+              "file": "d10-t04-jsf-el-cdi.md",
+              "minutes": 20
+            }
+          ]
+        },
+        {
+          "slug": "security",
+          "title": "Secure Java EE 7 Applications",
+          "topics": [
+            {
+              "id": "security-declarative-programmatic",
+              "slug": "security-declarative-programmatic",
+              "title": "Security deklaratif dan programatik",
+              "file": "d11-t01-security-declarative-programmatic.md",
+              "minutes": 24
+            },
+            {
+              "id": "ws-security",
+              "slug": "ws-security",
+              "title": "Standar keamanan web service",
+              "file": "d11-t02-ws-security.md",
+              "minutes": 20
+            }
+          ]
+        },
+        {
+          "slug": "cdi",
+          "title": "Use CDI Beans",
+          "topics": [
+            {
+              "id": "qualifier-producer-disposer",
+              "slug": "qualifier-producer-disposer",
+              "title": "Qualifier, producer, dan disposer",
+              "file": "d12-t01-qualifier-producer-disposer.md",
+              "minutes": 24
+            },
+            {
+              "id": "interceptor-event-stereotype",
+              "slug": "interceptor-event-stereotype",
+              "title": "Interceptor, event, dan stereotype CDI",
+              "file": "d12-t02-interceptor-event-stereotype.md",
+              "minutes": 22
+            }
+          ]
+        },
+        {
+          "slug": "concurrency",
+          "title": "Use Concurrency API in Java EE 7 Applications",
+          "topics": [
+            {
+              "id": "concurrency-utilities",
+              "slug": "concurrency-utilities",
+              "title": "Concurrency utilities di Java EE",
+              "file": "d13-t01-concurrency-utilities.md",
+              "minutes": 22
+            },
+            {
+              "id": "managed-executor",
+              "slug": "managed-executor",
+              "title": "Managed executor dan pola asinkron",
+              "file": "d13-t02-managed-executor.md",
+              "minutes": 20
+            }
+          ]
+        },
+        {
+          "slug": "batch",
+          "title": "Use Batch API in Java EE 7 Applications",
+          "topics": [
+            {
+              "id": "batch-jsl",
+              "slug": "batch-jsl",
+              "title": "Job batch dengan JSL",
+              "file": "d14-t01-batch-jsl.md",
+              "minutes": 22
+            },
+            {
+              "id": "batch-api-jsr352",
+              "slug": "batch-api-jsr352",
+              "title": "Batch API dan JobOperator",
+              "file": "d14-t02-batch-api-jsr352.md",
+              "minutes": 22
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "toefl-ibt",
+      "title": "TOEFL iBT",
+      "code": "iBT",
+      "vendor": "ETS",
+      "level": "Pemula–Menengah",
+      "badge": "30 skill",
+      "status": "ready",
+      "desc": "Metode Longman yang dipetakan ke format 2026: diagnostik dulu, lalu drilling per skill. 30 skill bernomor untuk Reading, Listening, Structure, Speaking, dan Writing.",
+      "facts": {
+        "Format": "4 seksi · adaptif",
+        "Durasi": "83–89 menit",
+        "Total item": "120 soal & tugas",
+        "Skor seksi": "1–6, kenaikan 0,5",
+        "Metode": "Longman · skill drilling"
+      },
+      "roadmap": [
+        {
+          "week": "Pekan 1",
+          "goal": "Diagnostik 45 soal, baca pola kesalahan, mulai skill W1-W2."
+        },
+        {
+          "week": "Pekan 2-3",
+          "goal": "Structure W3-W6 selesai, lalu Reading R1-R3 dengan timer."
+        },
+        {
+          "week": "Pekan 4-5",
+          "goal": "Reading R4-R7, tes penuh pertama, evaluasi per skill."
+        },
+        {
+          "week": "Pekan 6-7",
+          "goal": "Listening L1-L6, Speaking P1-P2 sebagai rawatan harian."
+        },
+        {
+          "week": "Pekan 8",
+          "goal": "Speaking P3-P4, Writing T1-T4, tes penuh kedua, ulangi skill bocor."
+        }
+      ],
+      "domains": [
+        {
+          "slug": "diagnostik",
+          "title": "Diagnostik & strategi — 3 skill",
+          "topics": [
+            {
+              "id": "skill-map",
+              "slug": "skill-map",
+              "title": "Peta 30 skill dan cara memakai kursus ini",
+              "file": "d01-t01-skill-map.md",
+              "minutes": 18
+            },
+            {
+              "id": "diagnostik",
+              "slug": "diagnostik",
+              "title": "Skill 1 — Menjalankan diagnostik dan membaca hasilnya",
+              "file": "d01-t02-diagnostik.md",
+              "minutes": 20
+            },
+            {
+              "id": "rencana",
+              "slug": "rencana",
+              "title": "Skill 2 — Menyusun rencana 8 pekan berbasis skill",
+              "file": "d01-t03-rencana.md",
+              "minutes": 16
+            }
+          ]
+        },
+        {
+          "slug": "reading",
+          "title": "Reading — 7 skill",
+          "topics": [
+            {
+              "id": "r1-main-idea",
+              "slug": "r1-main-idea",
+              "title": "Skill R1 — Pertanyaan ide pokok",
+              "file": "d02-t01-r1-main-idea.md",
+              "minutes": 20
+            },
+            {
+              "id": "r2-stated-detail",
+              "slug": "r2-stated-detail",
+              "title": "Skill R2 — Detail yang tersurat",
+              "file": "d02-t02-r2-stated-detail.md",
+              "minutes": 18
+            },
+            {
+              "id": "r3-unstated-detail",
+              "slug": "r3-unstated-detail",
+              "title": "Skill R3 — Detail tersirat dan inferensi",
+              "file": "d02-t03-r3-unstated-detail.md",
+              "minutes": 22
+            },
+            {
+              "id": "r4-vocabulary",
+              "slug": "r4-vocabulary",
+              "title": "Skill R4 — Kosakata dalam konteks",
+              "file": "d02-t04-r4-vocabulary.md",
+              "minutes": 18
+            },
+            {
+              "id": "r5-reference",
+              "slug": "r5-reference",
+              "title": "Skill R5 — Rujukan kata ganti",
+              "file": "d02-t05-r5-reference.md",
+              "minutes": 18
+            },
+            {
+              "id": "r6-simplification",
+              "slug": "r6-simplification",
+              "title": "Skill R6 — Penyederhanaan kalimat",
+              "file": "d02-t06-r6-simplification.md",
+              "minutes": 20
+            },
+            {
+              "id": "r7-complete-words",
+              "slug": "r7-complete-words",
+              "title": "Skill R7 — Complete the Words (format 2026)",
+              "file": "d02-t07-r7-complete-words.md",
+              "minutes": 20
+            }
+          ]
+        },
+        {
+          "slug": "listening",
+          "title": "Listening — 6 skill",
+          "topics": [
+            {
+              "id": "l1-main-idea",
+              "slug": "l1-main-idea",
+              "title": "Skill L1 — Ide pokok percakapan dan kuliah",
+              "file": "d03-t01-l1-main-idea.md",
+              "minutes": 18
+            },
+            {
+              "id": "l2-detail",
+              "slug": "l2-detail",
+              "title": "Skill L2 — Detail yang tersurat",
+              "file": "d03-t02-l2-detail.md",
+              "minutes": 18
+            },
+            {
+              "id": "l3-inference",
+              "slug": "l3-inference",
+              "title": "Skill L3 — Detail tersirat dan inferensi",
+              "file": "d03-t03-l3-inference.md",
+              "minutes": 20
+            },
+            {
+              "id": "l4-function",
+              "slug": "l4-function",
+              "title": "Skill L4 — Fungsi dan maksud ucapan",
+              "file": "d03-t04-l4-function.md",
+              "minutes": 20
+            },
+            {
+              "id": "l5-attitude",
+              "slug": "l5-attitude",
+              "title": "Skill L5 — Sikap dan nada",
+              "file": "d03-t05-l5-attitude.md",
+              "minutes": 16
+            },
+            {
+              "id": "l6-announcement",
+              "slug": "l6-announcement",
+              "title": "Skill L6 — Pengumuman dan organisasi kuliah",
+              "file": "d03-t06-l6-announcement.md",
+              "minutes": 20
+            }
+          ]
+        },
+        {
+          "slug": "structure",
+          "title": "Structure — Build a Sentence, 6 skill",
+          "topics": [
+            {
+              "id": "w1-subject-verb",
+              "slug": "w1-subject-verb",
+              "title": "Skill W1 — Kesesuaian subjek dan verba",
+              "file": "d04-t01-w1-subject-verb.md",
+              "minutes": 18
+            },
+            {
+              "id": "w2-verb-form",
+              "slug": "w2-verb-form",
+              "title": "Skill W2 — Bentuk dan waktu verba",
+              "file": "d04-t02-w2-verb-form.md",
+              "minutes": 20
+            },
+            {
+              "id": "w3-parallel",
+              "slug": "w3-parallel",
+              "title": "Skill W3 — Struktur paralel",
+              "file": "d04-t03-w3-parallel.md",
+              "minutes": 18
+            },
+            {
+              "id": "w4-word-order",
+              "slug": "w4-word-order",
+              "title": "Skill W4 — Urutan kata dan keterangan",
+              "file": "d04-t04-w4-word-order.md",
+              "minutes": 20
+            },
+            {
+              "id": "w5-word-form",
+              "slug": "w5-word-form",
+              "title": "Skill W5 — Kelas kata dan bentuk turunan",
+              "file": "d04-t05-w5-word-form.md",
+              "minutes": 18
+            },
+            {
+              "id": "w6-traps",
+              "slug": "w6-traps",
+              "title": "Skill W6 — Artikel, preposisi, dan jebakan klasik",
+              "file": "d04-t06-w6-traps.md",
+              "minutes": 18
+            }
+          ]
+        },
+        {
+          "slug": "speaking",
+          "title": "Speaking — 4 skill",
+          "topics": [
+            {
+              "id": "p1-repeat",
+              "slug": "p1-repeat",
+              "title": "Skill P1 — Listen and Repeat: akurasi",
+              "file": "d05-t01-p1-repeat.md",
+              "minutes": 20
+            },
+            {
+              "id": "p2-interview",
+              "slug": "p2-interview",
+              "title": "Skill P2 — Take an Interview: struktur jawaban",
+              "file": "d05-t02-p2-interview.md",
+              "minutes": 22
+            },
+            {
+              "id": "p3-fluency",
+              "slug": "p3-fluency",
+              "title": "Skill P3 — Kelancaran dan pelafalan",
+              "file": "d05-t03-p3-fluency.md",
+              "minutes": 18
+            },
+            {
+              "id": "p4-timing",
+              "slug": "p4-timing",
+              "title": "Skill P4 — Manajemen waktu 8 menit",
+              "file": "d05-t04-p4-timing.md",
+              "minutes": 16
+            }
+          ]
+        },
+        {
+          "slug": "writing",
+          "title": "Writing — 4 skill",
+          "topics": [
+            {
+              "id": "t1-email-purpose",
+              "slug": "t1-email-purpose",
+              "title": "Skill T1 — Email: tujuan dan nada",
+              "file": "d06-t01-t1-email-purpose.md",
+              "minutes": 20
+            },
+            {
+              "id": "t2-email-completeness",
+              "slug": "t2-email-completeness",
+              "title": "Skill T2 — Email: kelengkapan dan struktur",
+              "file": "d06-t02-t2-email-completeness.md",
+              "minutes": 20
+            },
+            {
+              "id": "t3-discussion-argument",
+              "slug": "t3-discussion-argument",
+              "title": "Skill T3 — Academic Discussion: argumen",
+              "file": "d06-t03-t3-discussion-argument.md",
+              "minutes": 22
+            },
+            {
+              "id": "t4-discussion-language",
+              "slug": "t4-discussion-language",
+              "title": "Skill T4 — Academic Discussion: bahasa dan waktu",
+              "file": "d06-t04-t4-discussion-language.md",
+              "minutes": 18
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mysql-8-dba",
+      "title": "MySQL 8.0 Database Administrator",
+      "code": "1Z0-908",
+      "vendor": "Oracle",
+      "level": "Menengah–Lanjutan",
+      "badge": "47 topik",
+      "status": "ready",
+      "desc": "Sertifikasi OCP untuk DBA MySQL 8.0: arsitektur InnoDB, instalasi, security, monitoring, optimasi query, backup, dan replikasi sampai InnoDB Cluster.",
+      "facts": {
+        "Kode ujian": "1Z0-908",
+        "Jumlah soal": "73 soal",
+        "Durasi": "120 menit",
+        "Level": "OCP",
+        "Prasyarat": "SQL + administrasi Linux dasar"
+      },
+      "roadmap": [
+        {
+          "week": "Pekan 1",
+          "goal": "Architecture: koneksi, datadir, InnoDB, buffer pool, data dictionary."
+        },
+        {
+          "week": "Pekan 2",
+          "goal": "Installation: paket, file, start/stop, upgrade, option file, variabel, multi-instance."
+        },
+        {
+          "week": "Pekan 3-4",
+          "goal": "Security (domain terbesar): user, role, plugin auth, TLS, password, enkripsi, firewall."
+        },
+        {
+          "week": "Pekan 5",
+          "goal": "Monitoring: log, status, audit, kapasitas, lock dan deadlock."
+        },
+        {
+          "week": "Pekan 6",
+          "goal": "Query Optimization: EXPLAIN, index, statistik, performance_schema."
+        },
+        {
+          "week": "Pekan 7",
+          "goal": "Backup: jenis, strategi, MEB, mysqldump, raw file, binlog + PITR."
+        },
+        {
+          "week": "Pekan 8",
+          "goal": "HA: replikasi, multisource, thread, troubleshooting, InnoDB Cluster dan recovery."
+        }
+      ],
+      "domains": [
+        {
+          "slug": "arsitektur",
+          "title": "Architecture",
+          "topics": [
+            {
+              "id": "m01-koneksi",
+              "slug": "m01-koneksi",
+              "title": "Konfigurasi koneksi klien ke server",
+              "file": "m01-t01-koneksi-klien.md",
+              "minutes": 20
+            },
+            {
+              "id": "m01-penyimpanan",
+              "slug": "m01-penyimpanan",
+              "title": "Bagaimana MySQL menyimpan data",
+              "file": "m01-t02-cara-menyimpan-data.md",
+              "minutes": 22
+            },
+            {
+              "id": "m01-innodb",
+              "slug": "m01-innodb",
+              "title": "Cara InnoDB menyimpan data dan log",
+              "file": "m01-t03-innodb-data-log.md",
+              "minutes": 24
+            },
+            {
+              "id": "m01-buffer",
+              "slug": "m01-buffer",
+              "title": "Mengonfigurasi buffer dan cache",
+              "file": "m01-t04-buffer-cache.md",
+              "minutes": 22
+            },
+            {
+              "id": "m01-dd",
+              "slug": "m01-dd",
+              "title": "Data dictionary dan INFORMATION_SCHEMA",
+              "file": "m01-t05-data-dictionary.md",
+              "minutes": 20
+            }
+          ]
+        },
+        {
+          "slug": "instalasi",
+          "title": "Server Installation and Configuration",
+          "topics": [
+            {
+              "id": "m02-install",
+              "slug": "m02-install",
+              "title": "Memasang server dan klien MySQL",
+              "file": "m02-t01-install.md",
+              "minutes": 22
+            },
+            {
+              "id": "m02-files",
+              "slug": "m02-files",
+              "title": "File dan folder hasil instalasi",
+              "file": "m02-t02-files-folders.md",
+              "minutes": 18
+            },
+            {
+              "id": "m02-startstop",
+              "slug": "m02-startstop",
+              "title": "Menjalankan dan menghentikan MySQL",
+              "file": "m02-t03-start-stop.md",
+              "minutes": 18
+            },
+            {
+              "id": "m02-upgrade",
+              "slug": "m02-upgrade",
+              "title": "Meningkatkan versi MySQL",
+              "file": "m02-t04-upgrade.md",
+              "minutes": 22
+            },
+            {
+              "id": "m02-options",
+              "slug": "m02-options",
+              "title": "Opsi dan option file",
+              "file": "m02-t05-options-files.md",
+              "minutes": 20
+            },
+            {
+              "id": "m02-variabel",
+              "slug": "m02-variabel",
+              "title": "Mengonfigurasi variabel MySQL",
+              "file": "m02-t06-variabel.md",
+              "minutes": 20
+            },
+            {
+              "id": "m02-multi",
+              "slug": "m02-multi",
+              "title": "Menjalankan beberapa server di satu host",
+              "file": "m02-t07-multiple-servers.md",
+              "minutes": 20
+            }
+          ]
+        },
+        {
+          "slug": "security",
+          "title": "Security",
+          "topics": [
+            {
+              "id": "m03-user",
+              "slug": "m03-user",
+              "title": "Membuat akun pengguna dan role",
+              "file": "m03-t01-user-roles.md",
+              "minutes": 20
+            },
+            {
+              "id": "m03-plugin",
+              "slug": "m03-plugin",
+              "title": "Plugin autentikasi",
+              "file": "m03-t02-auth-plugins.md",
+              "minutes": 20
+            },
+            {
+              "id": "m03-izin",
+              "slug": "m03-izin",
+              "title": "Mengendalikan izin pengguna dan role",
+              "file": "m03-t03-permissions.md",
+              "minutes": 22
+            },
+            {
+              "id": "m03-risiko",
+              "slug": "m03-risiko",
+              "title": "Mengenali risiko keamanan umum",
+              "file": "m03-t04-risiko-keamanan.md",
+              "minutes": 18
+            },
+            {
+              "id": "m03-tls",
+              "slug": "m03-tls",
+              "title": "Mengamankan koneksi dengan TLS",
+              "file": "m03-t05-tls.md",
+              "minutes": 22
+            },
+            {
+              "id": "m03-password",
+              "slug": "m03-password",
+              "title": "Keamanan password dan login",
+              "file": "m03-t06-password-login.md",
+              "minutes": 20
+            },
+            {
+              "id": "m03-host",
+              "slug": "m03-host",
+              "title": "Mengamankan lingkungan host MySQL",
+              "file": "m03-t07-host-environment.md",
+              "minutes": 20
+            },
+            {
+              "id": "m03-injection",
+              "slug": "m03-injection",
+              "title": "Mencegah serangan SQL injection",
+              "file": "m03-t08-sql-injection.md",
+              "minutes": 20
+            },
+            {
+              "id": "m03-enkripsi",
+              "slug": "m03-enkripsi",
+              "title": "Enkripsi data MySQL",
+              "file": "m03-t09-enkripsi.md",
+              "minutes": 22
+            },
+            {
+              "id": "m03-firewall",
+              "slug": "m03-firewall",
+              "title": "MySQL Enterprise Firewall",
+              "file": "m03-t10-enterprise-firewall.md",
+              "minutes": 18
+            }
+          ]
+        },
+        {
+          "slug": "monitoring",
+          "title": "Monitoring and Maintenance",
+          "topics": [
+            {
+              "id": "m04-log",
+              "slug": "m04-log",
+              "title": "Mengonfigurasi dan membaca log MySQL",
+              "file": "m04-t01-log-files.md",
+              "minutes": 22
+            },
+            {
+              "id": "m04-status",
+              "slug": "m04-status",
+              "title": "Memantau proses dan status server",
+              "file": "m04-t02-proses-status.md",
+              "minutes": 22
+            },
+            {
+              "id": "m04-audit",
+              "slug": "m04-audit",
+              "title": "MySQL Enterprise Audit",
+              "file": "m04-t03-enterprise-audit.md",
+              "minutes": 18
+            },
+            {
+              "id": "m04-mem",
+              "slug": "m04-mem",
+              "title": "MySQL Enterprise Monitor",
+              "file": "m04-t04-enterprise-monitor.md",
+              "minutes": 16
+            },
+            {
+              "id": "m04-kapasitas",
+              "slug": "m04-kapasitas",
+              "title": "Memantau pertumbuhan data dan kapasitas",
+              "file": "m04-t05-pertumbuhan-kapasitas.md",
+              "minutes": 20
+            },
+            {
+              "id": "m04-lock",
+              "slug": "m04-lock",
+              "title": "Menangani masalah lock dan deadlock",
+              "file": "m04-t06-lock.md",
+              "minutes": 22
+            }
+          ]
+        },
+        {
+          "slug": "optimasi",
+          "title": "Query Optimization",
+          "topics": [
+            {
+              "id": "m05-optimizer",
+              "slug": "m05-optimizer",
+              "title": "Bagaimana MySQL mengoptimasi query",
+              "file": "m05-t01-cara-optimizer.md",
+              "minutes": 24
+            },
+            {
+              "id": "m05-analisis",
+              "slug": "m05-analisis",
+              "title": "Menganalisis query dengan performance_schema",
+              "file": "m05-t02-analisis-query.md",
+              "minutes": 22
+            },
+            {
+              "id": "m05-index",
+              "slug": "m05-index",
+              "title": "Membuat index untuk performa",
+              "file": "m05-t03-index.md",
+              "minutes": 24
+            },
+            {
+              "id": "m05-statistik",
+              "slug": "m05-statistik",
+              "title": "Memantau dan memahami statistik index",
+              "file": "m05-t04-statistik-index.md",
+              "minutes": 20
+            }
+          ]
+        },
+        {
+          "slug": "backup",
+          "title": "Backups and Recovery",
+          "topics": [
+            {
+              "id": "m06-jenis",
+              "slug": "m06-jenis",
+              "title": "Jenis-jenis backup",
+              "file": "m06-t01-jenis-backup.md",
+              "minutes": 20
+            },
+            {
+              "id": "m06-strategi",
+              "slug": "m06-strategi",
+              "title": "Menyusun strategi backup",
+              "file": "m06-t02-strategi.md",
+              "minutes": 22
+            },
+            {
+              "id": "m06-meb",
+              "slug": "m06-meb",
+              "title": "Backup dan restore dengan Enterprise Backup",
+              "file": "m06-t03-enterprise-backup.md",
+              "minutes": 24
+            },
+            {
+              "id": "m06-dump",
+              "slug": "m06-dump",
+              "title": "Backup logis dengan mysqldump dan mysqlpump",
+              "file": "m06-t04-mysqldump.md",
+              "minutes": 22
+            },
+            {
+              "id": "m06-raw",
+              "slug": "m06-raw",
+              "title": "Backup file mentah (raw file)",
+              "file": "m06-t05-raw-file.md",
+              "minutes": 20
+            },
+            {
+              "id": "m06-binlog",
+              "slug": "m06-binlog",
+              "title": "Backup binary log dan point-in-time recovery",
+              "file": "m06-t06-binlog.md",
+              "minutes": 22
+            }
+          ]
+        },
+        {
+          "slug": "ha",
+          "title": "High Availability Techniques",
+          "topics": [
+            {
+              "id": "m07-konsep",
+              "slug": "m07-konsep",
+              "title": "Replikasi untuk ketersediaan dan skalabilitas",
+              "file": "m07-t01-replikasi-konsep.md",
+              "minutes": 20
+            },
+            {
+              "id": "m07-konfigurasi",
+              "slug": "m07-konfigurasi",
+              "title": "Mengonfigurasi replikasi",
+              "file": "m07-t02-konfigurasi.md",
+              "minutes": 24
+            },
+            {
+              "id": "m07-binlog",
+              "slug": "m07-binlog",
+              "title": "Peran binary log dalam replikasi",
+              "file": "m07-t03-binlog-replikasi.md",
+              "minutes": 18
+            },
+            {
+              "id": "m07-multisource",
+              "slug": "m07-multisource",
+              "title": "Replikasi multisource",
+              "file": "m07-t04-multisource.md",
+              "minutes": 20
+            },
+            {
+              "id": "m07-thread",
+              "slug": "m07-thread",
+              "title": "Peran thread replikasi",
+              "file": "m07-t05-thread.md",
+              "minutes": 18
+            },
+            {
+              "id": "m07-monitor",
+              "slug": "m07-monitor",
+              "title": "Memantau dan menangani masalah replikasi",
+              "file": "m07-t06-monitor-replikasi.md",
+              "minutes": 22
+            },
+            {
+              "id": "m07-cluster",
+              "slug": "m07-cluster",
+              "title": "InnoDB Cluster dan Group Replication",
+              "file": "m07-t07-cluster-konsep.md",
+              "minutes": 20
+            },
+            {
+              "id": "m07-konfig-cluster",
+              "slug": "m07-konfig-cluster",
+              "title": "Mengonfigurasi InnoDB Cluster",
+              "file": "m07-t08-konfigurasi-cluster.md",
+              "minutes": 24
+            },
+            {
+              "id": "m07-recovery",
+              "slug": "m07-recovery",
+              "title": "Pemulihan InnoDB Cluster",
+              "file": "m07-t09-cluster-recovery.md",
+              "minutes": 22
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mysql-8-dev",
+      "title": "MySQL 8.0 Database Developer",
+      "code": "1Z0-909",
+      "vendor": "Oracle",
+      "level": "Menengah",
+      "badge": "32 topik",
+      "status": "ready",
+      "desc": "Sertifikasi OCP untuk developer MySQL 8.0: konektor dan API, aplikasi berbasis data, objek skema, transaksi, optimasi, stored programs, serta JSON dan document store.",
+      "facts": {
+        "Kode ujian": "1Z0-909",
+        "Jumlah soal": "65 soal",
+        "Durasi": "90 menit",
+        "Nilai lulus": "62%",
+        "Level": "OCP"
+      },
+      "roadmap": [
+        {
+          "week": "Pekan 1",
+          "goal": "Connectors and APIs: pilih konektor, pooling, ambil data, nilai khusus, kredensial."
+        },
+        {
+          "week": "Pekan 2",
+          "goal": "Data-driven Applications: prepared statement, SQL mode, error/warning, agregasi, laporan."
+        },
+        {
+          "week": "Pekan 3",
+          "goal": "Schema objects: view, tipe string, numerik, temporal, spasial."
+        },
+        {
+          "week": "Pekan 4",
+          "goal": "Transactions: SQL, aplikasi, isolation level, locking."
+        },
+        {
+          "week": "Pekan 5",
+          "goal": "Query Optimization: index, EXPLAIN, rewrite query."
+        },
+        {
+          "week": "Pekan 6",
+          "goal": "Stored Programs: routine, konstruksi, trigger, event scheduler."
+        },
+        {
+          "week": "Pekan 7",
+          "goal": "JSON dan document store: JSON_TABLE, X DevAPI, MySQL Shell."
+        },
+        {
+          "week": "Pekan 8",
+          "goal": "Ujian latihan penuh, ulangi domain dengan skor terendah."
+        }
+      ],
+      "domains": [
+        {
+          "slug": "connectors",
+          "title": "Connectors and APIs",
+          "topics": [
+            {
+              "id": "c-pilih",
+              "slug": "c-pilih",
+              "title": "Memilih konektor untuk aplikasi",
+              "file": "d01-t01-pilih-konektor.md",
+              "minutes": 20
+            },
+            {
+              "id": "c-config",
+              "slug": "c-config",
+              "title": "Penggunaan, manajemen, dan konfigurasi konektor",
+              "file": "d01-t02-konfigurasi-konektor.md",
+              "minutes": 22
+            },
+            {
+              "id": "c-ambil",
+              "slug": "c-ambil",
+              "title": "Mengambil data lewat konektor",
+              "file": "d01-t03-ambil-data.md",
+              "minutes": 22
+            },
+            {
+              "id": "c-nilai",
+              "slug": "c-nilai",
+              "title": "Menangani nilai khusus",
+              "file": "d01-t04-nilai-khusus.md",
+              "minutes": 20
+            },
+            {
+              "id": "c-kredensial",
+              "slug": "c-kredensial",
+              "title": "Mengamankan kredensial dan koneksi",
+              "file": "d01-t05-kredensial.md",
+              "minutes": 20
+            }
+          ]
+        },
+        {
+          "slug": "aplikasi",
+          "title": "Data-driven Applications",
+          "topics": [
+            {
+              "id": "a-prepared",
+              "slug": "a-prepared",
+              "title": "Menggunakan prepared statement",
+              "file": "d02-t01-prepared.md",
+              "minutes": 20
+            },
+            {
+              "id": "a-sqlmode",
+              "slug": "a-sqlmode",
+              "title": "Mengatur SQL Mode untuk mengubah perilaku",
+              "file": "d02-t02-sql-mode.md",
+              "minutes": 22
+            },
+            {
+              "id": "a-error",
+              "slug": "a-error",
+              "title": "Menangani error dan warning",
+              "file": "d02-t03-error-warning.md",
+              "minutes": 22
+            },
+            {
+              "id": "a-tampil",
+              "slug": "a-tampil",
+              "title": "Menampilkan hasil query",
+              "file": "d02-t04-tampilkan-hasil.md",
+              "minutes": 18
+            },
+            {
+              "id": "a-agregasi",
+              "slug": "a-agregasi",
+              "title": "Agregasi dan ringkasan data",
+              "file": "d02-t05-agregasi.md",
+              "minutes": 22
+            },
+            {
+              "id": "a-laporan",
+              "slug": "a-laporan",
+              "title": "Laporan tingkat lanjut",
+              "file": "d02-t06-laporan.md",
+              "minutes": 22
+            }
+          ]
+        },
+        {
+          "slug": "skema",
+          "title": "MySQL Schema Objects and Data",
+          "topics": [
+            {
+              "id": "s-views",
+              "slug": "s-views",
+              "title": "Merancang, membuat, dan mengubah view",
+              "file": "d03-t01-views.md",
+              "minutes": 22
+            },
+            {
+              "id": "s-string",
+              "slug": "s-string",
+              "title": "Data string",
+              "file": "d03-t02-string.md",
+              "minutes": 22
+            },
+            {
+              "id": "s-numerik",
+              "slug": "s-numerik",
+              "title": "Data numerik",
+              "file": "d03-t03-numerik.md",
+              "minutes": 20
+            },
+            {
+              "id": "s-temporal",
+              "slug": "s-temporal",
+              "title": "Data temporal",
+              "file": "d03-t04-temporal.md",
+              "minutes": 22
+            },
+            {
+              "id": "s-spatial",
+              "slug": "s-spatial",
+              "title": "Data spasial",
+              "file": "d03-t05-spatial.md",
+              "minutes": 20
+            }
+          ]
+        },
+        {
+          "slug": "transaksi",
+          "title": "Transactions",
+          "topics": [
+            {
+              "id": "t-sql",
+              "slug": "t-sql",
+              "title": "Mengendalikan transaksi dengan SQL",
+              "file": "d04-t01-transaksi-sql.md",
+              "minutes": 20
+            },
+            {
+              "id": "t-app",
+              "slug": "t-app",
+              "title": "Mengendalikan transaksi di aplikasi",
+              "file": "d04-t02-transaksi-aplikasi.md",
+              "minutes": 22
+            },
+            {
+              "id": "t-isolasi",
+              "slug": "t-isolasi",
+              "title": "Tingkat isolasi dan masalah konsistensi",
+              "file": "d04-t03-isolasi.md",
+              "minutes": 22
+            },
+            {
+              "id": "t-locking",
+              "slug": "t-locking",
+              "title": "Mekanisme locking di MySQL",
+              "file": "d04-t04-locking.md",
+              "minutes": 20
+            }
+          ]
+        },
+        {
+          "slug": "optimasi",
+          "title": "Query Optimization",
+          "topics": [
+            {
+              "id": "o-index",
+              "slug": "o-index",
+              "title": "Memakai index untuk optimasi",
+              "file": "d05-t01-index-optimasi.md",
+              "minutes": 22
+            },
+            {
+              "id": "o-analisis",
+              "slug": "o-analisis",
+              "title": "Menganalisis query untuk optimasi",
+              "file": "d05-t02-analisis-query.md",
+              "minutes": 20
+            },
+            {
+              "id": "o-rewrite",
+              "slug": "o-rewrite",
+              "title": "Menulis ulang query untuk optimasi",
+              "file": "d05-t03-rewrite.md",
+              "minutes": 22
+            }
+          ]
+        },
+        {
+          "slug": "stored",
+          "title": "MySQL Stored Programs",
+          "topics": [
+            {
+              "id": "p-routine",
+              "slug": "p-routine",
+              "title": "Membuat dan menjalankan stored routine",
+              "file": "d06-t01-stored-routines.md",
+              "minutes": 22
+            },
+            {
+              "id": "p-konstruksi",
+              "slug": "p-konstruksi",
+              "title": "Konstruksi pemrograman dalam routine",
+              "file": "d06-t02-konstruksi.md",
+              "minutes": 22
+            },
+            {
+              "id": "p-trigger",
+              "slug": "p-trigger",
+              "title": "Membuat dan menjalankan trigger",
+              "file": "d06-t03-triggers.md",
+              "minutes": 20
+            },
+            {
+              "id": "p-event",
+              "slug": "p-event",
+              "title": "Menjadwalkan operasi database",
+              "file": "d06-t04-event.md",
+              "minutes": 20
+            }
+          ]
+        },
+        {
+          "slug": "json",
+          "title": "JSON and Document Store",
+          "topics": [
+            {
+              "id": "j-dasar",
+              "slug": "j-dasar",
+              "title": "Membuat dan menyimpan dokumen JSON",
+              "file": "d07-t01-json-dasar.md",
+              "minutes": 22
+            },
+            {
+              "id": "j-proses",
+              "slug": "j-proses",
+              "title": "Mengolah data dalam dokumen JSON",
+              "file": "d07-t02-json-proses.md",
+              "minutes": 22
+            },
+            {
+              "id": "j-nosql",
+              "slug": "j-nosql",
+              "title": "NoSQL dan X DevAPI",
+              "file": "d07-t03-nosql-xdevapi.md",
+              "minutes": 20
+            },
+            {
+              "id": "j-collection",
+              "slug": "j-collection",
+              "title": "Membuat dan mengakses document store",
+              "file": "d07-t04-document-store.md",
+              "minutes": 20
+            },
+            {
+              "id": "j-shell",
+              "slug": "j-shell",
+              "title": "Mengakses document store dengan MySQL Shell",
+              "file": "d07-t05-mysql-shell.md",
+              "minutes": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mysql-impl",
+      "title": "MySQL Implementation Associate",
+      "code": "1Z0-922",
+      "vendor": "Oracle",
+      "level": "Associate",
+      "badge": "22 topik",
+      "status": "ready",
+      "desc": "Sertifikasi Associate untuk implementasi MySQL, termasuk edisi Enterprise: instalasi, desain skema, keamanan, backup, replikasi, HA, monitoring, dan HeatWave.",
+      "facts": {
+        "Kode ujian": "1Z0-922",
+        "Durasi": "90 menit",
+        "Level": "Associate",
+        "Fokus": "Implementasi",
+        "Prasyarat": "SQL dasar"
+      },
+      "roadmap": [
+        {
+          "week": "Pekan 1",
+          "goal": "Introduction to Enterprise Edition + arsitektur + instalasi dan konfigurasi."
+        },
+        {
+          "week": "Pekan 2",
+          "goal": "Designing databases: tipe data, tabel, index, join."
+        },
+        {
+          "week": "Pekan 3",
+          "goal": "Security: privilege system, user/role, lalu Enterprise Authentication."
+        },
+        {
+          "week": "Pekan 4",
+          "goal": "Enterprise Firewall + Audit, lanjut backup (MEB) dan konfigurasinya."
+        },
+        {
+          "week": "Pekan 5",
+          "goal": "Replikasi dan topologi, lalu InnoDB Cluster dan fitur HA/skalabilitas."
+        },
+        {
+          "week": "Pekan 6",
+          "goal": "Monitoring, HeatWave architecture, ujian latihan penuh."
+        }
+      ],
+      "domains": [
+        {
+          "slug": "ee",
+          "title": "Introduction to MySQL Enterprise Edition",
+          "topics": [
+            {
+              "id": "ee-beda",
+              "slug": "ee-beda",
+              "title": "MySQL Enterprise vs Community/Standard",
+              "file": "e01-t01-ee-vs-community.md",
+              "minutes": 20
+            },
+            {
+              "id": "ee-produk",
+              "slug": "ee-produk",
+              "title": "Produk dan fitur MySQL Enterprise",
+              "file": "e01-t02-produk-fitur.md",
+              "minutes": 22
+            }
+          ]
+        },
+        {
+          "slug": "arsitektur",
+          "title": "MySQL Installation and Architecture",
+          "topics": [
+            {
+              "id": "ar-arsitektur",
+              "slug": "ar-arsitektur",
+              "title": "Arsitektur MySQL",
+              "file": "e02-t01-arsitektur.md",
+              "minutes": 22
+            },
+            {
+              "id": "ar-install",
+              "slug": "ar-install",
+              "title": "Memasang MySQL Enterprise Server",
+              "file": "e02-t02-install-ee.md",
+              "minutes": 22
+            },
+            {
+              "id": "ar-config",
+              "slug": "ar-config",
+              "title": "Mengonfigurasi MySQL Enterprise Server",
+              "file": "e02-t03-konfigurasi.md",
+              "minutes": 20
+            }
+          ]
+        },
+        {
+          "slug": "desain",
+          "title": "Designing Databases",
+          "topics": [
+            {
+              "id": "ds-tipe",
+              "slug": "ds-tipe",
+              "title": "Tipe data dalam database MySQL",
+              "file": "e03-t01-datatypes.md",
+              "minutes": 22
+            },
+            {
+              "id": "ds-tabel",
+              "slug": "ds-tabel",
+              "title": "Membuat database dan tabel",
+              "file": "e03-t02-create-db-tables.md",
+              "minutes": 22
+            },
+            {
+              "id": "ds-index",
+              "slug": "ds-index",
+              "title": "Mengonfigurasi index",
+              "file": "e03-t03-indexes.md",
+              "minutes": 22
+            },
+            {
+              "id": "ds-join",
+              "slug": "ds-join",
+              "title": "Menggabungkan tabel (join)",
+              "file": "e03-t04-joins.md",
+              "minutes": 22
+            }
+          ]
+        },
+        {
+          "slug": "security",
+          "title": "Implementing MySQL Security",
+          "topics": [
+            {
+              "id": "sc-privilege",
+              "slug": "sc-privilege",
+              "title": "Sistem privilege MySQL",
+              "file": "e04-t01-privilege-system.md",
+              "minutes": 22
+            },
+            {
+              "id": "sc-user",
+              "slug": "sc-user",
+              "title": "Mengonfigurasi user dan role",
+              "file": "e04-t02-users-roles.md",
+              "minutes": 20
+            }
+          ]
+        },
+        {
+          "slug": "security-tools",
+          "title": "Using MySQL Enterprise Security Tools",
+          "topics": [
+            {
+              "id": "st-auth",
+              "slug": "st-auth",
+              "title": "MySQL Enterprise Authentication",
+              "file": "e05-t01-enterprise-auth.md",
+              "minutes": 20
+            },
+            {
+              "id": "st-firewall",
+              "slug": "st-firewall",
+              "title": "MySQL Enterprise Firewall",
+              "file": "e05-t02-firewall.md",
+              "minutes": 18
+            },
+            {
+              "id": "st-audit",
+              "slug": "st-audit",
+              "title": "MySQL Enterprise Audit",
+              "file": "e05-t03-audit.md",
+              "minutes": 20
+            }
+          ]
+        },
+        {
+          "slug": "backup",
+          "title": "Backing Up MySQL",
+          "topics": [
+            {
+              "id": "bk-proses",
+              "slug": "bk-proses",
+              "title": "Proses MySQL Enterprise Backup",
+              "file": "e06-t01-meb-process.md",
+              "minutes": 22
+            },
+            {
+              "id": "bk-config",
+              "slug": "bk-config",
+              "title": "Mengonfigurasi backup MySQL",
+              "file": "e06-t02-konfigurasi-backup.md",
+              "minutes": 20
+            }
+          ]
+        },
+        {
+          "slug": "replikasi",
+          "title": "Implementing MySQL Replication",
+          "topics": [
+            {
+              "id": "rp-konsep",
+              "slug": "rp-konsep",
+              "title": "Replikasi MySQL",
+              "file": "e07-t01-replikasi.md",
+              "minutes": 22
+            },
+            {
+              "id": "rp-topologi",
+              "slug": "rp-topologi",
+              "title": "Topologi replikasi",
+              "file": "e07-t02-topologi.md",
+              "minutes": 20
+            }
+          ]
+        },
+        {
+          "slug": "ha",
+          "title": "Enabling MySQL High Availability",
+          "topics": [
+            {
+              "id": "ha-cluster",
+              "slug": "ha-cluster",
+              "title": "MySQL InnoDB Cluster",
+              "file": "e08-t01-innodb-cluster.md",
+              "minutes": 22
+            },
+            {
+              "id": "ha-scalability",
+              "slug": "ha-scalability",
+              "title": "Fitur ketersediaan tinggi dan skalabilitas",
+              "file": "e08-t02-ha-scalability.md",
+              "minutes": 20
+            }
+          ]
+        },
+        {
+          "slug": "monitoring",
+          "title": "Monitoring MySQL",
+          "topics": [
+            {
+              "id": "mo-teknik",
+              "slug": "mo-teknik",
+              "title": "Teknik memantau MySQL",
+              "file": "e09-t01-monitoring.md",
+              "minutes": 22
+            }
+          ]
+        },
+        {
+          "slug": "heatwave",
+          "title": "Using HeatWave cluster",
+          "topics": [
+            {
+              "id": "hw-arsitektur",
+              "slug": "hw-arsitektur",
+              "title": "Arsitektur MySQL HeatWave Cluster",
+              "file": "e10-t01-heatwave.md",
+              "minutes": 22
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "oracle-sql",
+      "title": "Oracle Database SQL",
+      "code": "1Z0-071",
+      "vendor": "Oracle",
+      "level": "Dasar–Menengah",
+      "badge": "59 topik",
+      "status": "ready",
+      "desc": "Sertifikasi SQL Oracle: SELECT, filter, fungsi, agregasi, join, subquery, operasi set, DML, DDL, view, hak akses, dan zona waktu.",
+      "facts": {
+        "Kode ujian": "1Z0-071",
+        "Jumlah soal": "63 soal",
+        "Durasi": "120 menit",
+        "Nilai lulus": "63%",
+        "Level": "Associate"
+      },
+      "roadmap": [
+        {
+          "week": "Pekan 1",
+          "goal": "Konsep relasional, SELECT, alias, NULL, filter, dan sorting."
+        },
+        {
+          "week": "Pekan 2",
+          "goal": "Fungsi satu baris dan konversi: string, tanggal, angka, NVL, TO_CHAR."
+        },
+        {
+          "week": "Pekan 3",
+          "goal": "Agregasi (GROUP BY/HAVING) lalu join lengkap termasuk outer dan kartesian."
+        },
+        {
+          "week": "Pekan 4",
+          "goal": "Subquery dan operasi set (UNION, INTERSECT, MINUS)."
+        },
+        {
+          "week": "Pekan 5",
+          "goal": "DML: transaksi, INSERT/UPDATE/DELETE, multi-table insert, MERGE."
+        },
+        {
+          "week": "Pekan 6",
+          "goal": "DDL: tabel, kolom, constraint, temporary dan external table, index/synonym/sequence."
+        },
+        {
+          "week": "Pekan 7",
+          "goal": "View, hak akses, data dictionary, dan zona waktu."
+        },
+        {
+          "week": "Pekan 8",
+          "goal": "Ujian latihan penuh, ulangi domain dengan skor terendah."
+        }
+      ],
+      "domains": [
+        {
+          "slug": "konsep",
+          "title": "Relational Database concepts",
+          "topics": [
+            {
+              "id": "k-teori",
+              "slug": "k-teori",
+              "title": "Aspek teoretis dan fisik basis data relasional",
+              "file": "o01-t01-relasional.md",
+              "minutes": 20
+            },
+            {
+              "id": "k-erd",
+              "slug": "k-erd",
+              "title": "Menghubungkan klausa SELECT dengan komponen ERD",
+              "file": "o01-t02-erd-select.md",
+              "minutes": 20
+            },
+            {
+              "id": "k-sql",
+              "slug": "k-sql",
+              "title": "Hubungan basis data dan SQL",
+              "file": "o01-t03-db-sql.md",
+              "minutes": 18
+            }
+          ]
+        },
+        {
+          "slug": "select",
+          "title": "Retrieving Data using the SQL SELECT Statement",
+          "topics": [
+            {
+              "id": "s-alias",
+              "slug": "s-alias",
+              "title": "Alias kolom",
+              "file": "o02-t01-alias.md",
+              "minutes": 16
+            },
+            {
+              "id": "s-select",
+              "slug": "s-select",
+              "title": "Pernyataan SELECT",
+              "file": "o02-t02-select.md",
+              "minutes": 18
+            },
+            {
+              "id": "s-concat",
+              "slug": "s-concat",
+              "title": "Konkatenasi, literal, q-quote, dan DISTINCT",
+              "file": "o02-t03-concat-distinct.md",
+              "minutes": 20
+            },
+            {
+              "id": "s-aritmatika",
+              "slug": "s-aritmatika",
+              "title": "Ekspresi aritmatika dan NULL",
+              "file": "o02-t04-aritmatika-null.md",
+              "minutes": 18
+            }
+          ]
+        },
+        {
+          "slug": "filter",
+          "title": "Restricting and Sorting Data",
+          "topics": [
+            {
+              "id": "f-presedensi",
+              "slug": "f-presedensi",
+              "title": "Aturan presedensi operator",
+              "file": "o03-t01-presedensi.md",
+              "minutes": 18
+            },
+            {
+              "id": "f-limit",
+              "slug": "f-limit",
+              "title": "Membatasi jumlah baris",
+              "file": "o03-t02-limit-rows.md",
+              "minutes": 18
+            },
+            {
+              "id": "f-substitusi",
+              "slug": "f-substitusi",
+              "title": "Substitution variable",
+              "file": "o03-t03-substitution.md",
+              "minutes": 18
+            },
+            {
+              "id": "f-define",
+              "slug": "f-define",
+              "title": "Perintah DEFINE dan VERIFY",
+              "file": "o03-t04-define-verify.md",
+              "minutes": 16
+            },
+            {
+              "id": "f-sort",
+              "slug": "f-sort",
+              "title": "Mengurutkan data",
+              "file": "o03-t05-sorting.md",
+              "minutes": 18
+            }
+          ]
+        },
+        {
+          "slug": "fungsi1",
+          "title": "Using Single-Row Functions to Customize Output",
+          "topics": [
+            {
+              "id": "u-string",
+              "slug": "u-string",
+              "title": "Fungsi karakter pada SELECT dan WHERE",
+              "file": "o04-t01-string.md",
+              "minutes": 20
+            },
+            {
+              "id": "u-date-aritmatika",
+              "slug": "u-date-aritmatika",
+              "title": "Aritmatika pada data tanggal",
+              "file": "o04-t02-date-aritmatika.md",
+              "minutes": 20
+            },
+            {
+              "id": "u-round",
+              "slug": "u-round",
+              "title": "ROUND, TRUNC, dan MOD",
+              "file": "o04-t03-round-trunc-mod.md",
+              "minutes": 18
+            },
+            {
+              "id": "u-date",
+              "slug": "u-date",
+              "title": "Fungsi tanggal",
+              "file": "o04-t04-date-functions.md",
+              "minutes": 20
+            }
+          ]
+        },
+        {
+          "slug": "konversi",
+          "title": "Using Conversion Functions and Conditional Expressions",
+          "topics": [
+            {
+              "id": "c-nvl",
+              "slug": "c-nvl",
+              "title": "NVL, NULLIF, dan COALESCE",
+              "file": "o05-t01-nvl-nullif-coalesce.md",
+              "minutes": 18
+            },
+            {
+              "id": "c-konversi",
+              "slug": "c-konversi",
+              "title": "Konversi tipe implisit dan eksplisit",
+              "file": "o05-t02-konversi.md",
+              "minutes": 20
+            },
+            {
+              "id": "c-tochar",
+              "slug": "c-tochar",
+              "title": "TO_CHAR, TO_NUMBER, dan TO_DATE",
+              "file": "o05-t03-to-char.md",
+              "minutes": 22
+            },
+            {
+              "id": "c-nesting",
+              "slug": "c-nesting",
+              "title": "Menumpuk beberapa fungsi",
+              "file": "o05-t04-nesting.md",
+              "minutes": 18
+            }
+          ]
+        },
+        {
+          "slug": "agregat",
+          "title": "Reporting Aggregated Data Using Group Functions",
+          "topics": [
+            {
+              "id": "g-fungsi",
+              "slug": "g-fungsi",
+              "title": "Fungsi grup",
+              "file": "o06-t01-group-functions.md",
+              "minutes": 20
+            },
+            {
+              "id": "g-groupby",
+              "slug": "g-groupby",
+              "title": "Membuat grup data",
+              "file": "o06-t02-group-by.md",
+              "minutes": 20
+            },
+            {
+              "id": "g-having",
+              "slug": "g-having",
+              "title": "Membatasi hasil grup",
+              "file": "o06-t03-having.md",
+              "minutes": 18
+            }
+          ]
+        },
+        {
+          "slug": "join",
+          "title": "Displaying Data from Multiple Tables",
+          "topics": [
+            {
+              "id": "j-self",
+              "slug": "j-self",
+              "title": "Self join",
+              "file": "o07-t01-self-join.md",
+              "minutes": 18
+            },
+            {
+              "id": "j-jenis",
+              "slug": "j-jenis",
+              "title": "Berbagai jenis join",
+              "file": "o07-t02-join-types.md",
+              "minutes": 20
+            },
+            {
+              "id": "j-nonequi",
+              "slug": "j-nonequi",
+              "title": "Non-equijoin",
+              "file": "o07-t03-non-equijoin.md",
+              "minutes": 18
+            },
+            {
+              "id": "j-outer",
+              "slug": "j-outer",
+              "title": "OUTER join",
+              "file": "o07-t04-outer.md",
+              "minutes": 20
+            },
+            {
+              "id": "j-cartesian",
+              "slug": "j-cartesian",
+              "title": "Produk kartesian",
+              "file": "o07-t05-cartesian.md",
+              "minutes": 16
+            }
+          ]
+        },
+        {
+          "slug": "subquery",
+          "title": "Using Subqueries to Solve Queries",
+          "topics": [
+            {
+              "id": "q-single",
+              "slug": "q-single",
+              "title": "Subquery satu baris",
+              "file": "o08-t01-single-row.md",
+              "minutes": 20
+            },
+            {
+              "id": "q-multi",
+              "slug": "q-multi",
+              "title": "Subquery banyak baris",
+              "file": "o08-t02-multi-row.md",
+              "minutes": 20
+            },
+            {
+              "id": "q-correlated",
+              "slug": "q-correlated",
+              "title": "UPDATE dan DELETE dengan subquery berkorelasi",
+              "file": "o08-t03-correlated.md",
+              "minutes": 20
+            }
+          ]
+        },
+        {
+          "slug": "setops",
+          "title": "Using SET Operators",
+          "topics": [
+            {
+              "id": "t-matching",
+              "slug": "t-matching",
+              "title": "Menyesuaikan SELECT pada operasi set",
+              "file": "o09-t01-matching.md",
+              "minutes": 18
+            },
+            {
+              "id": "t-orderby",
+              "slug": "t-orderby",
+              "title": "ORDER BY pada operasi set",
+              "file": "o09-t02-order-by-setops.md",
+              "minutes": 16
+            },
+            {
+              "id": "t-intersect",
+              "slug": "t-intersect",
+              "title": "Operator INTERSECT",
+              "file": "o09-t03-intersect.md",
+              "minutes": 16
+            },
+            {
+              "id": "t-minus",
+              "slug": "t-minus",
+              "title": "Operator MINUS",
+              "file": "o09-t04-minus.md",
+              "minutes": 16
+            },
+            {
+              "id": "t-union",
+              "slug": "t-union",
+              "title": "UNION dan UNION ALL",
+              "file": "o09-t05-union.md",
+              "minutes": 18
+            }
+          ]
+        },
+        {
+          "slug": "dml",
+          "title": "Managing Tables using DML statements",
+          "topics": [
+            {
+              "id": "d-transaksi",
+              "slug": "d-transaksi",
+              "title": "Mengelola transaksi database",
+              "file": "o10-t01-transaksi.md",
+              "minutes": 20
+            },
+            {
+              "id": "d-control",
+              "slug": "d-control",
+              "title": "Mengendalikan transaksi",
+              "file": "o10-t02-control.md",
+              "minutes": 18
+            },
+            {
+              "id": "d-dml",
+              "slug": "d-dml",
+              "title": "INSERT, UPDATE, dan DELETE",
+              "file": "o10-t03-dml.md",
+              "minutes": 20
+            },
+            {
+              "id": "d-multi",
+              "slug": "d-multi",
+              "title": "Insert multi-tabel",
+              "file": "o10-t04-multi-insert.md",
+              "minutes": 20
+            },
+            {
+              "id": "d-merge",
+              "slug": "d-merge",
+              "title": "MERGE statement",
+              "file": "o10-t05-merge.md",
+              "minutes": 20
+            }
+          ]
+        },
+        {
+          "slug": "objek",
+          "title": "Managing Indexes Synonyms and Sequences",
+          "topics": [
+            {
+              "id": "o-index",
+              "slug": "o-index",
+              "title": "Mengelola index",
+              "file": "o11-t01-indexes.md",
+              "minutes": 20
+            },
+            {
+              "id": "o-synonym",
+              "slug": "o-synonym",
+              "title": "Mengelola synonym",
+              "file": "o11-t02-synonyms.md",
+              "minutes": 18
+            },
+            {
+              "id": "o-sequence",
+              "slug": "o-sequence",
+              "title": "Mengelola sequence",
+              "file": "o11-t03-sequences.md",
+              "minutes": 18
+            }
+          ]
+        },
+        {
+          "slug": "ddl",
+          "title": "Use DDL to manage tables and their relationships",
+          "topics": [
+            {
+              "id": "l-tables",
+              "slug": "l-tables",
+              "title": "Menggambarkan dan bekerja dengan tabel",
+              "file": "o12-t01-tables.md",
+              "minutes": 18
+            },
+            {
+              "id": "l-columns",
+              "slug": "l-columns",
+              "title": "Kolom dan tipe data",
+              "file": "o12-t02-columns-datatypes.md",
+              "minutes": 20
+            },
+            {
+              "id": "l-create",
+              "slug": "l-create",
+              "title": "Membuat tabel",
+              "file": "o12-t03-create-table.md",
+              "minutes": 20
+            },
+            {
+              "id": "l-unused",
+              "slug": "l-unused",
+              "title": "Menghapus kolom dan menandai UNUSED",
+              "file": "o12-t04-drop-unused.md",
+              "minutes": 18
+            },
+            {
+              "id": "l-truncate",
+              "slug": "l-truncate",
+              "title": "TRUNCATE tabel",
+              "file": "o12-t05-truncate.md",
+              "minutes": 16
+            },
+            {
+              "id": "l-temp",
+              "slug": "l-temp",
+              "title": "Temporary table",
+              "file": "o12-t06-temp-tables.md",
+              "minutes": 18
+            },
+            {
+              "id": "l-external",
+              "slug": "l-external",
+              "title": "External table",
+              "file": "o12-t07-external-tables.md",
+              "minutes": 20
+            },
+            {
+              "id": "l-constraint",
+              "slug": "l-constraint",
+              "title": "Mengelola constraint",
+              "file": "o12-t08-constraints.md",
+              "minutes": 20
+            }
+          ]
+        },
+        {
+          "slug": "views",
+          "title": "Managing Views",
+          "topics": [
+            {
+              "id": "v-views",
+              "slug": "v-views",
+              "title": "Mengelola view",
+              "file": "o13-t01-views.md",
+              "minutes": 20
+            }
+          ]
+        },
+        {
+          "slug": "akses",
+          "title": "Controlling User Access",
+          "topics": [
+            {
+              "id": "a-privilege",
+              "slug": "a-privilege",
+              "title": "System privilege vs object privilege",
+              "file": "o14-t01-privileges.md",
+              "minutes": 18
+            },
+            {
+              "id": "a-grant",
+              "slug": "a-grant",
+              "title": "Memberikan privilege pada tabel",
+              "file": "o14-t02-grant-tables.md",
+              "minutes": 18
+            },
+            {
+              "id": "a-role",
+              "slug": "a-role",
+              "title": "Privilege vs role",
+              "file": "o14-t03-roles.md",
+              "minutes": 18
+            }
+          ]
+        },
+        {
+          "slug": "dictionary",
+          "title": "Managing Objects with Data Dictionary Views",
+          "topics": [
+            {
+              "id": "d-dict",
+              "slug": "d-dict",
+              "title": "Data dictionary views",
+              "file": "o15-t01-dictionary.md",
+              "minutes": 20
+            }
+          ]
+        },
+        {
+          "slug": "timezone",
+          "title": "Managing Data in Different Time Zones",
+          "topics": [
+            {
+              "id": "z-current",
+              "slug": "z-current",
+              "title": "CURRENT_DATE, CURRENT_TIMESTAMP, LOCALTIMESTAMP",
+              "file": "o16-t01-current-time.md",
+              "minutes": 20
+            },
+            {
+              "id": "z-interval",
+              "slug": "z-interval",
+              "title": "Tipe data INTERVAL",
+              "file": "o16-t02-interval.md",
+              "minutes": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "oracle-19c-tune",
+      "title": "Oracle 19c Performance Management & Tuning",
+      "code": "1Z0-084",
+      "vendor": "Oracle",
+      "level": "Lanjutan (OCP)",
+      "badge": "46 topik",
+      "status": "ready",
+      "desc": "Tuning database Oracle 19c: wait events, time model, AWR/ASH/ADDM, Statspack, execution plan, statistik, SPM, memori (SGA/PGA/IM), I/O, dan Real Application Testing.",
+      "facts": {
+        "Kode ujian": "1Z0-084",
+        "Durasi": "90 menit",
+        "Level": "OCP (lanjutan)",
+        "Fokus": "Diagnosis berbasis bukti"
+      },
+      "roadmap": [
+        {
+          "week": "Pekan 1",
+          "goal": "Metodologi, siklus tuning, time model, wait events, dan V$ views."
+        },
+        {
+          "week": "Pekan 2",
+          "goal": "Statspack, alert log, trace file, metric/alert, dan AWR baseline."
+        },
+        {
+          "week": "Pekan 3",
+          "goal": "ADDM, ASH, maintenance task, monitoring operasi dan service."
+        },
+        {
+          "week": "Pekan 4",
+          "goal": "Fase SQL, execution plan, trace, adaptive plan, dan SQL Plan Directives."
+        },
+        {
+          "week": "Pekan 5",
+          "goal": "Statistik & parameter optimizer, lalu biaya operasi SQL (shrink, chaining, kompresi, ruang)."
+        },
+        {
+          "week": "Pekan 6",
+          "goal": "Real Application Testing (SPA, Replay) dan SQL Performance Management (SPM, advisor)."
+        },
+        {
+          "week": "Pekan 7",
+          "goal": "Shared pool, buffer cache, I/O, Big Table Cache, dan Flash Cache."
+        },
+        {
+          "week": "Pekan 8",
+          "goal": "PGA, temp, ASMM/AMM, In-Memory Column Store, lalu ujian latihan penuh."
+        }
+      ],
+      "domains": [
+        {
+          "slug": "dasar",
+          "title": "Basic Tuning Methods and Diagnostics",
+          "topics": [
+            {
+              "id": "b-metodologi",
+              "slug": "b-metodologi",
+              "title": "Metodologi tuning",
+              "file": "t01-t01-metodologi.md",
+              "minutes": 20
+            },
+            {
+              "id": "b-lifecycle",
+              "slug": "b-lifecycle",
+              "title": "Fase siklus tuning",
+              "file": "t01-t02-lifecycle.md",
+              "minutes": 20
+            },
+            {
+              "id": "b-timemodel",
+              "slug": "b-timemodel",
+              "title": "Time model",
+              "file": "t01-t03-time-model.md",
+              "minutes": 20
+            },
+            {
+              "id": "b-waits",
+              "slug": "b-waits",
+              "title": "Wait events",
+              "file": "t01-t04-wait-events.md",
+              "minutes": 22
+            },
+            {
+              "id": "b-vviews",
+              "slug": "b-vviews",
+              "title": "Diagnosis dengan V$ views",
+              "file": "t01-t05-vviews.md",
+              "minutes": 22
+            }
+          ]
+        },
+        {
+          "slug": "statspack",
+          "title": "Using Statspack",
+          "topics": [
+            {
+              "id": "s-install",
+              "slug": "s-install",
+              "title": "Memasang dan mengonfigurasi Statspack",
+              "file": "t02-t01-statspack-install.md",
+              "minutes": 18
+            },
+            {
+              "id": "s-diag",
+              "slug": "s-diag",
+              "title": "Diagnosis dengan Statspack",
+              "file": "t02-t02-statspack-diagnose.md",
+              "minutes": 18
+            }
+          ]
+        },
+        {
+          "slug": "logtrace",
+          "title": "Using Log and Trace Files to Monitor Performance",
+          "topics": [
+            {
+              "id": "l-alert",
+              "slug": "l-alert",
+              "title": "Alert log",
+              "file": "t03-t01-alert-log.md",
+              "minutes": 18
+            },
+            {
+              "id": "l-trace",
+              "slug": "l-trace",
+              "title": "Trace file dan TKPROF",
+              "file": "t03-t02-trace-files.md",
+              "minutes": 20
+            }
+          ]
+        },
+        {
+          "slug": "metrics",
+          "title": "Using Metrics, Alerts and Baselines",
+          "topics": [
+            {
+              "id": "m-threshold",
+              "slug": "m-threshold",
+              "title": "Metric threshold dan alert",
+              "file": "t04-t01-metrics-alerts.md",
+              "minutes": 18
+            },
+            {
+              "id": "m-baseline",
+              "slug": "m-baseline",
+              "title": "AWR baseline",
+              "file": "t04-t02-awr-baseline.md",
+              "minutes": 20
+            }
+          ]
+        },
+        {
+          "slug": "awr",
+          "title": "Using AWR-Based Tools",
+          "topics": [
+            {
+              "id": "w-addm",
+              "slug": "w-addm",
+              "title": "Diagnosis dengan ADDM",
+              "file": "t05-t01-addm.md",
+              "minutes": 20
+            },
+            {
+              "id": "w-ash",
+              "slug": "w-ash",
+              "title": "Diagnosis dengan ASH",
+              "file": "t05-t02-ash.md",
+              "minutes": 20
+            },
+            {
+              "id": "w-maint",
+              "slug": "w-maint",
+              "title": "Automated Maintenance Tasks",
+              "file": "t05-t03-maintenance.md",
+              "minutes": 18
+            }
+          ]
+        },
+        {
+          "slug": "appmon",
+          "title": "Performing Oracle Database Application Monitoring",
+          "topics": [
+            {
+              "id": "a-realtime",
+              "slug": "a-realtime",
+              "title": "Real-Time Database Operation Monitoring",
+              "file": "t06-t01-realtime-monitoring.md",
+              "minutes": 20
+            },
+            {
+              "id": "a-service",
+              "slug": "a-service",
+              "title": "Service untuk memantau performa aplikasi",
+              "file": "t06-t02-services.md",
+              "minutes": 20
+            }
+          ]
+        },
+        {
+          "slug": "probsql",
+          "title": "Identifying Problem SQL Statements",
+          "topics": [
+            {
+              "id": "q-fase",
+              "slug": "q-fase",
+              "title": "Fase pemrosesan pernyataan SQL",
+              "file": "t07-t01-sql-phases.md",
+              "minutes": 20
+            },
+            {
+              "id": "q-plan",
+              "slug": "q-plan",
+              "title": "Membaca execution plan",
+              "file": "t07-t02-execution-plans.md",
+              "minutes": 20
+            },
+            {
+              "id": "q-trace",
+              "slug": "q-trace",
+              "title": "SQL Trace dan optimizer trace",
+              "file": "t07-t03-trace.md",
+              "minutes": 18
+            },
+            {
+              "id": "q-adaptive",
+              "slug": "q-adaptive",
+              "title": "Adaptive dan dynamic execution plan",
+              "file": "t07-t04-adaptive.md",
+              "minutes": 20
+            },
+            {
+              "id": "q-reopt",
+              "slug": "q-reopt",
+              "title": "Reoptimization dan SQL Plan Directives",
+              "file": "t07-t05-reopt-directives.md",
+              "minutes": 20
+            }
+          ]
+        },
+        {
+          "slug": "optimizer",
+          "title": "Influencing the Optimizer",
+          "topics": [
+            {
+              "id": "i-statistik",
+              "slug": "i-statistik",
+              "title": "Pengaruh statistik terhadap optimizer",
+              "file": "t08-t01-statistik.md",
+              "minutes": 20
+            },
+            {
+              "id": "i-parameter",
+              "slug": "i-parameter",
+              "title": "Parameter yang memengaruhi optimizer",
+              "file": "t08-t02-parameter.md",
+              "minutes": 20
+            }
+          ]
+        },
+        {
+          "slug": "cost",
+          "title": "Reducing the Cost of SQL Operations",
+          "topics": [
+            {
+              "id": "c-shrink",
+              "slug": "c-shrink",
+              "title": "Menyusutkan segmen",
+              "file": "t09-t01-shrink.md",
+              "minutes": 18
+            },
+            {
+              "id": "c-chaining",
+              "slug": "c-chaining",
+              "title": "Chaining dan migration baris",
+              "file": "t09-t02-chaining.md",
+              "minutes": 18
+            },
+            {
+              "id": "c-opsi",
+              "slug": "c-opsi",
+              "title": "Opsi performa index dan tabel",
+              "file": "t09-t03-index-table-options.md",
+              "minutes": 20
+            },
+            {
+              "id": "c-kompresi",
+              "slug": "c-kompresi",
+              "title": "Kompresi tabel",
+              "file": "t09-t04-compression.md",
+              "minutes": 20
+            },
+            {
+              "id": "c-ruang",
+              "slug": "c-ruang",
+              "title": "Diagnosis masalah ruang",
+              "file": "t09-t05-space.md",
+              "minutes": 20
+            }
+          ]
+        },
+        {
+          "slug": "rat",
+          "title": "Using Real Application Testing",
+          "topics": [
+            {
+              "id": "r-spa",
+              "slug": "r-spa",
+              "title": "SQL Performance Analyzer",
+              "file": "t10-t01-spa.md",
+              "minutes": 20
+            },
+            {
+              "id": "r-replay",
+              "slug": "r-replay",
+              "title": "Database Replay",
+              "file": "t10-t02-replay.md",
+              "minutes": 20
+            }
+          ]
+        },
+        {
+          "slug": "sqlperf",
+          "title": "SQL Performance Management",
+          "topics": [
+            {
+              "id": "p-stats",
+              "slug": "p-stats",
+              "title": "Mengelola statistik optimizer",
+              "file": "t11-t01-stats-mgmt.md",
+              "minutes": 20
+            },
+            {
+              "id": "p-statsadvisor",
+              "slug": "p-statsadvisor",
+              "title": "Optimizer Statistics Advisor",
+              "file": "t11-t02-stats-advisor.md",
+              "minutes": 18
+            },
+            {
+              "id": "p-advisors",
+              "slug": "p-advisors",
+              "title": "SQL Access dan SQL Tuning Advisor",
+              "file": "t11-t03-sql-advisors.md",
+              "minutes": 20
+            },
+            {
+              "id": "p-spm",
+              "slug": "p-spm",
+              "title": "SQL Plan Management",
+              "file": "t11-t04-spm.md",
+              "minutes": 20
+            }
+          ]
+        },
+        {
+          "slug": "sharedpool",
+          "title": "Tuning the Shared Pool",
+          "topics": [
+            {
+              "id": "h-shared",
+              "slug": "h-shared",
+              "title": "Tuning shared pool",
+              "file": "t12-t01-shared-pool.md",
+              "minutes": 20
+            },
+            {
+              "id": "h-result",
+              "slug": "h-result",
+              "title": "Result cache",
+              "file": "t12-t02-result-cache.md",
+              "minutes": 18
+            }
+          ]
+        },
+        {
+          "slug": "buffercache",
+          "title": "Tuning the Buffer Cache",
+          "topics": [
+            {
+              "id": "k-buffer",
+              "slug": "k-buffer",
+              "title": "Tuning buffer cache",
+              "file": "t13-t01-buffer-cache.md",
+              "minutes": 20
+            },
+            {
+              "id": "k-io",
+              "slug": "k-io",
+              "title": "Diagnosis masalah I/O",
+              "file": "t13-t02-io.md",
+              "minutes": 20
+            },
+            {
+              "id": "k-btc",
+              "slug": "k-btc",
+              "title": "Big Table Caching",
+              "file": "t13-t03-big-table-cache.md",
+              "minutes": 18
+            },
+            {
+              "id": "k-flash",
+              "slug": "k-flash",
+              "title": "Flash Cache",
+              "file": "t13-t04-flash-cache.md",
+              "minutes": 18
+            }
+          ]
+        },
+        {
+          "slug": "pga",
+          "title": "Tuning the PGA",
+          "topics": [
+            {
+              "id": "g-pga",
+              "slug": "g-pga",
+              "title": "Tuning PGA",
+              "file": "t14-t01-pga.md",
+              "minutes": 20
+            },
+            {
+              "id": "g-temp",
+              "slug": "g-temp",
+              "title": "Masalah temporary tablespace",
+              "file": "t14-t02-temp.md",
+              "minutes": 20
+            }
+          ]
+        },
+        {
+          "slug": "amm",
+          "title": "Using Automatic Memory Management",
+          "topics": [
+            {
+              "id": "n-asmm",
+              "slug": "n-asmm",
+              "title": "Automatic Shared Memory Management",
+              "file": "t15-t01-asmm.md",
+              "minutes": 20
+            },
+            {
+              "id": "n-amm",
+              "slug": "n-amm",
+              "title": "Automatic Memory Management",
+              "file": "t15-t02-amm.md",
+              "minutes": 18
+            }
+          ]
+        },
+        {
+          "slug": "inmemory",
+          "title": "Using In-Memory Features",
+          "topics": [
+            {
+              "id": "y-im",
+              "slug": "y-im",
+              "title": "In-Memory Column Store",
+              "file": "t16-t01-im-column-store.md",
+              "minutes": 22
+            },
+            {
+              "id": "y-imfitur",
+              "slug": "y-imfitur",
+              "title": "In-Memory dengan fitur lain",
+              "file": "t16-t02-im-features.md",
+              "minutes": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "oracle-aws-arch",
+      "title": "Oracle AI Database@AWS Architect Professional",
+      "code": "1Z0-1146",
+      "vendor": "Oracle",
+      "level": "Professional",
+      "badge": "24 topik",
+      "status": "ready",
+      "desc": "Arsitektur Oracle Database@AWS: multicloud, onboarding lewat AWS Marketplace, ODB network & peering, provisioning Exadata/ADB, ZDM, HA/DR, dan keamanan dua cloud.",
+      "facts": {
+        "Kode ujian": "1Z0-1146",
+        "Jumlah soal": "50 soal",
+        "Durasi": "90 menit",
+        "Nilai lulus": "68%",
+        "Bobot domain": "sesuai tabel resmi"
+      },
+      "roadmap": [
+        {
+          "week": "Pekan 1",
+          "goal": "Multicloud, use case, arsitektur Oracle Database@AWS, dan pilihan layanan."
+        },
+        {
+          "week": "Pekan 2",
+          "goal": "Onboarding: AWS Marketplace, aktivasi OCI, prasyarat izin, dan procurement."
+        },
+        {
+          "week": "Pekan 3",
+          "goal": "Networking: desain ODB network, topologi (VPC/TGW/Cloud WAN), dan DNS."
+        },
+        {
+          "week": "Pekan 4",
+          "goal": "Provisioning: ODB peering, Exadata infrastructure, VM cluster, database."
+        },
+        {
+          "week": "Pekan 5",
+          "goal": "Operasi: ACDB/ADB, backup-restore ke S3, dan observability (CloudWatch/EventBridge/CloudTrail)."
+        },
+        {
+          "week": "Pekan 6",
+          "goal": "Migrasi dengan ZDM ke Exadata dan ke Autonomous Database."
+        },
+        {
+          "week": "Pekan 7",
+          "goal": "HA (RAC, Data Guard) dan DR lintas AZ/region."
+        },
+        {
+          "week": "Pekan 8",
+          "goal": "Keamanan (IAM dua lapis, TDE, Data Safe, kontrol) + Well-Architected, lalu ujian latihan."
+        }
+      ],
+      "domains": [
+        {
+          "slug": "multicloud",
+          "title": "Introduction to Multicloud (5%)",
+          "topics": [
+            {
+              "id": "x-dasar",
+              "slug": "x-dasar",
+              "title": "Multicloud dan manfaatnya",
+              "file": "m01-t01-multicloud.md",
+              "minutes": 18
+            },
+            {
+              "id": "x-usecase",
+              "slug": "x-usecase",
+              "title": "Use case multicloud dan implementasinya di OCI",
+              "file": "m01-t02-usecases.md",
+              "minutes": 20
+            }
+          ]
+        },
+        {
+          "slug": "arsitektur",
+          "title": "Architecture and Onboarding (20%)",
+          "topics": [
+            {
+              "id": "x-arch",
+              "slug": "x-arch",
+              "title": "Arsitektur Oracle Database@AWS",
+              "file": "m02-t01-architecture.md",
+              "minutes": 22
+            },
+            {
+              "id": "x-layanan",
+              "slug": "x-layanan",
+              "title": "Layanan database yang tersedia",
+              "file": "m02-t02-services.md",
+              "minutes": 22
+            },
+            {
+              "id": "x-prasyarat",
+              "slug": "x-prasyarat",
+              "title": "Prasyarat onboarding",
+              "file": "m02-t03-prereq.md",
+              "minutes": 20
+            },
+            {
+              "id": "x-pengadaan",
+              "slug": "x-pengadaan",
+              "title": "Pengadaan (procurement)",
+              "file": "m02-t04-procurement.md",
+              "minutes": 20
+            }
+          ]
+        },
+        {
+          "slug": "jaringan",
+          "title": "Configure Networking (15%)",
+          "topics": [
+            {
+              "id": "x-odbn",
+              "slug": "x-odbn",
+              "title": "Desain ODB network",
+              "file": "m03-t01-odb-network.md",
+              "minutes": 22
+            },
+            {
+              "id": "x-topologi",
+              "slug": "x-topologi",
+              "title": "Topologi jaringan yang didukung",
+              "file": "m03-t02-topologies.md",
+              "minutes": 22
+            },
+            {
+              "id": "x-dns",
+              "slug": "x-dns",
+              "title": "Konfigurasi DNS",
+              "file": "m03-t03-dns.md",
+              "minutes": 20
+            }
+          ]
+        },
+        {
+          "slug": "provisioning",
+          "title": "Provision and Operate Resources (20%)",
+          "topics": [
+            {
+              "id": "x-peering",
+              "slug": "x-peering",
+              "title": "ODB network dan ODB peering",
+              "file": "m04-t01-odb-peering.md",
+              "minutes": 22
+            },
+            {
+              "id": "x-exainfra",
+              "slug": "x-exainfra",
+              "title": "Exadata infrastructure dan VM cluster",
+              "file": "m04-t02-exadata-infra.md",
+              "minutes": 22
+            },
+            {
+              "id": "x-exadb",
+              "slug": "x-exadb",
+              "title": "Exadata Database dan komponennya",
+              "file": "m04-t03-exadata-db.md",
+              "minutes": 20
+            },
+            {
+              "id": "x-acdb",
+              "slug": "x-acdb",
+              "title": "ACDB dan Autonomous Database",
+              "file": "m04-t04-acdb-adb.md",
+              "minutes": 20
+            },
+            {
+              "id": "x-backup",
+              "slug": "x-backup",
+              "title": "Backup dan restore",
+              "file": "m04-t05-backup-restore.md",
+              "minutes": 20
+            },
+            {
+              "id": "x-monitor",
+              "slug": "x-monitor",
+              "title": "Monitoring dan observability",
+              "file": "m04-t06-monitoring.md",
+              "minutes": 20
+            }
+          ]
+        },
+        {
+          "slug": "migrasi",
+          "title": "Migrate to Oracle Database@AWS (15%)",
+          "topics": [
+            {
+              "id": "x-zdm",
+              "slug": "x-zdm",
+              "title": "Mengenal Zero Downtime Migration",
+              "file": "m05-t01-zdm.md",
+              "minutes": 20
+            },
+            {
+              "id": "x-zdm-exa",
+              "slug": "x-zdm-exa",
+              "title": "Alur ZDM ke Exadata",
+              "file": "m05-t02-zdm-exadata.md",
+              "minutes": 20
+            },
+            {
+              "id": "x-zdm-adb",
+              "slug": "x-zdm-adb",
+              "title": "Alur ZDM ke Autonomous Database",
+              "file": "m05-t03-zdm-adb.md",
+              "minutes": 20
+            }
+          ]
+        },
+        {
+          "slug": "hadr",
+          "title": "HA and DR (10%)",
+          "topics": [
+            {
+              "id": "x-ha",
+              "slug": "x-ha",
+              "title": "Merancang high availability",
+              "file": "m06-t01-ha.md",
+              "minutes": 20
+            },
+            {
+              "id": "x-dr",
+              "slug": "x-dr",
+              "title": "Konfigurasi disaster recovery",
+              "file": "m06-t02-dr.md",
+              "minutes": 20
+            }
+          ]
+        },
+        {
+          "slug": "keamanan",
+          "title": "Secure Oracle Database@AWS (15%)",
+          "topics": [
+            {
+              "id": "x-iam",
+              "slug": "x-iam",
+              "title": "Identity and Access Management",
+              "file": "m07-t01-iam.md",
+              "minutes": 20
+            },
+            {
+              "id": "x-dataprot",
+              "slug": "x-dataprot",
+              "title": "Perlindungan data",
+              "file": "m07-t02-data-protection.md",
+              "minutes": 20
+            },
+            {
+              "id": "x-kontrol",
+              "slug": "x-kontrol",
+              "title": "Kontrol keamanan",
+              "file": "m07-t03-security-controls.md",
+              "minutes": 18
+            },
+            {
+              "id": "x-waf",
+              "slug": "x-waf",
+              "title": "Pilar Well-Architected",
+              "file": "m07-t04-well-architected.md",
+              "minutes": 18
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "java-se-17",
+      "title": "Oracle Java SE 17 Developer",
+      "code": "1Z0-829",
+      "vendor": "Oracle",
+      "level": "Menengah",
+      "badge": "28 topik",
+      "status": "ready",
+      "desc": "Java 17 modern: primitif & text block, Date-Time, OOP (record, sealed, enum), exception, koleksi, stream & lambda, JPMS, concurrency, I/O, JDBC, lokalisasi, logging, anotasi, dan generics.",
+      "facts": {
+        "Kode ujian": "1Z0-829",
+        "Jumlah soal": "50 soal",
+        "Durasi": "90 menit",
+        "Nilai lulus": "68%",
+        "Catatan": "1Z0-829 pensiun 28 Februari 2027"
+      },
+      "roadmap": [
+        {
+          "week": "Pekan 1",
+          "goal": "Primitif, casting, String/text block, dan Date-Time API."
+        },
+        {
+          "week": "Pekan 2",
+          "goal": "Kontrol alur (switch expression) dan dasar OOP: objek, record, initializer."
+        },
+        {
+          "week": "Pekan 3",
+          "goal": "Overloading, scope/var, inheritance, sealed, interface, dan enum."
+        },
+        {
+          "week": "Pekan 4",
+          "goal": "Exception (try-with-resources, multi-catch) dan koleksi (List/Set/Map/Deque)."
+        },
+        {
+          "week": "Pekan 5",
+          "goal": "Stream, lambda, dan collector (grouping, partitioning, teeing)."
+        },
+        {
+          "week": "Pekan 6",
+          "goal": "JPMS, jar modular, jlink, lalu concurrency (thread, lock, koleksi konkuren)."
+        },
+        {
+          "week": "Pekan 7",
+          "goal": "I/O, serialisasi, NIO.2, dan JDBC."
+        },
+        {
+          "week": "Pekan 8",
+          "goal": "Lokalisasi, logging, anotasi, generics — lalu ujian latihan penuh."
+        }
+      ],
+      "domains": [
+        {
+          "slug": "nilai",
+          "title": "Handling date, time, text, numeric and boolean values",
+          "topics": [
+            {
+              "id": "v-primitif",
+              "slug": "v-primitif",
+              "title": "Primitif, wrapper, Math, dan casting",
+              "file": "j01-t01-primitives.md",
+              "minutes": 22
+            },
+            {
+              "id": "v-string",
+              "slug": "v-string",
+              "title": "String, text block, dan StringBuilder",
+              "file": "j01-t02-string.md",
+              "minutes": 22
+            },
+            {
+              "id": "v-datetime",
+              "slug": "v-datetime",
+              "title": "Date-Time API",
+              "file": "j01-t03-datetime.md",
+              "minutes": 24
+            }
+          ]
+        },
+        {
+          "slug": "alur",
+          "title": "Controlling Program Flow",
+          "topics": [
+            {
+              "id": "f-alur",
+              "slug": "f-alur",
+              "title": "if/else, switch, loop, break, continue",
+              "file": "j02-t01-flow.md",
+              "minutes": 22
+            }
+          ]
+        },
+        {
+          "slug": "oop",
+          "title": "Utilizing Java Object-Oriented Approach",
+          "topics": [
+            {
+              "id": "o-objek",
+              "slug": "o-objek",
+              "title": "Objek, nested class, dan siklus hidup",
+              "file": "j03-t01-objects.md",
+              "minutes": 22
+            },
+            {
+              "id": "o-kelas",
+              "slug": "o-kelas",
+              "title": "Class, record, field, dan initializer",
+              "file": "j03-t02-classes-records.md",
+              "minutes": 24
+            },
+            {
+              "id": "o-overload",
+              "slug": "o-overload",
+              "title": "Overloading dan var-args",
+              "file": "j03-t03-overloading.md",
+              "minutes": 20
+            },
+            {
+              "id": "o-scope",
+              "slug": "o-scope",
+              "title": "Scope, var, encapsulation, immutability",
+              "file": "j03-t04-scope.md",
+              "minutes": 22
+            },
+            {
+              "id": "o-inherit",
+              "slug": "o-inherit",
+              "title": "Inheritance, abstract, sealed, polymorphism",
+              "file": "j03-t05-inheritance.md",
+              "minutes": 24
+            },
+            {
+              "id": "o-interface",
+              "slug": "o-interface",
+              "title": "Interface dan functional interface",
+              "file": "j03-t06-interfaces.md",
+              "minutes": 22
+            },
+            {
+              "id": "o-enum",
+              "slug": "o-enum",
+              "title": "Enum dengan field, method, constructor",
+              "file": "j03-t07-enums.md",
+              "minutes": 20
+            }
+          ]
+        },
+        {
+          "slug": "exception",
+          "title": "Handling Exceptions",
+          "topics": [
+            {
+              "id": "e-exception",
+              "slug": "e-exception",
+              "title": "try/catch/finally, try-with-resources, multi-catch",
+              "file": "j04-t01-exceptions.md",
+              "minutes": 24
+            }
+          ]
+        },
+        {
+          "slug": "koleksi",
+          "title": "Working with Arrays and Collections",
+          "topics": [
+            {
+              "id": "k-koleksi",
+              "slug": "k-koleksi",
+              "title": "Array, List, Set, Map, Deque",
+              "file": "j05-t01-collections.md",
+              "minutes": 24
+            }
+          ]
+        },
+        {
+          "slug": "stream",
+          "title": "Working with Streams and Lambda expressions",
+          "topics": [
+            {
+              "id": "s-stream",
+              "slug": "s-stream",
+              "title": "Stream dan lambda",
+              "file": "j06-t01-streams.md",
+              "minutes": 24
+            },
+            {
+              "id": "s-collector",
+              "slug": "s-collector",
+              "title": "Collectors: grouping, partitioning, reduction",
+              "file": "j06-t02-collectors.md",
+              "minutes": 24
+            }
+          ]
+        },
+        {
+          "slug": "modul",
+          "title": "Packaging, deploying and JPMS",
+          "topics": [
+            {
+              "id": "m-modul",
+              "slug": "m-modul",
+              "title": "Java Platform Module System",
+              "file": "j07-t01-modules.md",
+              "minutes": 24
+            },
+            {
+              "id": "m-package",
+              "slug": "m-package",
+              "title": "Compile, jar modular, runtime image, migrasi",
+              "file": "j07-t02-packaging.md",
+              "minutes": 22
+            }
+          ]
+        },
+        {
+          "slug": "concurrency",
+          "title": "Managing concurrent code execution",
+          "topics": [
+            {
+              "id": "c-thread",
+              "slug": "c-thread",
+              "title": "Thread, Runnable, Callable, executor",
+              "file": "j08-t01-threads.md",
+              "minutes": 24
+            },
+            {
+              "id": "c-lock",
+              "slug": "c-lock",
+              "title": "Thread-safe code dan locking",
+              "file": "j08-t02-locking.md",
+              "minutes": 24
+            },
+            {
+              "id": "c-koleksi",
+              "slug": "c-koleksi",
+              "title": "Koleksi konkuren dan stream paralel",
+              "file": "j08-t03-concurrent-collections.md",
+              "minutes": 22
+            }
+          ]
+        },
+        {
+          "slug": "io",
+          "title": "Using Java I/O API",
+          "topics": [
+            {
+              "id": "i-stream",
+              "slug": "i-stream",
+              "title": "I/O Streams dan console",
+              "file": "j09-t01-io-streams.md",
+              "minutes": 22
+            },
+            {
+              "id": "i-serial",
+              "slug": "i-serial",
+              "title": "Serialisasi objek",
+              "file": "j09-t02-serialization.md",
+              "minutes": 20
+            },
+            {
+              "id": "i-nio",
+              "slug": "i-nio",
+              "title": "java.nio.file: Path dan Files",
+              "file": "j09-t03-nio-path.md",
+              "minutes": 24
+            }
+          ]
+        },
+        {
+          "slug": "jdbc",
+          "title": "Accessing databases using JDBC",
+          "topics": [
+            {
+              "id": "j-jdbc",
+              "slug": "j-jdbc",
+              "title": "JDBC: connection, statement, resultset, transaksi",
+              "file": "j10-t01-jdbc.md",
+              "minutes": 24
+            }
+          ]
+        },
+        {
+          "slug": "lokalisasi",
+          "title": "Implementing Localization",
+          "topics": [
+            {
+              "id": "l-locale",
+              "slug": "l-locale",
+              "title": "Locale, ResourceBundle, format",
+              "file": "j11-t01-localization.md",
+              "minutes": 22
+            }
+          ]
+        },
+        {
+          "slug": "tambahan",
+          "title": "Tambahan yang diuji (logging, anotasi, generics)",
+          "topics": [
+            {
+              "id": "t-logging",
+              "slug": "t-logging",
+              "title": "Dasar Java Logging API",
+              "file": "j12-t01-logging.md",
+              "minutes": 18
+            },
+            {
+              "id": "t-anotasi",
+              "slug": "t-anotasi",
+              "title": "Anotasi standar",
+              "file": "j12-t02-annotations.md",
+              "minutes": 18
+            },
+            {
+              "id": "t-generics",
+              "slug": "t-generics",
+              "title": "Generics dan wildcard",
+              "file": "j12-t03-generics.md",
+              "minutes": 22
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "docker-dca",
+      "title": "Docker Certified Associate",
+      "code": "DCA",
+      "vendor": "Docker / Mirantis",
+      "level": "Menengah",
+      "badge": "40 topik",
+      "status": "ready",
+      "desc": "Container tingkat associate: swarm & service (25%), image & registry (20%), instalasi & konfigurasi (15%), networking (15%), security (15%), storage (10%).",
+      "facts": {
+        "Kode ujian": "DCA",
+        "Jumlah soal": "55 soal",
+        "Durasi": "90 menit",
+        "Nilai lulus": "65% (sumber lain 66–67%)",
+        "Format": "13 pilihan ganda + 42 penilaian opsi per opsi",
+        "Bobot domain": "25/20/15/15/15/10"
+      },
+      "roadmap": [
+        {
+          "week": "Pekan 1",
+          "goal": "Dasar container, image, Dockerfile, dan build cache."
+        },
+        {
+          "week": "Pekan 2",
+          "goal": "Registry, tag/digest, multi-stage build, dan content trust."
+        },
+        {
+          "week": "Pekan 3",
+          "goal": "Swarm: init, join, service, replica, dan stack Compose."
+        },
+        {
+          "week": "Pekan 4",
+          "goal": "Rolling update, secret, node label, healthcheck, dan kuorum."
+        },
+        {
+          "week": "Pekan 5",
+          "goal": "Instalasi, daemon.json, storage driver, logging driver, akses TLS."
+        },
+        {
+          "week": "Pekan 6",
+          "goal": "Networking: bridge, overlay, macvlan, publish port, DNS internal."
+        },
+        {
+          "week": "Pekan 7",
+          "goal": "Security: seccomp, capability, AppArmor/userns, mTLS, rootless."
+        },
+        {
+          "week": "Pekan 8",
+          "goal": "Storage: volume, bind, tmpfs, NFS, backup-restore, lalu ujian latihan."
+        }
+      ],
+      "domains": [
+        {
+          "slug": "orkestrasi",
+          "title": "Orchestration",
+          "topics": [
+            {
+              "id": "o-swarm",
+              "slug": "o-swarm",
+              "title": "Menyiapkan cluster swarm",
+              "file": "d01-t01-swarm-init.md",
+              "minutes": 22
+            },
+            {
+              "id": "o-service",
+              "slug": "o-service",
+              "title": "Service dan replica",
+              "file": "d01-t02-service.md",
+              "minutes": 22
+            },
+            {
+              "id": "o-stack",
+              "slug": "o-stack",
+              "title": "Stack dan deploy Compose",
+              "file": "d01-t03-stack.md",
+              "minutes": 26
+            },
+            {
+              "id": "o-secret",
+              "slug": "o-secret",
+              "title": "Secret di swarm",
+              "file": "d01-t04-secrets.md",
+              "minutes": 20
+            },
+            {
+              "id": "o-label",
+              "slug": "o-label",
+              "title": "Node label dan constraint",
+              "file": "d01-t05-node-label.md",
+              "minutes": 20
+            },
+            {
+              "id": "o-rolling",
+              "slug": "o-rolling",
+              "title": "Rolling update dan rollback",
+              "file": "d01-t06-rolling.md",
+              "minutes": 22
+            },
+            {
+              "id": "o-health",
+              "slug": "o-health",
+              "title": "Healthcheck pada service",
+              "file": "d01-t07-healthcheck.md",
+              "minutes": 18
+            },
+            {
+              "id": "o-debug",
+              "slug": "o-debug",
+              "title": "Inspeksi dan troubleshooting swarm",
+              "file": "d01-t08-swarm-inspect-debug.md",
+              "minutes": 20
+            },
+            {
+              "id": "o-quorum",
+              "slug": "o-quorum",
+              "title": "Kuorum manajer dan pemulihan",
+              "file": "d01-t09-quorum.md",
+              "minutes": 18
+            },
+            {
+              "id": "o-config",
+              "slug": "o-config",
+              "title": "Konfigurasi lanjutan service",
+              "file": "d01-t10-service-update-config.md",
+              "minutes": 20
+            }
+          ]
+        },
+        {
+          "slug": "image",
+          "title": "Image Creation, Management, and Registry",
+          "topics": [
+            {
+              "id": "i-dockerfile",
+              "slug": "i-dockerfile",
+              "title": "Instruksi Dockerfile",
+              "file": "d02-t01-dockerfile.md",
+              "minutes": 26
+            },
+            {
+              "id": "i-cache",
+              "slug": "i-cache",
+              "title": "Build context dan layer caching",
+              "file": "d02-t02-build-cache.md",
+              "minutes": 22
+            },
+            {
+              "id": "i-multistage",
+              "slug": "i-multistage",
+              "title": "Multi-stage build",
+              "file": "d02-t03-multistage.md",
+              "minutes": 22
+            },
+            {
+              "id": "i-tag",
+              "slug": "i-tag",
+              "title": "Tag, push, dan pull image",
+              "file": "d02-t04-tag-push.md",
+              "minutes": 20
+            },
+            {
+              "id": "i-inspect",
+              "slug": "i-inspect",
+              "title": "Inspeksi image: history, inspect, prune",
+              "file": "d02-t05-inspect-history.md",
+              "minutes": 22
+            },
+            {
+              "id": "i-registry",
+              "slug": "i-registry",
+              "title": "Menjalankan dan memakai registry",
+              "file": "d02-t06-registry.md",
+              "minutes": 22
+            },
+            {
+              "id": "i-trust",
+              "slug": "i-trust",
+              "title": "Content trust dan signing",
+              "file": "d02-t07-content-trust.md",
+              "minutes": 20
+            }
+          ]
+        },
+        {
+          "slug": "instalasi",
+          "title": "Installation and Configuration",
+          "topics": [
+            {
+              "id": "n-install",
+              "slug": "n-install",
+              "title": "Instalasi dan layanan systemd",
+              "file": "d03-t01-install-systemd.md",
+              "minutes": 20
+            },
+            {
+              "id": "n-daemon",
+              "slug": "n-daemon",
+              "title": "Konfigurasi daemon.json",
+              "file": "d03-t02-daemon-json.md",
+              "minutes": 22
+            },
+            {
+              "id": "n-storage-driver",
+              "slug": "n-storage-driver",
+              "title": "Storage driver",
+              "file": "d03-t03-storage-driver.md",
+              "minutes": 22
+            },
+            {
+              "id": "n-logging",
+              "slug": "n-logging",
+              "title": "Logging driver",
+              "file": "d03-t04-logging-driver.md",
+              "minutes": 20
+            },
+            {
+              "id": "n-remote",
+              "slug": "n-remote",
+              "title": "Akses daemon jarak jauh dan TLS",
+              "file": "d03-t05-remote-access.md",
+              "minutes": 22
+            },
+            {
+              "id": "n-context",
+              "slug": "n-context",
+              "title": "Context, upgrade, dan version pinning",
+              "file": "d03-t06-context-upgrade.md",
+              "minutes": 18
+            }
+          ]
+        },
+        {
+          "slug": "networking",
+          "title": "Networking",
+          "topics": [
+            {
+              "id": "w-bridge",
+              "slug": "w-bridge",
+              "title": "Bridge dan user-defined bridge",
+              "file": "d04-t01-bridge.md",
+              "minutes": 22
+            },
+            {
+              "id": "w-host",
+              "slug": "w-host",
+              "title": "Host, none, dan macvlan",
+              "file": "d04-t02-host-none-macvlan.md",
+              "minutes": 22
+            },
+            {
+              "id": "w-overlay",
+              "slug": "w-overlay",
+              "title": "Overlay network dan routing mesh",
+              "file": "d04-t03-overlay-routing-mesh.md",
+              "minutes": 24
+            },
+            {
+              "id": "w-publish",
+              "slug": "w-publish",
+              "title": "Menerbitkan port",
+              "file": "d04-t04-port-publishing.md",
+              "minutes": 18
+            },
+            {
+              "id": "w-dns",
+              "slug": "w-dns",
+              "title": "DNS dan service discovery",
+              "file": "d04-t05-dns-service-discovery.md",
+              "minutes": 20
+            },
+            {
+              "id": "w-trouble",
+              "slug": "w-trouble",
+              "title": "Troubleshooting jaringan",
+              "file": "d04-t06-network-troubleshoot.md",
+              "minutes": 20
+            }
+          ]
+        },
+        {
+          "slug": "security",
+          "title": "Security",
+          "topics": [
+            {
+              "id": "s-seccomp",
+              "slug": "s-seccomp",
+              "title": "Seccomp dan capability",
+              "file": "d05-t01-seccomp-caps.md",
+              "minutes": 22
+            },
+            {
+              "id": "s-apparmor",
+              "slug": "s-apparmor",
+              "title": "AppArmor, SELinux, dan user namespace",
+              "file": "d05-t02-apparmor-userns.md",
+              "minutes": 22
+            },
+            {
+              "id": "s-swarm-tls",
+              "slug": "s-swarm-tls",
+              "title": "Keamanan swarm: mTLS dan join token",
+              "file": "d05-t03-swarm-tls.md",
+              "minutes": 22
+            },
+            {
+              "id": "s-image",
+              "slug": "s-image",
+              "title": "Keamanan image",
+              "file": "d05-t04-image-security.md",
+              "minutes": 22
+            },
+            {
+              "id": "s-rootless",
+              "slug": "s-rootless",
+              "title": "Rootless mode dan hardening host",
+              "file": "d05-t05-rootless.md",
+              "minutes": 20
+            },
+            {
+              "id": "s-secret",
+              "slug": "s-secret",
+              "title": "Secret, token, dan konfigurasi aman",
+              "file": "d05-t06-secret-config.md",
+              "minutes": 20
+            }
+          ]
+        },
+        {
+          "slug": "storage",
+          "title": "Storage and Volumes",
+          "topics": [
+            {
+              "id": "v-volume",
+              "slug": "v-volume",
+              "title": "Volume",
+              "file": "d06-t01-volumes.md",
+              "minutes": 22
+            },
+            {
+              "id": "v-bind",
+              "slug": "v-bind",
+              "title": "Bind mount dan tmpfs",
+              "file": "d06-t02-bind-tmpfs.md",
+              "minutes": 22
+            },
+            {
+              "id": "v-driver",
+              "slug": "v-driver",
+              "title": "Volume driver dan NFS",
+              "file": "d06-t03-volume-drivers.md",
+              "minutes": 20
+            },
+            {
+              "id": "v-backup",
+              "slug": "v-backup",
+              "title": "Backup dan restore volume",
+              "file": "d06-t04-backup-restore.md",
+              "minutes": 20
+            },
+            {
+              "id": "v-prune",
+              "slug": "v-prune",
+              "title": "Prune dan pembersihan ruang",
+              "file": "d06-t05-prune.md",
+              "minutes": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ckad",
+      "title": "Certified Kubernetes Application Developer",
+      "code": "CKAD",
+      "vendor": "CNCF / Linux Foundation",
+      "level": "Lanjutan",
+      "badge": "25 topik",
+      "status": "ready",
+      "desc": "Ujian praktik Kubernetes: desain & build (20%), deployment (20%), observability (15%), environment & security (25%), services & networking (20%).",
+      "facts": {
+        "Kode ujian": "CKAD",
+        "Format": "15–20 tugas praktik di kluster nyata",
+        "Durasi": "120 menit",
+        "Nilai lulus": "66%",
+        "Kurikulum": "Kubernetes v1.35",
+        "Bobot domain": "20/20/15/25/20"
+      },
+      "roadmap": [
+        {
+          "week": "Pekan 1",
+          "goal": "Pod, init/sidecar, Job/CronJob, volume, label & namespace."
+        },
+        {
+          "week": "Pekan 2",
+          "goal": "Deployment, rolling update/rollback, scaling, Helm, Kustomize."
+        },
+        {
+          "week": "Pekan 3",
+          "goal": "Probe, log, debugging (exec/debug/port-forward), request & limit."
+        },
+        {
+          "week": "Pekan 4",
+          "goal": "ConfigMap, Secret, env, SecurityContext, ServiceAccount & RBAC."
+        },
+        {
+          "week": "Pekan 5",
+          "goal": "Quota/LimitRange, Service semua tipe, Ingress, NetworkPolicy, DNS."
+        },
+        {
+          "week": "Pekan 6",
+          "goal": "Latihan timed: generate YAML dengan --dry-run=client, edit cepat, verifikasi."
+        },
+        {
+          "week": "Pekan 7",
+          "goal": "Troubleshooting jaringan dan status Pod (Pending/CrashLoop/ImagePull)."
+        },
+        {
+          "week": "Pekan 8",
+          "goal": "Simulasi ujian: 15–20 tugas dalam 120 menit di kluster latihan sendiri."
+        }
+      ],
+      "domains": [
+        {
+          "slug": "desain",
+          "title": "Application Design and Build",
+          "topics": [
+            {
+              "id": "d-image",
+              "slug": "d-image",
+              "title": "Image container untuk Kubernetes",
+              "file": "k01-t01-image-build.md",
+              "minutes": 20
+            },
+            {
+              "id": "d-pod",
+              "slug": "d-pod",
+              "title": "Pod, init container, dan pola multi-container",
+              "file": "k01-t02-pod-patterns.md",
+              "minutes": 22
+            },
+            {
+              "id": "d-job",
+              "slug": "d-job",
+              "title": "Job dan CronJob",
+              "file": "k01-t03-jobs.md",
+              "minutes": 20
+            },
+            {
+              "id": "d-volume",
+              "slug": "d-volume",
+              "title": "Volume untuk aplikasi",
+              "file": "k01-t04-volumes.md",
+              "minutes": 22
+            },
+            {
+              "id": "d-label",
+              "slug": "d-label",
+              "title": "Label, selector, dan namespace",
+              "file": "k01-t05-labels-namespaces.md",
+              "minutes": 18
+            }
+          ]
+        },
+        {
+          "slug": "deployment",
+          "title": "Application Deployment",
+          "topics": [
+            {
+              "id": "p-deploy",
+              "slug": "p-deploy",
+              "title": "Deployment dan ReplicaSet",
+              "file": "k02-t01-deployment.md",
+              "minutes": 22
+            },
+            {
+              "id": "p-rollout",
+              "slug": "p-rollout",
+              "title": "Rolling update dan rollback",
+              "file": "k02-t02-rollout.md",
+              "minutes": 22
+            },
+            {
+              "id": "p-hpa",
+              "slug": "p-hpa",
+              "title": "Scaling manual dan HPA",
+              "file": "k02-t03-scaling-hpa.md",
+              "minutes": 22
+            },
+            {
+              "id": "p-helm",
+              "slug": "p-helm",
+              "title": "Dasar Helm",
+              "file": "k02-t04-helm.md",
+              "minutes": 20
+            },
+            {
+              "id": "p-kustomize",
+              "slug": "p-kustomize",
+              "title": "Kustomize",
+              "file": "k02-t05-kustomize.md",
+              "minutes": 20
+            }
+          ]
+        },
+        {
+          "slug": "observability",
+          "title": "Application Observability and Maintenance",
+          "topics": [
+            {
+              "id": "o-probe",
+              "slug": "o-probe",
+              "title": "Probe: liveness, readiness, startup",
+              "file": "k03-t01-probes.md",
+              "minutes": 24
+            },
+            {
+              "id": "o-log",
+              "slug": "o-log",
+              "title": "Log dan event",
+              "file": "k03-t02-logs.md",
+              "minutes": 18
+            },
+            {
+              "id": "o-debug",
+              "slug": "o-debug",
+              "title": "Debugging dengan kubectl",
+              "file": "k03-t03-debug.md",
+              "minutes": 22
+            },
+            {
+              "id": "o-resource",
+              "slug": "o-resource",
+              "title": "Request, limit, dan kelas QoS",
+              "file": "k03-t04-resources.md",
+              "minutes": 22
+            }
+          ]
+        },
+        {
+          "slug": "config",
+          "title": "Application Environment, Configuration and Security",
+          "topics": [
+            {
+              "id": "c-cm",
+              "slug": "c-cm",
+              "title": "ConfigMap",
+              "file": "k04-t01-configmap.md",
+              "minutes": 22
+            },
+            {
+              "id": "c-secret",
+              "slug": "c-secret",
+              "title": "Secret",
+              "file": "k04-t02-secret.md",
+              "minutes": 22
+            },
+            {
+              "id": "c-env",
+              "slug": "c-env",
+              "title": "Environment variable lanjutan",
+              "file": "k04-t03-env.md",
+              "minutes": 18
+            },
+            {
+              "id": "c-secctx",
+              "slug": "c-secctx",
+              "title": "SecurityContext",
+              "file": "k04-t04-securitycontext.md",
+              "minutes": 22
+            },
+            {
+              "id": "c-rbac",
+              "slug": "c-rbac",
+              "title": "ServiceAccount dan RBAC dasar",
+              "file": "k04-t05-rbac-sa.md",
+              "minutes": 22
+            },
+            {
+              "id": "c-quota",
+              "slug": "c-quota",
+              "title": "ResourceQuota dan LimitRange",
+              "file": "k04-t06-quota-limitrange.md",
+              "minutes": 20
+            }
+          ]
+        },
+        {
+          "slug": "services",
+          "title": "Services and Networking",
+          "topics": [
+            {
+              "id": "s-svc",
+              "slug": "s-svc",
+              "title": "Service: ClusterIP, NodePort, LoadBalancer, headless",
+              "file": "k05-t01-services.md",
+              "minutes": 24
+            },
+            {
+              "id": "s-ingress",
+              "slug": "s-ingress",
+              "title": "Ingress",
+              "file": "k05-t02-ingress.md",
+              "minutes": 22
+            },
+            {
+              "id": "s-netpol",
+              "slug": "s-netpol",
+              "title": "NetworkPolicy",
+              "file": "k05-t03-networkpolicy.md",
+              "minutes": 22
+            },
+            {
+              "id": "s-dns",
+              "slug": "s-dns",
+              "title": "DNS dan service discovery",
+              "file": "k05-t04-dns.md",
+              "minutes": 20
+            },
+            {
+              "id": "s-trouble",
+              "slug": "s-trouble",
+              "title": "Troubleshooting jaringan aplikasi",
+              "file": "k05-t05-troubleshoot-net.md",
+              "minutes": 20
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

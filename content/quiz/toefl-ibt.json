@@ -1,0 +1,607 @@
+{
+ "cert": "toefl-ibt",
+ "minutes": 50,
+ "pass": 65,
+ "questions": [
+  {
+   "d": "diagnostik",
+   "q": "Dalam metode Longman, urutan belajar yang benar adalah...",
+   "o": [
+    "Tes penuh → skill → tes penuh",
+    "Diagnostik → drilling skill terlemah → tes penuh",
+    "Hafal kosakata → tes",
+    "Skill termudah dulu sampai habis"
+   ],
+   "a": 1,
+   "e": "Diagnostik menentukan prioritas, lalu drilling per skill, baru simulasi penuh."
+  },
+  {
+   "d": "diagnostik",
+   "q": "Kamu benar 8/10 soal tetapi 5 di antaranya menebak. Artinya...",
+   "o": [
+    "Skill sudah dikuasai",
+    "Fondasi skill masih rapuh",
+    "Soalnya terlalu mudah",
+    "Perlu langsung tes penuh"
+   ],
+   "a": 1,
+   "e": "Angka benar menipu bila banyak tebakan; ulangi skill dasar dulu."
+  },
+  {
+   "d": "diagnostik",
+   "q": "Mengapa belajar per skill lebih efektif daripada per seksi?",
+   "o": [
+    "Karena lebih cepat selesai",
+    "Karena 'Reading lemah' terlalu luas untuk diperbaiki",
+    "Karena ujian menghitung per skill",
+    "Karena buku Longman begitu"
+   ],
+   "a": 1,
+   "e": "Skill sempit memberi target latihan yang bisa diukur akurasinya."
+  },
+  {
+   "d": "diagnostik",
+   "q": "Berapa kali diagnostik sebaiknya diambil dalam 8 pekan?",
+   "o": [
+    "Setiap hari",
+    "Dua kali: awal dan akhir",
+    "Seminggu sekali",
+    "Tidak perlu"
+   ],
+   "a": 1,
+   "e": "Awal untuk prioritas, akhir untuk mengukur kenaikan; di antaranya pakai latihan per skill."
+  },
+  {
+   "d": "reading",
+   "q": "Paragraf menjelaskan tiga penyebab erosi tanah. Opsi ide pokok yang benar...",
+   "o": [
+    "Erosion is a serious problem.",
+    "Three causes of soil erosion",
+    "How farmers prevent erosion",
+    "Soil composition in tropical areas"
+   ],
+   "a": 1,
+   "e": "Ide pokok harus mencakup seluruh isi; opsi lain terlalu luas atau tidak dibahas."
+  },
+  {
+   "d": "reading",
+   "q": "Opsi ide pokok yang menyebut satu detail dari paragraf biasanya...",
+   "o": [
+    "Jawaban benar",
+    "Terlalu sempit",
+    "Terlalu luas",
+    "Selalu salah karena negasi"
+   ],
+   "a": 1,
+   "e": "Detail hanya bagian kecil; ide pokok mencakup keseluruhan."
+  },
+  {
+   "d": "reading",
+   "q": "Teks: 'The bridge was closed for repairs throughout the winter.' Pertanyaan: kapan ditutup?",
+   "o": [
+    "During winter",
+    "For one week",
+    "In spring",
+    "Every weekend"
+   ],
+   "a": 0,
+   "e": "Jawaban tersurat: sepanjang musim dingin."
+  },
+  {
+   "d": "reading",
+   "q": "Mengapa opsi yang menyalin kata persis dari teks patut dicurigai?",
+   "o": [
+    "Karena selalu salah",
+    "Karena jawaban benar biasanya diparafrase",
+    "Karena soalnya salah cetak",
+    "Karena kata itu tidak penting"
+   ],
+   "a": 1,
+   "e": "Penyalinan kata sering dipakai sebagai distraktor dengan satu detail diubah."
+  },
+  {
+   "d": "reading",
+   "q": "Teks: 'The museum extended its opening hours after visitor numbers doubled.' Inferensi yang sah...",
+   "o": [
+    "The museum was closed on Mondays.",
+    "Visitor demand influenced the decision.",
+    "Ticket prices increased.",
+    "The museum hired new staff."
+   ],
+   "a": 1,
+   "e": "Hanya opsi yang wajib benar dari hubungan sebab-akibat yang disebut."
+  },
+  {
+   "d": "reading",
+   "q": "Teks: 'Fresh water is scarce; farmers must ration irrigation.' Arti 'scarce'...",
+   "o": [
+    "plentiful",
+    "insufficient",
+    "polluted",
+    "expensive"
+   ],
+   "a": 1,
+   "e": "Konteks 'must ration' menunjukkan jumlah terbatas."
+  },
+  {
+   "d": "reading",
+   "q": "Teks: 'Algae live inside coral tissues... the corals expel them.' Kata 'them' merujuk...",
+   "o": [
+    "corals",
+    "tissues",
+    "algae",
+    "waters"
+   ],
+   "a": 2,
+   "e": "Uji makna: yang dikeluarkan adalah algae, dan bentuknya jamak."
+  },
+  {
+   "d": "reading",
+   "q": "Teks: 'The report, which was written by two interns and reviewed by the committee, was rejected.' Inti kalimat...",
+   "o": [
+    "Two interns rejected the report.",
+    "The report was rejected.",
+    "The committee wrote the report.",
+    "The interns reviewed the report."
+   ],
+   "a": 1,
+   "e": "Pelaku tertukar pada opsi lain; inti adalah laporan ditolak."
+  },
+  {
+   "d": "reading",
+   "q": "'The data were collect___ over six months by research___s.' Bentuk yang benar...",
+   "o": [
+    "collected / researchers",
+    "collecting / researcher",
+    "collect / researches",
+    "collected / researcher"
+   ],
+   "a": 0,
+   "e": "Pasif lampau + kata benda jamak setelah 'research-ers'."
+  },
+  {
+   "d": "reading",
+   "q": "Mengapa 'three experiment' salah?",
+   "o": [
+    "Karena harus 'experimenting'",
+    "Karena setelah bilangan jamak kata benda harus jamak",
+    "Karena 'experiment' tidak dapat dihitung",
+    "Karena salah ejaan"
+   ],
+   "a": 1,
+   "e": "Bentuk jamak wajib: experiments."
+  },
+  {
+   "d": "listening",
+   "q": "Pembuka: 'I'd like to talk about why some plants survive in deserts.' Topiknya...",
+   "o": [
+    "Cara menanam kaktus",
+    "Tumbuhan gurun dan alasan bertahan hidup",
+    "Iklim di gurun",
+    "Penyiraman tanaman"
+   ],
+   "a": 1,
+   "e": "Topik = tumbuhan gurun; tujuan = menjelaskan alasan bertahan."
+  },
+  {
+   "d": "listening",
+   "q": "Audio: 'from 9 to 11, sorry, 9 to 12'. Jam yang berlaku...",
+   "o": [
+    "9-11",
+    "9-12",
+    "11-12",
+    "Tidak jelas"
+   ],
+   "a": 1,
+   "e": "Angka yang dikoreksi menggantikan angka pertama."
+  },
+  {
+   "d": "listening",
+   "q": "Man: 'Do you mind if I use your notes?' Woman: 'Not at all.' Maksudnya...",
+   "o": [
+    "Dia menolak",
+    "Dia mempersilakan",
+    "Dia tidak mendengar",
+    "Dia meminta catatan"
+   ],
+   "a": 1,
+   "e": "'Not at all' menjawab 'do you mind' dengan tidak keberatan."
+  },
+  {
+   "d": "listening",
+   "q": "Profesor: 'The data are interesting, though I'd want to see the sample size.' Sikapnya...",
+   "o": [
+    "Sangat yakin",
+    "Terbuka tetapi hati-hati",
+    "Menolak total",
+    "Tidak peduli"
+   ],
+   "a": 1,
+   "e": "'Though' membalik nada; ia tertarik tetapi mengingatkan keterbatasan."
+  },
+  {
+   "d": "listening",
+   "q": "'For instance, the 2016 event affected reefs across thousands of kilometres.' Fungsi contoh ini...",
+   "o": [
+    "Mengganti topik",
+    "Menunjukkan skala dampak",
+    "Mengkritik peneliti lain",
+    "Mendefinisikan istilah"
+   ],
+   "a": 1,
+   "e": "Contoh berfungsi sebagai bukti skala."
+  },
+  {
+   "d": "listening",
+   "q": "Petugas: 'You can't register without the prerequisite.' Mahasiswa: 'But I took it last summer.' Langkah berikutnya paling mungkin...",
+   "o": [
+    "Mahasiswa membatalkan pendaftaran",
+    "Petugas memeriksa transkrip untuk verifikasi",
+    "Mahasiswa mengulang mata kuliah",
+    "Petugas menolak tanpa penjelasan"
+   ],
+   "a": 1,
+   "e": "Inferensi langkah berikutnya: verifikasi bukti yang diklaim mahasiswa."
+  },
+  {
+   "d": "listening",
+   "q": "Announcement: 'The shuttle will not run 12-14 March. Instead, use bus route 7.' Informasi pentingnya...",
+   "o": [
+    "Nomor rute berubah",
+    "Shuttle berhenti dan ada alternatif",
+    "Gerbang utara ditutup",
+    "Bus 7 dibatalkan"
+   ],
+   "a": 1,
+   "e": "'Instead' menandai pengganti."
+  },
+  {
+   "d": "listening",
+   "q": "Catatan kuliah yang baik berbentuk...",
+   "o": [
+    "Transkrip kalimat lengkap",
+    "Kerangka ide dan fungsi contoh",
+    "Daftar kosakata baru",
+    "Ringkasan satu paragraf"
+   ],
+   "a": 1,
+   "e": "Ujian menguji hubungan ide, bukan kata persis."
+  },
+  {
+   "d": "listening",
+   "q": "Adviser: 'Two options, but keep in mind option two's deadline is Friday.' Ia sedang...",
+   "o": [
+    "Menolak kedua opsi",
+    "Memberi peringatan tentang batasan",
+    "Mengganti topik",
+    "Mengonfirmasi keputusan"
+   ],
+   "a": 1,
+   "e": "'Keep in mind' menandai batasan yang perlu diperhatikan."
+  },
+  {
+   "d": "structure",
+   "q": "'The list of items ___ attached.' Pilih verba yang benar.",
+   "o": [
+    "were",
+    "was",
+    "have been",
+    "are"
+   ],
+   "a": 1,
+   "e": "Subjek inti 'the list' tunggal; 'of items' hanya frasa penyela."
+  },
+  {
+   "d": "structure",
+   "q": "'A number of students ___ complained.' Pilih verba.",
+   "o": [
+    "has",
+    "have",
+    "is",
+    "was"
+   ],
+   "a": 1,
+   "e": "'A number of' diikuti verba jamak; 'the number of' tunggal."
+  },
+  {
+   "d": "structure",
+   "q": "'Each of the students ___ a form.' Pilih verba.",
+   "o": [
+    "have",
+    "has",
+    "are",
+    "were"
+   ],
+   "a": 1,
+   "e": "Each/every/one of dianggap tunggal."
+  },
+  {
+   "d": "structure",
+   "q": "Kalimat dengan tense yang benar...",
+   "o": [
+    "She has worked here since 2019.",
+    "She works here since 2019.",
+    "She worked here since 2019.",
+    "She is working here since 2019."
+   ],
+   "a": 0,
+   "e": "'Since' menuntut present perfect."
+  },
+  {
+   "d": "structure",
+   "q": "'The proposal ___ by the committee last week.' Bentuk pasif yang benar...",
+   "o": [
+    "was reviewed",
+    "was review",
+    "has reviewed",
+    "were reviewed"
+   ],
+   "a": 0,
+   "e": "Pasif lampau, subjek tunggal."
+  },
+  {
+   "d": "structure",
+   "q": "Kalimat dengan struktur paralel yang benar...",
+   "o": [
+    "The job requires writing, editing, and to publish.",
+    "The job requires writing, editing, and publishing.",
+    "The job requires to write, editing, and publish.",
+    "The job requires writing, to edit, and publishing."
+   ],
+   "a": 1,
+   "e": "Semua unsur daftar harus bentuk -ing."
+  },
+  {
+   "d": "structure",
+   "q": "Perbaikan terbaik: 'She is responsible for planning and to organise events.'",
+   "o": [
+    "...planning and organising events.",
+    "...plan and to organise events.",
+    "...to plan and organising events.",
+    "Tidak perlu diperbaiki"
+   ],
+   "a": 0,
+   "e": "Paralel: gerund dengan gerund."
+  },
+  {
+   "d": "structure",
+   "q": "Urutan keterangan yang benar...",
+   "o": [
+    "She sent yesterday the file to the office.",
+    "She sent the file to the office yesterday.",
+    "She yesterday sent the file to the office.",
+    "She sent the file yesterday to the office."
+   ],
+   "a": 1,
+   "e": "Urutan baku: objek → tempat → waktu."
+  },
+  {
+   "d": "structure",
+   "q": "Posisi adverbia frekuensi yang benar...",
+   "o": [
+    "She arrives always early.",
+    "She always arrives early.",
+    "Always she arrives early.",
+    "She arrives early always."
+   ],
+   "a": 1,
+   "e": "Adverbia frekuensi sebelum verba utama, sesudah 'be'."
+  },
+  {
+   "d": "structure",
+   "q": "'The results were ___ (surprise).' Bentuk yang tepat...",
+   "o": [
+    "surprise",
+    "surprising",
+    "surprisingly",
+    "surprisedly"
+   ],
+   "a": 1,
+   "e": "Setelah 'were' butuh kata sifat: surprising."
+  },
+  {
+   "d": "structure",
+   "q": "'She spoke ___ during the interview.'",
+   "o": [
+    "confident",
+    "confidence",
+    "confidently",
+    "confiding"
+   ],
+   "a": 2,
+   "e": "Menerangkan verba 'spoke' butuh kata keterangan."
+  },
+  {
+   "d": "structure",
+   "q": "'We met ___ Tuesday ___ 9 a.m.'",
+   "o": [
+    "in / at",
+    "on / at",
+    "at / on",
+    "on / in"
+   ],
+   "a": 1,
+   "e": "Hari memakai 'on', jam memakai 'at'."
+  },
+  {
+   "d": "structure",
+   "q": "Perbaikan terbaik: 'She explained me the procedure.'",
+   "o": [
+    "She explained to me the procedure.",
+    "She explained the procedure to me.",
+    "She explained me to the procedure.",
+    "Tidak perlu diperbaiki"
+   ],
+   "a": 1,
+   "e": "Pola: explain something to someone."
+  },
+  {
+   "d": "structure",
+   "q": "'Not only ___ the report but also edited it.'",
+   "o": [
+    "she wrote",
+    "did she write",
+    "she did write",
+    "wrote she"
+   ],
+   "a": 1,
+   "e": "Setelah 'not only' di awal kalimat, inversi: did she write."
+  },
+  {
+   "d": "structure",
+   "q": "Kalimat dengan urutan kata sifat yang benar...",
+   "o": [
+    "a car red",
+    "a red car",
+    "red a car",
+    "car a red"
+   ],
+   "a": 1,
+   "e": "Kata sifat sebelum kata benda."
+  },
+  {
+   "d": "speaking",
+   "q": "Dalam Listen and Repeat, memparafrase kalimat...",
+   "o": [
+    "Dianjurkan",
+    "Berisiko karena akurasi dinilai",
+    "Wajib",
+    "Tidak berpengaruh"
+   ],
+   "a": 1,
+   "e": "Tugas menilai akurasi pengulangan."
+  },
+  {
+   "d": "speaking",
+   "q": "Jawaban interview yang baik memakai pola...",
+   "o": [
+    "Satu kata",
+    "Point, example, close",
+    "Hanya definisi",
+    "Permintaan maaf panjang"
+   ],
+   "a": 1,
+   "e": "Pola tiga bagian memberi jawaban jelas dan berkembang."
+  },
+  {
+   "d": "speaking",
+   "q": "Bila ide habis di tengah jawaban, sebaiknya...",
+   "o": [
+    "Diam",
+    "Menambah contoh konkret atau perbandingan",
+    "Mengulang pertanyaan",
+    "Minta maaf dan berhenti"
+   ],
+   "a": 1,
+   "e": "Menambah contoh menjaga kelancaran."
+  },
+  {
+   "d": "speaking",
+   "q": "Kebiasaan yang paling menurunkan kejelasan...",
+   "o": [
+    "Tempo sedang",
+    "Konsonan akhir hilang dan bicara terlalu cepat",
+    "Jeda singkat antar ide",
+    "Kalimat pendek"
+   ],
+   "a": 1,
+   "e": "Kejelasan dinilai; kata melebur merugikan."
+  },
+  {
+   "d": "writing",
+   "q": "Tujuan email sebaiknya dinyatakan pada...",
+   "o": [
+    "Kalimat pertama setelah sapaan",
+    "Paragraf terakhir",
+    "Subjek email saja",
+    "Tidak perlu"
+   ],
+   "a": 0,
+   "e": "Penilai mencari kejelasan tujuan sejak awal."
+  },
+  {
+   "d": "writing",
+   "q": "Perbaikan register terbaik: 'Hey prof, gotta ask…'",
+   "o": [
+    "Dear Professor Lee, I am writing to…",
+    "Hi, quick question…",
+    "Professor, need answer now.",
+    "Yo, what's up?"
+   ],
+   "a": 0,
+   "e": "Register formal yang wajar untuk email akademik."
+  },
+  {
+   "d": "writing",
+   "q": "Elemen yang paling sering diminta skenario email...",
+   "o": [
+    "Nama hewan peliharaan",
+    "Tanggal baru yang diminta dan alasannya",
+    "Daftar nilai semester",
+    "Riwayat pekerjaan orang tua"
+   ],
+   "a": 1,
+   "e": "Kelengkapan informasi (tanggal + alasan) adalah inti tugas."
+  },
+  {
+   "d": "writing",
+   "q": "Kohesi terbaik untuk: 'I missed the exam. I was ill. I want a retake.'",
+   "o": [
+    "I missed the exam and I was ill and I want a retake.",
+    "Because I was ill, I missed the exam; therefore I would like to request a retake.",
+    "I missed the exam. I was ill. I want a retake.",
+    "Illness exam retake want."
+   ],
+   "a": 1,
+   "e": "Penghubung menunjukkan hubungan sebab-akibat."
+  },
+  {
+   "d": "writing",
+   "q": "Pembuka terkuat untuk Academic Discussion...",
+   "o": [
+    "I agree with everyone.",
+    "While recorded lectures offer flexibility, I believe live classes produce better learning.",
+    "This is difficult and I have no opinion.",
+    "Many people think many things."
+   ],
+   "a": 1,
+   "e": "Posisi jelas + mengakui sisi lain + alasan."
+  },
+  {
+   "d": "writing",
+   "q": "Contoh pendukung terbaik...",
+   "o": [
+    "Many students prefer live classes.",
+    "In my statistics course, I understood the material better because I could ask questions immediately.",
+    "Everyone knows live classes are better.",
+    "Classes are important."
+   ],
+   "a": 1,
+   "e": "Contoh spesifik dan konkret lebih kuat."
+  },
+  {
+   "d": "writing",
+   "q": "Target panjang untuk Academic Discussion 10 menit...",
+   "o": [
+    "100-150 kata",
+    "400 kata",
+    "50 kata",
+    "Tanpa batas"
+   ],
+   "a": 0,
+   "e": "Cukup untuk posisi, alasan, contoh, penutup, dan pemeriksaan."
+  },
+  {
+   "d": "writing",
+   "q": "Tiga hal yang diperiksa pada 60 detik terakhir...",
+   "o": [
+    "Ejaan nama, tanda baca, paragraf",
+    "Subjek-verba, artikel, tenses",
+    "Jumlah kata, judul, tanggal",
+    "Kosakata sulit, idiom, kutipan"
+   ],
+   "a": 1,
+   "e": "Kesalahan yang paling sering muncul dan paling mudah diperbaiki."
+  }
+ ]
+}

@@ -1,0 +1,703 @@
+{
+ "cert": "java-ee-7",
+ "minutes": 60,
+ "pass": 63,
+ "questions": [
+  {
+   "d": "arsitektur",
+   "q": "Manakah yang TIDAK termasuk Web Profile Java EE 7?",
+   "o": [
+    "Servlet 3.1",
+    "JAX-RS 2.0",
+    "JMS 2.0",
+    "Bean Validation 1.1"
+   ],
+   "a": 2,
+   "e": "Web Profile tidak memuat JMS, JAX-WS, Batch, dan Concurrency Utilities."
+  },
+  {
+   "d": "arsitektur",
+   "q": "Komponen mana yang lifecycle-nya dikelola EJB container?",
+   "o": [
+    "Servlet",
+    "Message-driven bean",
+    "JSP",
+    "JSF managed bean"
+   ],
+   "a": 1,
+   "e": "MDB adalah komponen EJB; servlet/JSP/JSF hidup di web container."
+  },
+  {
+   "d": "arsitektur",
+   "q": "Nama JNDI paling sempit cakupannya adalah...",
+   "o": [
+    "java:global",
+    "java:app",
+    "java:module",
+    "java:comp/env"
+   ],
+   "a": 3,
+   "e": "Urutan dari sempit ke luas: java:comp/env, java:module, java:app, java:global."
+  },
+  {
+   "d": "arsitektur",
+   "q": "Anotasi untuk menyuntik DataSource adalah...",
+   "o": [
+    "@Inject",
+    "@EJB",
+    "@Resource",
+    "@PersistenceContext"
+   ],
+   "a": 2,
+   "e": "@Resource untuk objek infrastruktur seperti DataSource, JMSContext, UserTransaction."
+  },
+  {
+   "d": "arsitektur",
+   "q": "Sebuah @Stateless bean menyimpan daftar item di field instance. Apa akibatnya?",
+   "o": [
+    "Field di-reset tiap request",
+    "Data bisa tercampur antar klien karena instance dipakai bergantian",
+    "Deployment gagal",
+    "Container membuat instance per klien"
+   ],
+   "a": 1,
+   "e": "Stateless bean berasal dari pool; field instance tidak boleh menyimpan state klien."
+  },
+  {
+   "d": "jpa",
+   "q": "Pada relasi dua arah @OneToMany/@ManyToOne, sisi mana yang memiliki foreign key?",
+   "o": [
+    "Sisi @OneToMany",
+    "Sisi @ManyToOne",
+    "Keduanya",
+    "Tidak ada, dibuat tabel join"
+   ],
+   "a": 1,
+   "e": "Sisi @ManyToOne adalah owning side; @OneToMany memakai mappedBy dan tidak punya kolom FK."
+  },
+  {
+   "d": "jpa",
+   "q": "Default fetch type untuk @ManyToOne adalah...",
+   "o": [
+    "LAZY",
+    "EAGER",
+    "Tergantung provider",
+    "Tidak ada default"
+   ],
+   "a": 1,
+   "e": "@ManyToOne default EAGER, @OneToMany default LAZY. Ini sering ditanyakan."
+  },
+  {
+   "d": "jpa",
+   "q": "Metode apa yang harus dipakai untuk menyimpan perubahan pada entity detached?",
+   "o": [
+    "persist",
+    "merge",
+    "refresh",
+    "flush"
+   ],
+   "a": 1,
+   "e": "merge menyalin state ke instance managed dan mengembalikan instance baru; nilai kembaliannya harus dipakai."
+  },
+  {
+   "d": "jpa",
+   "q": "Apa efek bulk JPQL UPDATE terhadap entity yang sudah managed?",
+   "o": [
+    "Entity ikut ter-update otomatis",
+    "Cache/entity managed bisa basi dan callback dilewati",
+    "Transaksi otomatis rollback",
+    "EntityManager ditutup"
+   ],
+   "a": 1,
+   "e": "Bulk operation langsung ke DB: melewati @PreUpdate dan tidak menyegarkan persistence context."
+  },
+  {
+   "d": "jpa",
+   "q": "Strategi key generation mana yang paling ramah untuk insert massal?",
+   "o": [
+    "IDENTITY",
+    "SEQUENCE dengan allocationSize besar",
+    "TABLE",
+    "AUTO"
+   ],
+   "a": 1,
+   "e": "IDENTITY memaksa insert satu per satu untuk mendapat id; SEQUENCE bisa pre-allocate sehingga batch insert efisien."
+  },
+  {
+   "d": "jpa",
+   "q": "Exception apa yang muncul saat Bean Validation gagal pada persist dalam CMT?",
+   "o": [
+    "ValidationException",
+    "ConstraintViolationException",
+    "PersistenceException",
+    "IllegalArgumentException"
+   ],
+   "a": 1,
+   "e": "Dilempar saat flush/commit, bukan saat persist dipanggil."
+  },
+  {
+   "d": "ejb",
+   "q": "@Asynchronous pada session bean boleh mengembalikan tipe...",
+   "o": [
+    "void atau Future<T>",
+    "void saja",
+    "String",
+    "Tipe apa pun"
+   ],
+   "a": 0,
+   "e": "Hanya void atau Future<T>; nilai lain menyebabkan error deploy."
+  },
+  {
+   "d": "ejb",
+   "q": "Atribut transaksi yang selalu membuat transaksi baru dan men-suspend yang berjalan adalah...",
+   "o": [
+    "REQUIRED",
+    "REQUIRES_NEW",
+    "SUPPORTS",
+    "MANDATORY"
+   ],
+   "a": 1,
+   "e": "REQUIRES_NEW men-suspend transaksi pemanggil; commit-nya independen."
+  },
+  {
+   "d": "ejb",
+   "q": "Method A (REQUIRED) memanggil B (REQUIRES_NEW), lalu A melempar RuntimeException. Apa yang terjadi pada data B?",
+   "o": [
+    "Ikut rollback",
+    "Tetap tersimpan",
+    "Tergantung provider",
+    "Transaksi B di-suspend sampai A selesai"
+   ],
+   "a": 1,
+   "e": "B sudah commit di transaksinya sendiri sebelum A gagal."
+  },
+  {
+   "d": "ejb",
+   "q": "Checked exception pada method CMT menyebabkan rollback bila...",
+   "o": [
+    "Selalu rollback",
+    "Tidak pernah rollback",
+    "Dianotasi @ApplicationException(rollback=true)",
+    "Method memakai @TransactionAttribute(REQUIRED)"
+   ],
+   "a": 2,
+   "e": "Default: hanya runtime exception dan RemoteException yang me-rollback."
+  },
+  {
+   "d": "ejb",
+   "q": "@Schedule(persistent = true) berarti...",
+   "o": [
+    "Timer disimpan sehingga bertahan setelah restart",
+    "Timer berjalan di thread baru",
+    "Timer hanya sekali",
+    "Timer dijalankan di klien"
+   ],
+   "a": 0,
+   "e": "Timer persistent disimpan di timer store DB dan dipulihkan saat aplikasi start."
+  },
+  {
+   "d": "jms",
+   "q": "Dua MDB mendengarkan queue yang sama. Berapa yang menerima satu pesan?",
+   "o": [
+    "Keduanya",
+    "Satu",
+    "Tidak ada",
+    "Tergantung isi pesan"
+   ],
+   "a": 1,
+   "e": "Queue = point-to-point, satu pesan dikonsumsi satu konsumen (load balanced)."
+  },
+  {
+   "d": "jms",
+   "q": "Agar subscriber topic tetap menerima pesan saat offline, diperlukan...",
+   "o": [
+    "Durable subscription dengan clientID dan subscriptionName",
+    "AUTO_ACKNOWLEDGE",
+    "Queue browser",
+    "Message selector"
+   ],
+   "a": 0,
+   "e": "Durable subscription menyimpan pesan untuk subscriber yang sedang tidak terhubung."
+  },
+  {
+   "d": "jms",
+   "q": "MDB melempar RuntimeException di onMessage dengan CMT. Akibatnya...",
+   "o": [
+    "Pesan hilang",
+    "Transaksi rollback dan pesan dikirim ulang",
+    "Pesan di-acknowledge",
+    "MDB di-undeploy"
+   ],
+   "a": 1,
+   "e": "Rollback menyebabkan redelivery; ini sebabnya konsumen perlu idempoten."
+  },
+  {
+   "d": "soap",
+   "q": "Anotasi untuk menyembunyikan method publik dari kontrak WSDL adalah...",
+   "o": [
+    "@WebMethod(exclude = true)",
+    "@WebParam(mode = OUT)",
+    "@SOAPBinding(style = RPC)",
+    "@WebService(name = \"\")"
+   ],
+   "a": 0,
+   "e": "exclude=true menghapus operation dari WSDL meski method public."
+  },
+  {
+   "d": "soap",
+   "q": "Parameter mode OUT pada @WebMethod membutuhkan tipe...",
+   "o": [
+    "String",
+    "Holder<T>",
+    "List<T>",
+    "Optional<T>"
+   ],
+   "a": 1,
+   "e": "Java tidak punya out-parameter, jadi dipakai javax.xml.ws.Holder."
+  },
+  {
+   "d": "soap",
+   "q": "Default XmlAccessType pada JAXB adalah...",
+   "o": [
+    "FIELD",
+    "PROPERTY",
+    "PUBLIC_MEMBER",
+    "NONE"
+   ],
+   "a": 2,
+   "e": "PUBLIC_MEMBER memetakan field publik dan properti getter/setter; bisa menyebabkan duplikasi."
+  },
+  {
+   "d": "soap",
+   "q": "Anotasi untuk membungkus koleksi dalam satu elemen wrapper adalah...",
+   "o": [
+    "@XmlElement",
+    "@XmlElementWrapper",
+    "@XmlAttribute",
+    "@XmlType"
+   ],
+   "a": 1,
+   "e": "@XmlElementWrapper membungkus; @XmlElement membuat elemen berulang tanpa wrapper."
+  },
+  {
+   "d": "servlet",
+   "q": "Servlet memiliki pola /produk dan /produk/*. Pola mana yang menang untuk request /produk?",
+   "o": [
+    "/produk",
+    "/produk/*",
+    "Keduanya",
+    "Container memilih acak"
+   ],
+   "a": 0,
+   "e": "Exact match selalu menang atas path mapping."
+  },
+  {
+   "d": "servlet",
+   "q": "Mengapa menyimpan HttpServletRequest di field servlet berbahaya?",
+   "o": [
+    "Servlet bukan Serializable",
+    "Servlet dipakai banyak thread sekaligus",
+    "Field tidak boleh ada di servlet",
+    "Container me-reset field tiap 5 detik"
+   ],
+   "a": 1,
+   "e": "Satu instance servlet melayani banyak request paralel, jadi field menjadi race condition."
+  },
+  {
+   "d": "servlet",
+   "q": "Filter hanya berjalan pada forward bila...",
+   "o": [
+    "Selalu berjalan",
+    "dispatcherTypes menyertakan FORWARD",
+    "Filter dideklarasikan di web.xml",
+    "Filter memakai @WebFilter(urlPatterns=\"/*\")"
+   ],
+   "a": 1,
+   "e": "Default hanya REQUEST; FORWARD/INCLUDE/ERROR/ASYNC harus disebut eksplisit."
+  },
+  {
+   "d": "servlet",
+   "q": "Cara aman mencegah cookie diakses JavaScript adalah...",
+   "o": [
+    "setSecure(true)",
+    "setHttpOnly(true)",
+    "setMaxAge(0)",
+    "setPath(\"/\")"
+   ],
+   "a": 1,
+   "e": "HttpOnly melindungi dari XSS; Secure membatasi pengiriman ke HTTPS."
+  },
+  {
+   "d": "servlet",
+   "q": "Apa perbedaan sendRedirect dan forward?",
+   "o": [
+    "Redirect memakai RequestDispatcher",
+    "Redirect membuat request baru dari klien; forward terjadi di server",
+    "Forward mengubah URL di browser",
+    "Keduanya sama"
+   ],
+   "a": 1,
+   "e": "sendRedirect = 302 dan klien request ulang; forward tetap satu request, URL tidak berubah."
+  },
+  {
+   "d": "jsp",
+   "q": "Method yang TIDAK bisa ditimpa pada JSP hasil terjemahan adalah...",
+   "o": [
+    "jspInit",
+    "jspDestroy",
+    "_jspService",
+    "Semua bisa ditimpa"
+   ],
+   "a": 2,
+   "e": "_jspService digenerate dengan awalan garis bawah sehingga tidak dapat dioverride."
+  },
+  {
+   "d": "jsp",
+   "q": "Fase JSP tempat error sintaks skrip ditemukan adalah...",
+   "o": [
+    "Service",
+    "Translation/compilation",
+    "Destroy",
+    "Init"
+   ],
+   "a": 1,
+   "e": "JSP diterjemahkan menjadi servlet lebih dulu; error sintaks muncul di fase itu."
+  },
+  {
+   "d": "jsp",
+   "q": "Ekspresi EL ${empty daftar} bernilai true bila...",
+   "o": [
+    "daftar null saja",
+    "daftar kosong saja",
+    "daftar null atau kosong",
+    "daftar berisi satu elemen"
+   ],
+   "a": 2,
+   "e": "empty menangani null, string kosong, koleksi/map kosong."
+  },
+  {
+   "d": "jsp",
+   "q": "Tag untuk meng-escape output pengguna agar aman dari XSS adalah...",
+   "o": [
+    "<c:out>",
+    "<c:if>",
+    "<fmt:message>",
+    "<c:import>"
+   ],
+   "a": 0,
+   "e": "<c:out> melakukan HTML escaping; alternatif fn:escapeXml."
+  },
+  {
+   "d": "jax-rs",
+   "q": "Anotasi yang menentukan tipe media body request adalah...",
+   "o": [
+    "@Produces",
+    "@Consumes",
+    "@Path",
+    "@Context"
+   ],
+   "a": 1,
+   "e": "Produces = response, Consumes = request. Sering tertukar di soal."
+  },
+  {
+   "d": "jax-rs",
+   "q": "Status yang tepat untuk POST yang berhasil membuat resource adalah...",
+   "o": [
+    "200 OK",
+    "201 Created + Location",
+    "204 No Content",
+    "202 Accepted"
+   ],
+   "a": 1,
+   "e": "201 wajib disertai header Location menuju resource baru."
+  },
+  {
+   "d": "jax-rs",
+   "q": "Untuk mengubah IllegalArgumentException menjadi response 400 secara global dipakai...",
+   "o": [
+    "ExceptionMapper",
+    "ContainerRequestFilter",
+    "MessageBodyWriter",
+    "ParamConverter"
+   ],
+   "a": 0,
+   "e": "ExceptionMapper<T> beranotasi @Provider memetakan exception ke Response."
+  },
+  {
+   "d": "jax-rs",
+   "q": "Manakah yang idempoten?",
+   "o": [
+    "POST",
+    "PATCH",
+    "PUT",
+    "Tidak ada"
+   ],
+   "a": 2,
+   "e": "PUT mengganti representasi utuh dan idempoten; POST tidak, PATCH tidak dijamin."
+  },
+  {
+   "d": "websocket",
+   "q": "Status HTTP yang menandai handshake WebSocket berhasil adalah...",
+   "o": [
+    "200 OK",
+    "101 Switching Protocols",
+    "301 Moved Permanently",
+    "426 Upgrade Required"
+   ],
+   "a": 1,
+   "e": "Setelah 101, protokol berganti dari HTTP ke WebSocket pada koneksi yang sama."
+  },
+  {
+   "d": "websocket",
+   "q": "Remote yang tidak memblokir thread pengirim adalah...",
+   "o": [
+    "getBasicRemote()",
+    "getAsyncRemote()",
+    "getSession()",
+    "getUserProperties()"
+   ],
+   "a": 1,
+   "e": "getBasicRemote sinkron; getAsyncRemote mengembalikan Future."
+  },
+  {
+   "d": "websocket",
+   "q": "Method yang dipanggil saat klien memutus koneksi adalah...",
+   "o": [
+    "@OnError",
+    "@OnMessage",
+    "@OnClose",
+    "@OnOpen"
+   ],
+   "a": 2,
+   "e": "@OnClose dipanggil pada akhir lifecycle koneksi."
+  },
+  {
+   "d": "websocket",
+   "q": "Fungsi willDecode pada Decoder.Text adalah...",
+   "o": [
+    "Mengubah objek ke teks",
+    "Memeriksa apakah pesan cocok untuk decoder itu",
+    "Menutup sesi",
+    "Mendaftarkan encoder"
+   ],
+   "a": 1,
+   "e": "Container memakai willDecode untuk memilih decoder yang tepat sebelum decode."
+  },
+  {
+   "d": "jsf",
+   "q": "Urutan fase JSF yang benar adalah...",
+   "o": [
+    "Restore View, Apply Request Values, Process Validations, Update Model Values, Invoke Application, Render Response",
+    "Restore View, Process Validations, Apply Request Values, Update Model Values, Render Response, Invoke Application",
+    "Apply Request Values, Restore View, Update Model Values, Process Validations, Invoke Application, Render Response",
+    "Restore View, Update Model Values, Apply Request Values, Process Validations, Invoke Application, Render Response"
+   ],
+   "a": 0,
+   "e": "Enam fase berurutan; validasi gagal melewati sisa fase dan langsung Render Response."
+  },
+  {
+   "d": "jsf",
+   "q": "Atribut pada tombol agar melewati validasi form (misal tombol Batal) adalah...",
+   "o": [
+    "immediate=\"true\"",
+    "required=\"false\"",
+    "ajax=\"false\"",
+    "rendered=\"false\""
+   ],
+   "a": 0,
+   "e": "immediate=true memproses di fase Apply Request Values dan melewati validasi."
+  },
+  {
+   "d": "jsf",
+   "q": "Tanpa <h:messages/> atau <h:message/>, pesan validasi...",
+   "o": [
+    "Tetap tampil di atas form",
+    "Tidak tampil",
+    "Muncul sebagai alert",
+    "Masuk ke log"
+   ],
+   "a": 1,
+   "e": "Validasi tetap berjalan, tetapi pesan tidak dirender tanpa komponen message."
+  },
+  {
+   "d": "jsf",
+   "q": "Untuk memakai @Inject di bean halaman, bean harus...",
+   "o": [
+    "@ManagedBean",
+    "@Named (dikelola CDI)",
+    "Serializable saja",
+    "Memakai @ViewScoped JSF"
+   ],
+   "a": 1,
+   "e": "@ManagedProperty hanya untuk @ManagedBean; injeksi CDI butuh bean dikelola CDI."
+  },
+  {
+   "d": "security",
+   "q": "@RolesAllowed berpengaruh pada...",
+   "o": [
+    "Servlet dan JSP",
+    "EJB saja",
+    "Semua komponen",
+    "JSF managed bean"
+   ],
+   "a": 1,
+   "e": "Untuk servlet dipakai web.xml security-constraint atau @ServletSecurity."
+  },
+  {
+   "d": "security",
+   "q": "Mekanisme yang melindungi pesan end-to-end melewati beberapa perantara adalah...",
+   "o": [
+    "TLS",
+    "WS-Security",
+    "Basic Auth",
+    "IP allowlist"
+   ],
+   "a": 1,
+   "e": "TLS melindungi per hop; WS-Security menaruh keamanan di dalam pesan."
+  },
+  {
+   "d": "security",
+   "q": "Elemen web.xml yang memaksa HTTPS untuk URL tertentu adalah...",
+   "o": [
+    "<transport-guarantee>CONFIDENTIAL</transport-guarantee>",
+    "<auth-method>FORM</auth-method>",
+    "<security-role>",
+    "<welcome-file-list>"
+   ],
+   "a": 0,
+   "e": "user-data-constraint dengan transport-guarantee CONFIDENTIAL memaksa TLS."
+  },
+  {
+   "d": "cdi",
+   "q": "Dua implementasi interface di-inject tanpa qualifier menyebabkan...",
+   "o": [
+    "UnsatisfiedResolutionException",
+    "AmbiguousResolutionException",
+    "Deployment berhasil, pilih acak",
+    "NullPointerException"
+   ],
+   "a": 1,
+   "e": "Ambiguitas gagal saat deploy; selesaikan dengan qualifier atau @Alternative."
+  },
+  {
+   "d": "cdi",
+   "q": "Method yang membersihkan objek hasil @Produces adalah...",
+   "o": [
+    "@PreDestroy",
+    "@Disposes",
+    "@PrePassivate",
+    "@Remove"
+   ],
+   "a": 1,
+   "e": "@Disposes menerima tipe yang sama dengan producer dan dipanggil saat scope berakhir."
+  },
+  {
+   "d": "cdi",
+   "q": "Agar event hanya diproses setelah transaksi commit, observer memakai...",
+   "o": [
+    "@Observes",
+    "@Observes(during = TransactionPhase.AFTER_SUCCESS)",
+    "@Observes(during = BEFORE_COMPLETION)",
+    "@Inject Event"
+   ],
+   "a": 1,
+   "e": "AFTER_SUCCESS dipanggil hanya bila transaksi berhasil commit."
+  },
+  {
+   "d": "cdi",
+   "q": "Default scope untuk bean @Named tanpa anotasi scope adalah...",
+   "o": [
+    "@RequestScoped",
+    "@SessionScoped",
+    "@Dependent",
+    "@ApplicationScoped"
+   ],
+   "a": 2,
+   "e": "@Dependent membuat instance baru per titik injeksi; bukan yang diinginkan untuk form."
+  },
+  {
+   "d": "concurrency",
+   "q": "Pengganti yang benar untuk new Thread() di dalam EJB adalah...",
+   "o": [
+    "ManagedExecutorService",
+    "synchronized block",
+    "Timer biasa",
+    "Fork/Join mentah"
+   ],
+   "a": 0,
+   "e": "Thread mentah melanggar kontrak container; gunakan executor terkelola atau @Asynchronous."
+  },
+  {
+   "d": "concurrency",
+   "q": "Utilitas untuk membawa konteks container ke task adalah...",
+   "o": [
+    "ContextService",
+    "ManagedThreadFactory",
+    "UserTransaction",
+    "SessionContext"
+   ],
+   "a": 0,
+   "e": "ContextService membungkus objek agar membawa konteks security/classloader."
+  },
+  {
+   "d": "concurrency",
+   "q": "invokeAll(tasks, timeout) mengembalikan...",
+   "o": [
+    "Hasil pertama yang selesai",
+    "List Future sesuai urutan input",
+    "Nilai void",
+    "Exception pertama"
+   ],
+   "a": 1,
+   "e": "Task yang belum selesai saat timeout ditandai cancelled, tetap ada di list."
+  },
+  {
+   "d": "batch",
+   "q": "Elemen JSL untuk memproses per item dengan commit berkala adalah...",
+   "o": [
+    "<batchlet>",
+    "<chunk>",
+    "<split>",
+    "<flow>"
+   ],
+   "a": 1,
+   "e": "chunk menjalankan reader, processor, writer dengan commit tiap item-count."
+  },
+  {
+   "d": "batch",
+   "q": "Return type method process() pada Batchlet adalah...",
+   "o": [
+    "void",
+    "String (exit status)",
+    "int",
+    "boolean"
+   ],
+   "a": 1,
+   "e": "Nilai String menjadi exit status yang bisa dipakai untuk alur berikutnya."
+  },
+  {
+   "d": "batch",
+   "q": "Untuk melanjutkan job yang gagal dipakai...",
+   "o": [
+    "JobOperator.start()",
+    "JobOperator.restart(executionId)",
+    "JobOperator.stop()",
+    "JobOperator.getRunningExecutions()"
+   ],
+   "a": 1,
+   "e": "restart melanjutkan dari checkpoint terakhir, bukan dari awal."
+  },
+  {
+   "d": "batch",
+   "q": "Anotasi untuk mengikat properti JSL ke field komponen adalah...",
+   "o": [
+    "@BatchProperty",
+    "@Resource",
+    "@Inject",
+    "@Named"
+   ],
+   "a": 0,
+   "e": "@BatchProperty mengisi field dari properti job XML; nilainya String."
+  }
+ ]
+}

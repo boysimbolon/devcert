@@ -1,0 +1,680 @@
+{
+ "cert": "mysql-8-dba",
+ "minutes": 60,
+ "pass": 65,
+ "passLabel": "ambang latihan",
+ "questions": [
+  {
+   "d": "arsitektur",
+   "q": "Variabel yang membatasi antarmuka jaringan tempat mysqld mendengar adalah...",
+   "o": [
+    "max_connections",
+    "bind-address",
+    "port",
+    "skip_name_resolve"
+   ],
+   "a": 1,
+   "e": "bind-address menentukan alamat IP yang didengarkan; 127.0.0.1 berarti hanya lokal."
+  },
+  {
+   "d": "arsitektur",
+   "q": "Status yang menunjukkan jumlah kegagalan handshake/autentikasi adalah...",
+   "o": [
+    "Aborted_connects",
+    "Threads_running",
+    "Connections",
+    "Max_used_connections"
+   ],
+   "a": 0,
+   "e": "Aborted_connects mencatat koneksi yang gagal sebelum berhasil login."
+  },
+  {
+   "d": "arsitektur",
+   "q": "Definisi tabel InnoDB di MySQL 8.0 disimpan di...",
+   "o": [
+    "file .frm per tabel",
+    "data dictionary di mysql.ibd",
+    "ibdata1 saja",
+    "file .cfg"
+   ],
+   "a": 1,
+   "e": "Tidak ada .frm lagi; metadata ada di data dictionary transaksional, dengan SDI di file .ibd."
+  },
+  {
+   "d": "arsitektur",
+   "q": "Sejak MySQL 8.0.30, redo log InnoDB disimpan sebagai...",
+   "o": [
+    "dua file ib_logfile0/1",
+    "direktori #innodb_redo",
+    "tabel mysql.redo_log",
+    "file .ibd"
+   ],
+   "a": 1,
+   "e": "8.0.30+ memakai direktori #innodb_redo dengan beberapa file redo."
+  },
+  {
+   "d": "arsitektur",
+   "q": "Fungsi utama redo log adalah...",
+   "o": [
+    "replikasi ke replica",
+    "crash recovery dan durability",
+    "menyimpan versi lama baris",
+    "audit perubahan"
+   ],
+   "a": 1,
+   "e": "Redo mencatat perubahan fisik untuk pemulihan setelah crash; binlog untuk replikasi/PITR."
+  },
+  {
+   "d": "arsitektur",
+   "q": "Undo log diperlukan terutama untuk...",
+   "o": [
+    "rollback dan MVCC",
+    "kompresi tabel",
+    "enkripsi data",
+    "cache index"
+   ],
+   "a": 0,
+   "e": "Undo menyimpan versi lama baris untuk rollback dan read view (MVCC)."
+  },
+  {
+   "d": "arsitektur",
+   "q": "Mengubah innodb_buffer_pool_size saat server berjalan...",
+   "o": [
+    "tidak mungkin tanpa restart",
+    "bisa, diterapkan bertahap sesuai chunk",
+    "hanya berlaku untuk sesi",
+    "menghapus cache"
+   ],
+   "a": 1,
+   "e": "Buffer pool resize online menyesuaikan per chunk; nilai dibulatkan ke kelipatan chunk."
+  },
+  {
+   "d": "arsitektur",
+   "q": "Doublewrite buffer berfungsi untuk...",
+   "o": [
+    "mempercepat commit",
+    "mencegah torn page saat penulisan",
+    "menyimpan binlog",
+    "mengompresi page"
+   ],
+   "a": 1,
+   "e": "Page ditulis ke area doublewrite dulu agar tidak ada halaman setengah tertulis bila crash."
+  },
+  {
+   "d": "instalasi",
+   "q": "my.cnf dibaca dalam urutan tertentu; opsi yang menggantikan seluruh urutan tersebut adalah...",
+   "o": [
+    "--defaults-extra-file",
+    "--defaults-file",
+    "--no-defaults",
+    "--options-file"
+   ],
+   "a": 1,
+   "e": "--defaults-file menggantikan semua file default; --defaults-extra-file dibaca lebih dulu tanpa menggantikan."
+  },
+  {
+   "d": "instalasi",
+   "q": "Perintah menghentikan server dengan bersih adalah...",
+   "o": [
+    "kill -9 $(pidof mysqld)",
+    "mysqladmin shutdown",
+    "systemctl kill mysqld",
+    "DROP DATABASE"
+   ],
+   "a": 1,
+   "e": "mysqladmin shutdown memicu shutdown bersih dengan checkpoint dan flush."
+  },
+  {
+   "d": "instalasi",
+   "q": "Perbedaan mysqld --initialize dan --initialize-insecure adalah...",
+   "o": [
+    "tidak ada bedanya",
+    "--initialize membuat password sementara, --initialize-insecure tidak",
+    "--initialize-insecure hanya untuk Windows",
+    "--initialize tidak membuat datadir"
+   ],
+   "a": 1,
+   "e": "--initialize membuat root dengan password sementara di error log; --initialize-insecure membuat root tanpa password."
+  },
+  {
+   "d": "instalasi",
+   "q": "Sejak MySQL 8.0.16, perintah mysql_upgrade...",
+   "o": [
+    "wajib dijalankan setelah upgrade",
+    "sudah dihapus; upgrade otomatis saat start",
+    "hanya untuk Windows",
+    "diganti mysqldump"
+   ],
+   "a": 1,
+   "e": "Upgrade internal dilakukan saat start; bisa dipaksa dengan --upgrade=FORCE."
+  },
+  {
+   "d": "instalasi",
+   "q": "SET PERSIST menyimpan nilai ke file...",
+   "o": [
+    "my.cnf",
+    "mysqld-auto.cnf",
+    "auto.cnf",
+    "binlog.index"
+   ],
+   "a": 1,
+   "e": "Nilai SET PERSIST/PERSIST_ONLY disimpan di mysqld-auto.cnf di dalam datadir."
+  },
+  {
+   "d": "instalasi",
+   "q": "Menjalankan instance kedua di host yang sama, parameter minimal yang harus berbeda adalah...",
+   "o": [
+    "datadir saja",
+    "port, socket, datadir, pid_file",
+    "server_id saja",
+    "innodb_buffer_pool_size"
+   ],
+   "a": 1,
+   "e": "Keempatnya harus unik agar tidak bentrok; server_id juga untuk replikasi."
+  },
+  {
+   "d": "instalasi",
+   "q": "Variabel mana yang berlaku per koneksi, bukan global?",
+   "o": [
+    "max_connections",
+    "sort_buffer_size",
+    "innodb_buffer_pool_size",
+    "table_open_cache"
+   ],
+   "a": 1,
+   "e": "sort_buffer_size dialokasikan per koneksi/per operasi, jadi nilai besar dikalikan banyak koneksi."
+  },
+  {
+   "d": "instalasi",
+   "q": "secure_file_priv bernilai NULL berarti...",
+   "o": [
+    "impor/ekspor diizinkan di mana saja",
+    "impor/ekspor tidak diizinkan",
+    "hanya baca",
+    "hanya lokal"
+   ],
+   "a": 1,
+   "e": "NULL mematikan fitur impor/ekspor file; string kosong justru berarti tanpa batas."
+  },
+  {
+   "d": "security",
+   "q": "'app'@'localhost' dan 'app'@'%' adalah...",
+   "o": [
+    "akun yang sama",
+    "dua akun berbeda",
+    "alias otomatis",
+    "role"
+   ],
+   "a": 1,
+   "e": "Identitas akun adalah pasangan user+host; keduanya akun terpisah dengan privilege terpisah."
+  },
+  {
+   "d": "security",
+   "q": "Perintah agar role aktif otomatis saat pengguna login adalah...",
+   "o": [
+    "GRANT ROLE",
+    "SET DEFAULT ROLE",
+    "ALTER USER DEFAULT",
+    "SET ROLE ALL"
+   ],
+   "a": 1,
+   "e": "SET DEFAULT ROLE menentukan role yang aktif saat koneksi baru."
+  },
+  {
+   "d": "security",
+   "q": "Plugin autentikasi default MySQL 8.0 adalah...",
+   "o": [
+    "mysql_native_password",
+    "caching_sha2_password",
+    "sha256_password",
+    "auth_socket"
+   ],
+   "a": 1,
+   "e": "caching_sha2_password; klien lama sering gagal karena butuh TLS atau RSA."
+  },
+  {
+   "d": "security",
+   "q": "Untuk mewajibkan sebuah akun memakai TLS, perintahnya...",
+   "o": [
+    "GRANT SSL ON *.*",
+    "ALTER USER ... REQUIRE SSL",
+    "SET GLOBAL ssl=ON",
+    "CREATE USER ... TLS"
+   ],
+   "a": 1,
+   "e": "ALTER USER ... REQUIRE SSL (atau REQUIRE X509 untuk sertifikat klien)."
+  },
+  {
+   "d": "security",
+   "q": "validate_password di MySQL 8.0 dipasang sebagai...",
+   "o": [
+    "plugin .so",
+    "component",
+    "UDF",
+    "stored procedure"
+   ],
+   "a": 1,
+   "e": "INSTALL COMPONENT 'file://component_validate_password'; lalu atur validate_password.*."
+  },
+  {
+   "d": "security",
+   "q": "FAILED_LOGIN_ATTEMPTS tanpa PASSWORD_LOCK_TIME menyebabkan...",
+   "o": [
+    "akun terkunci permanen",
+    "akun tidak dikunci",
+    "password kedaluwarsa",
+    "akun dihapus"
+   ],
+   "a": 1,
+   "e": "Butuh PASSWORD_LOCK_TIME untuk menentukan lama penguncian setelah percobaan gagal."
+  },
+  {
+   "d": "security",
+   "q": "Privilege paling sempit untuk hanya membaca dua kolom adalah...",
+   "o": [
+    "SELECT pada database",
+    "SELECT pada tabel",
+    "SELECT (kol1, kol2) pada tabel",
+    "SELECT pada *.*"
+   ],
+   "a": 2,
+   "e": "Privilege level kolom memberi akses hanya pada kolom yang disebut."
+  },
+  {
+   "d": "security",
+   "q": "Mengapa nama tabel tidak bisa diparameterkan dengan prepared statement?",
+   "o": [
+    "Karena bukan nilai, melainkan identifier",
+    "Karena MySQL tidak mendukung",
+    "Karena butuh TLS",
+    "Karena butuh index"
+   ],
+   "a": 0,
+   "e": "Parameter hanya untuk nilai; identifier harus divalidasi dengan whitelist."
+  },
+  {
+   "d": "security",
+   "q": "Kehilangan keyring pada enkripsi tablespace berarti...",
+   "o": [
+    "data tetap bisa dibuka",
+    "data terenkripsi tidak bisa dipulihkan",
+    "hanya index hilang",
+    "tabel menjadi MyISAM"
+   ],
+   "a": 1,
+   "e": "Kunci enkripsi tidak bisa direkonstruksi; keyring wajib dibackup terpisah."
+  },
+  {
+   "d": "security",
+   "q": "MySQL Enterprise Firewall bekerja dengan urutan...",
+   "o": [
+    "PROTECTING lalu RECORDING",
+    "RECORDING lalu PROTECTING",
+    "hanya PROTECTING",
+    "hanya OFF"
+   ],
+   "a": 1,
+   "e": "Rekam pola query sah dulu, baru tegakkan; DETECTING hanya mencatat pelanggaran."
+  },
+  {
+   "d": "security",
+   "q": "require_secure_transport=ON berdampak pada...",
+   "o": [
+    "hanya akun admin",
+    "semua koneksi, termasuk replikasi",
+    "hanya koneksi lokal",
+    "hanya klien GUI"
+   ],
+   "a": 1,
+   "e": "Semua koneksi wajib TLS; replikasi juga harus dikonfigurasi dengan TLS."
+  },
+  {
+   "d": "monitoring",
+   "q": "Log untuk melihat query yang melewati long_query_time adalah...",
+   "o": [
+    "error log",
+    "slow query log",
+    "general log",
+    "relay log"
+   ],
+   "a": 1,
+   "e": "Slow query log mencatat query lambat; aktifkan dengan slow_query_log=ON dan long_query_time."
+  },
+  {
+   "d": "monitoring",
+   "q": "Perbedaan KILL dan KILL QUERY adalah...",
+   "o": [
+    "tidak ada bedanya",
+    "KILL memutus koneksi, KILL QUERY menghentikan pernyataan",
+    "KILL QUERY memutus koneksi",
+    "KILL hanya untuk SELECT"
+   ],
+   "a": 1,
+   "e": "KILL memutus koneksi dan me-rollback transaksi; KILL QUERY hanya menghentikan pernyataan berjalan."
+  },
+  {
+   "d": "monitoring",
+   "q": "general_log=ON di produksi berisiko karena...",
+   "o": [
+    "memperlambat index",
+    "menulis setiap pernyataan sehingga disk penuh dan data sensitif tercatat",
+    "mematikan binlog",
+    "mengunci tabel"
+   ],
+   "a": 1,
+   "e": "General log mencatat semua pernyataan tanpa filter, termasuk nilai parameter."
+  },
+  {
+   "d": "monitoring",
+   "q": "Perintah untuk memutar (rotate) log tanpa restart server adalah...",
+   "o": [
+    "FLUSH LOGS",
+    "RESET LOGS",
+    "PURGE LOGS",
+    "ANALYZE LOGS"
+   ],
+   "a": 0,
+   "e": "FLUSH LOGS menutup file lama dan membuka file baru."
+  },
+  {
+   "d": "monitoring",
+   "q": "View yang menunjukkan transaksi mana menunggu lock adalah...",
+   "o": [
+    "sys.schema_unused_indexes",
+    "sys.innodb_lock_waits",
+    "sys.statement_analysis",
+    "sys.metrics"
+   ],
+   "a": 1,
+   "e": "sys.innodb_lock_waits merangkum waiting transaction beserta pemegang lock."
+  },
+  {
+   "d": "monitoring",
+   "q": "table_rows di information_schema.TABLES adalah...",
+   "o": [
+    "jumlah pasti baris",
+    "perkiraan dari statistik",
+    "ukuran dalam byte",
+    "jumlah index"
+   ],
+   "a": 1,
+   "e": "Nilainya perkiraan statistik, bisa jauh berbeda dari jumlah sebenarnya."
+  },
+  {
+   "d": "monitoring",
+   "q": "Audit Enterprise berbeda dari general log karena...",
+   "o": [
+    "tidak bisa difilter",
+    "terstruktur dan dapat difilter per akun/event",
+    "hanya mencatat error",
+    "berformat CSV"
+   ],
+   "a": 1,
+   "e": "Audit log memakai filter dan format terstruktur (JSON/XML), serta mencakup login dan perubahan privilege."
+  },
+  {
+   "d": "optimasi",
+   "q": "Nilai kolom type=ALL pada EXPLAIN berarti...",
+   "o": [
+    "index unik dipakai",
+    "full table scan",
+    "const join",
+    "index range"
+   ],
+   "a": 1,
+   "e": "ALL berarti seluruh tabel dipindai — berbahaya pada tabel besar."
+  },
+  {
+   "d": "optimasi",
+   "q": "Mengapa WHERE DATE(tanggal) = '2026-01-01' menghalangi index?",
+   "o": [
+    "karena fungsi pada kolom",
+    "karena tipe data salah",
+    "karena tidak ada PK",
+    "karena collation"
+   ],
+   "a": 0,
+   "e": "Fungsi diterapkan pada kolom sehingga index tidak bisa dipakai; gunakan rentang."
+  },
+  {
+   "d": "optimasi",
+   "q": "Urutan kolom composite index untuk WHERE pelanggan_id=? ORDER BY tanggal DESC adalah...",
+   "o": [
+    "(tanggal, pelanggan_id)",
+    "(pelanggan_id, tanggal)",
+    "(pelanggan_id)",
+    "(tanggal)"
+   ],
+   "a": 1,
+   "e": "Kolom equality dulu, lalu kolom urutan/range."
+  },
+  {
+   "d": "optimasi",
+   "q": "Extra: Using index pada EXPLAIN menandakan...",
+   "o": [
+    "index tidak dipakai",
+    "covering index (data diambil dari index)",
+    "temporary table",
+    "filesort"
+   ],
+   "a": 1,
+   "e": "Semua kolom yang dibutuhkan tersedia di index sehingga tabel tidak dibaca."
+  },
+  {
+   "d": "optimasi",
+   "q": "Invisible index berguna untuk...",
+   "o": [
+    "menghapus index permanen",
+    "menguji dampak tanpa mengubah rencana optimizer",
+    "mempercepat insert",
+    "membuat index unik"
+   ],
+   "a": 1,
+   "e": "Index disembunyikan dari optimizer sehingga bisa diuji dan dikembalikan tanpa drop."
+  },
+  {
+   "d": "optimasi",
+   "q": "Histogram statistik dibuat dengan...",
+   "o": [
+    "ANALYZE TABLE ... UPDATE HISTOGRAM",
+    "CREATE STATISTICS",
+    "OPTIMIZE TABLE",
+    "EXPLAIN ANALYZE"
+   ],
+   "a": 0,
+   "e": "Perintahnya ANALYZE TABLE tbl UPDATE HISTOGRAM ON kolom WITH n BUCKETS."
+  },
+  {
+   "d": "optimasi",
+   "q": "Cardinality rendah pada index berarti...",
+   "o": [
+    "index sangat selektif",
+    "nilai kolom tidak banyak berbeda",
+    "index rusak",
+    "index tidak lengkap"
+   ],
+   "a": 1,
+   "e": "Kardinalitas rendah = sedikit nilai unik, sehingga index kurang membantu penyaringan."
+  },
+  {
+   "d": "backup",
+   "q": "Backup logis lebih tepat daripada fisik ketika...",
+   "o": [
+    "data berukuran TB",
+    "butuh portabilitas antar versi dan selektif per tabel",
+    "butuh RTO sangat kecil",
+    "server harus tetap online"
+   ],
+   "a": 1,
+   "e": "Dump logis portabel dan fleksibel, tetapi lambat untuk data besar."
+  },
+  {
+   "d": "backup",
+   "q": "Aturan 3-2-1 berarti...",
+   "o": [
+    "3 backup, 2 server, 1 admin",
+    "3 salinan, 2 media, 1 off-site",
+    "3 hari, 2 jam, 1 menit",
+    "3 replika, 2 cluster, 1 router"
+   ],
+   "a": 1,
+   "e": "Tiga salinan data, dua jenis media, satu di luar lokasi."
+  },
+  {
+   "d": "backup",
+   "q": "Fungsi apply-log pada MySQL Enterprise Backup adalah...",
+   "o": [
+    "mengompresi backup",
+    "menerapkan redo/undo agar backup konsisten",
+    "menghapus binlog",
+    "membuat index"
+   ],
+   "a": 1,
+   "e": "Tanpa apply-log, file backup belum dalam kondisi siap dipakai."
+  },
+  {
+   "d": "backup",
+   "q": "Opsi mysqldump untuk dump konsisten pada InnoDB yang aktif adalah...",
+   "o": [
+    "--lock-all-tables",
+    "--single-transaction",
+    "--flush-logs",
+    "--quick"
+   ],
+   "a": 1,
+   "e": "--single-transaction memakai snapshot konsisten tanpa mengunci tabel."
+  },
+  {
+   "d": "backup",
+   "q": "Menyalin file datadir server yang sedang berjalan tanpa lock/snapshot menghasilkan...",
+   "o": [
+    "backup konsisten",
+    "backup tidak konsisten",
+    "backup terenkripsi",
+    "backup incremental"
+   ],
+   "a": 1,
+   "e": "File bisa tersalin di tengah penulisan; gunakan cold backup, FTWRL, atau snapshot storage."
+  },
+  {
+   "d": "backup",
+   "q": "PITR membutuhkan...",
+   "o": [
+    "hanya binlog",
+    "hanya backup penuh",
+    "backup penuh + binlog setelahnya",
+    "replica aktif"
+   ],
+   "a": 2,
+   "e": "Restore backup penuh, lalu terapkan binlog sampai waktu target."
+  },
+  {
+   "d": "ha",
+   "q": "Risiko utama replikasi asinkron adalah...",
+   "o": [
+    "replica tidak bisa dibaca",
+    "kehilangan transaksi yang belum terkirim saat source gagal",
+    "binlog membengkak",
+    "butuh GTID"
+   ],
+   "a": 1,
+   "e": "Event yang belum sampai ke replica hilang bila source mati mendadak."
+  },
+  {
+   "d": "ha",
+   "q": "server_id pada source dan replica harus...",
+   "o": [
+    "sama",
+    "berbeda",
+    "nol",
+    "tidak diisi"
+   ],
+   "a": 1,
+   "e": "server_id unik mencegah loop dan membedakan asal event."
+  },
+  {
+   "d": "ha",
+   "q": "SOURCE_AUTO_POSITION=1 membutuhkan...",
+   "o": [
+    "binlog_format=STATEMENT",
+    "gtid_mode=ON di kedua sisi",
+    "relay_log=OFF",
+    "read_only=OFF"
+   ],
+   "a": 1,
+   "e": "Replikasi berbasis GTID mensyaratkan GTID aktif dan konsisten di source maupun replica."
+  },
+  {
+   "d": "ha",
+   "q": "Format binlog yang paling aman untuk replikasi adalah...",
+   "o": [
+    "STATEMENT",
+    "ROW",
+    "MIXED",
+    "OFF"
+   ],
+   "a": 1,
+   "e": "ROW mencatat perubahan baris sehingga hasilnya deterministik di replica."
+  },
+  {
+   "d": "ha",
+   "q": "Perintah untuk menargetkan channel tertentu pada multisource adalah...",
+   "o": [
+    "WITH CHANNEL",
+    "FOR CHANNEL 'nama'",
+    "USING CHANNEL",
+    "CHANNEL=nama"
+   ],
+   "a": 1,
+   "e": "Semua perintah replikasi menerima FOR CHANNEL 'nama'; channel default adalah string kosong."
+  },
+  {
+   "d": "ha",
+   "q": "Seconds_Behind_Source bernilai NULL biasanya berarti...",
+   "o": [
+    "lag nol",
+    "thread replikasi tidak berjalan",
+    "replica lebih cepat",
+    "GTID tidak aktif"
+   ],
+   "a": 1,
+   "e": "NULL menandakan replica tidak sedang memproses/mengambil event — bukan berarti sinkron."
+  },
+  {
+   "d": "ha",
+   "q": "InnoDB Cluster terdiri dari...",
+   "o": [
+    "Group Replication + MySQL Shell AdminAPI + MySQL Router",
+    "ProxySQL + MHA + Percona",
+    "Galera + HAProxy",
+    "Replikasi + cron"
+   ],
+   "a": 0,
+   "e": "Tiga komponen itu: replikasi grup, alat administrasi, dan router koneksi."
+  },
+  {
+   "d": "ha",
+   "q": "Cluster tiga anggota dapat menoleransi...",
+   "o": [
+    "dua anggota mati",
+    "satu anggota mati",
+    "tidak ada",
+    "semua anggota mati"
+   ],
+   "a": 1,
+   "e": "Mayoritas dua dari tiga tetap hidup sehingga satu kegagalan bisa ditoleransi."
+  },
+  {
+   "d": "ha",
+   "q": "Perintah untuk menghidupkan kembali cluster setelah semua anggota mati adalah...",
+   "o": [
+    "cluster.rejoinInstance()",
+    "dba.rebootClusterFromCompleteOutage()",
+    "cluster.addInstance()",
+    "dba.createCluster()"
+   ],
+   "a": 1,
+   "e": "rebootClusterFromCompleteOutage khusus untuk kondisi seluruh cluster mati."
+  }
+ ]
+}
