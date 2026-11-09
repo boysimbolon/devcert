@@ -1,10 +1,35 @@
-/* DevCert — progres, pencarian, navigasi */
+/* DevCert — progres, pencarian, navigasi, tema */
 (function () {
   "use strict";
   var KEY = "devcert.progress.v1";
+  var THEME_KEY = "devcert-theme";
   var body = document.body;
   var certId = body.dataset.cert || "";
   var topicId = body.dataset.topic || "";
+
+  /* ---------- tema terang/gelap ---------- */
+  function applyTheme(mode) {
+    document.documentElement.setAttribute("data-theme", mode);
+    var btn = document.getElementById("themeBtn");
+    if (btn) btn.setAttribute("aria-pressed", mode === "dark" ? "true" : "false");
+    var meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute("content", mode === "dark" ? "#0b0d10" : "#f2f4f7");
+  }
+  function initTheme() {
+    var saved = null;
+    try { saved = localStorage.getItem(THEME_KEY); } catch (e) {}
+    if (!saved) saved = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    applyTheme(saved);
+    var btn = document.getElementById("themeBtn");
+    if (!btn) return;
+    btn.addEventListener("click", function () {
+      var next = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      applyTheme(next);
+      try { localStorage.setItem(THEME_KEY, next); } catch (e) {}
+    });
+  }
+  initTheme();
+
 
   function load() {
     try { return JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) { return {}; }
