@@ -8,14 +8,27 @@ Jalankan: python3 build.py
 """
 import html
 import json
+import os
 import re
 import shutil
 from pathlib import Path
 
 ROOT = Path(__file__).parent
 CONTENT = ROOT / "content"
-OUT = ROOT / "out"
+# DEVCERT_BASE memungkinkan situs disajikan di subpath (mis. /devcert/situs)
+BASE = os.environ.get("DEVCERT_BASE", "").rstrip("/")
+OUT = ROOT / os.environ.get("DEVCERT_OUT", "out")
 ASSETS = ROOT / "assets"
+
+
+def with_base(markup: str) -> str:
+    """Prefix semua URL internal absolut dengan BASE agar aman di subpath."""
+    if not BASE:
+        return markup
+    markup = markup.replace('href="/', 'href="' + BASE + "/")
+    markup = markup.replace('src="/', 'src="' + BASE + "/")
+    markup = markup.replace('url(/assets/', 'url(' + BASE + '/assets/')
+    return markup
 
 SITE = {
     "name": "DevCert",
@@ -230,7 +243,7 @@ PAGE = """<!doctype html>
   <span>Progres disimpan di browser kamu (localStorage).</span>
   <span><a href="https://boyfsimbolon.netlify.app/devcert">Portofolio pembuatnya →</a></span>
 </footer>
-<script>window.__TOTAL_TOPICS__={total};</script>
+<script>window.__TOTAL_TOPICS__={total};window.__BASE__="{base}";</script>
 <script src="/assets/app.js?v={ver}" defer></script>
 </body>
 </html>"""
@@ -275,10 +288,11 @@ def write_page(path: Path, title, desc, content, sidebar, cert_id="", topic_id="
         shelld = " no-side"
     else:
         shelld = ""
-    path.write_text(PAGE.format(title=title, desc=html.escape(desc), content=content,
-                                sidebar=sidebar, cert_id=cert_id, topic_id=topic_id,
-                                shelld=shelld, total=TOTAL_TOPICS, ver=VERSION),
-                    encoding="utf-8")
+    page = PAGE.format(title=title, desc=html.escape(desc), content=content,
+                       sidebar=sidebar, cert_id=cert_id, topic_id=topic_id,
+                       shelld=shelld, total=TOTAL_TOPICS, ver=VERSION,
+                       base=BASE)
+    path.write_text(with_base(page), encoding="utf-8")
 
 # ----------------------------------------------------------------------- pages
 def load_certs():
@@ -569,12 +583,12 @@ def main():
         else:
             qdir.mkdir(parents=True, exist_ok=True)
         if qdir:
-          (qdir / "index.html").write_text(PAGE.format(
+          (qdir / "index.html").write_text(with_base(PAGE.format(
             title=f"Ujian latihan {cert['title']} — DevCert",
             desc=f"Simulasi ujian {cert['code']} dengan soal pilihan ganda dan pembahasan.",
             content=build_quiz_page(cert),
             sidebar="",
-            cert_id=cert["id"], topic_id="", shelld=" no-side", total=TOTAL_TOPICS, ver=VERSION),
+            cert_id=cert["id"], topic_id="", shelld=" no-side", total=TOTAL_TOPICS, ver=VERSION, base=BASE)),
             encoding="utf-8")
 
         for i, (d, t, url) in enumerate(flat):
@@ -583,11 +597,11 @@ def main():
             body, meta = build_topic_page(cert, d, t, prev_t, next_t)
             page = OUT / "sertifikasi" / cert["id"] / d["slug"] / t["slug"] / "index.html"
             page.parent.mkdir(parents=True, exist_ok=True)
-            page.write_text(PAGE.format(title=f"{t['title']} — {cert['title']}",
-                                        desc=meta.get("summary", t["title"]),
-                                        content=body,
-                                        sidebar=render_sidebar(certs, cert["id"], t["id"]),
-                                        cert_id=cert["id"], topic_id=t["id"], shelld="", total=TOTAL_TOPICS, ver=VERSION), encoding="utf-8")
+            page.write_text(with_base(PAGE.format(title=f"{t['title']} — {cert['title']}",
+                                                  desc=meta.get("summary", t["title"]),
+                                                  content=body,
+                                                  sidebar=render_sidebar(certs, cert["id"], t["id"]),
+                                                  cert_id=cert["id"], topic_id=t["id"], shelld="", total=TOTAL_TOPICS, ver=VERSION, base=BASE)), encoding="utf-8")
             plain = re.sub(r"<[^>]+>", " ", md_to_html(parse_frontmatter(
                 (CONTENT / cert["id"] / t["file"]).read_text(encoding="utf-8"))[1]))
             index.append({
@@ -596,6 +610,9 @@ def main():
                 "x": re.sub(r"\s+", " ", plain)[:400],
             })
 
+    if BASE:
+        for it in index:
+            it["u"] = BASE + it["u"]
     (OUT / "search.json").write_text(json.dumps(index, ensure_ascii=False), encoding="utf-8")
     qout = OUT / "quiz"
     qout.mkdir(parents=True, exist_ok=True)

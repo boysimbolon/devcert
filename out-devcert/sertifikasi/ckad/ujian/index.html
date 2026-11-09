@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ujian latihan Certified Kubernetes Application Developer — DevCert</title>
+<meta name="description" content="Simulasi ujian CKAD dengan soal pilihan ganda dan pembahasan.">
+<meta name="theme-color" content="#f2f4f7">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>try{var t=localStorage.getItem('devcert-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}</script>
+<link rel="stylesheet" href="/devcert/situs/assets/style.css?v=65652c1f">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%232460e0'/><text x='50' y='68' font-size='54' font-family='monospace' fill='white' text-anchor='middle'>D</text></svg>">
+</head>
+<body data-cert="ckad" data-topic="">
+<a class="skip" href="#main">Lewati ke konten</a>
+<header class="top">
+  <a class="brand" href="/devcert/situs/"><span class="mark">D</span> DevCert <span class="dot" title="siap dipakai"></span></a>
+  <button id="searchBtn" class="search-open" type="button">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg>
+    <span>Cari topik…</span> <kbd>/</kbd>
+  </button>
+  <div class="progress-mini" title="Progres belajar">
+    <svg viewBox="0 0 36 36" aria-hidden="true"><circle class="bg" cx="18" cy="18" r="15.5"/><circle id="ring" class="fg" cx="18" cy="18" r="15.5"/></svg>
+    <span id="progressPct">0%</span>
+  </div>
+  <button id="themeBtn" class="icon-btn" type="button" aria-label="Ganti tema terang atau gelap" title="Ganti tema">
+    <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/></svg>
+    <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.6 6.6 0 0 0 9.8 9.8Z"/></svg>
+  </button>
+</header>
+<div class="shell no-side">
+  <aside class="side"></aside>
+  <main id="main">
+<div class="crumbs"><a href="/devcert/situs/">Beranda</a> / <a href="/devcert/situs/sertifikasi/ckad/">Certified Kubernetes Application Developer</a> / <span>Ujian latihan</span></div>
+<header class="cert-hero">
+  <div class="cert-vendor">Simulasi ujian · CKAD</div>
+  <h1>Ujian latihan: Certified Kubernetes Application Developer</h1>
+  <p class="lede">55 soal pilihan ganda dari 14 domain, waktu 90 menit, ambang latihan (ujian asli 66%) 66%. Sama seperti ujian aslinya: tidak ada pembahasan sampai kamu submit.</p>
+</header>
+
+<div class="quiz" id="quiz">
+  <section class="quiz-start" id="qStart">
+    <div class="facts">
+      <div class="fact"><span>Soal</span><b>55</b></div>
+      <div class="fact"><span>Durasi</span><b>90 menit</b></div>
+      <div class="fact"><span>Ambang latihan (ujian asli 66%)</span><b>66%</b></div>
+      <div class="fact"><span>Domain</span><b>5</b></div>
+    </div>
+    <div class="qmeta"><div class="qmeta-row"><span>Application Design and Build</span><b>11 soal</b></div><div class="qmeta-row"><span>Application Deployment</span><b>11 soal</b></div><div class="qmeta-row"><span>Application Observability and Maintenance</span><b>8 soal</b></div><div class="qmeta-row"><span>Application Environment, Configuration and Security</span><b>14 soal</b></div><div class="qmeta-row"><span>Services and Networking</span><b>11 soal</b></div></div>
+    <button class="btn primary" id="startQuiz" type="button">Mulai ujian</button>
+    <p class="hint">Jawaban bisa diubah sebelum submit. Waktu berjalan otomatis; saat habis, ujian dikumpulkan sendiri.</p>
+  </section>
+
+  <section class="quiz-run" id="qRun" hidden>
+    <div class="qbar">
+      <span class="qcount" id="qCount">Soal 1 / 55</span>
+      <span class="qtimer" id="qTimer">--:--</span>
+      <button class="btn ghost small" id="qSubmit" type="button">Kumpulkan</button>
+    </div>
+    <div class="qbody">
+      <p class="qdom" id="qDom"></p>
+      <h2 class="qtext" id="qText"></h2>
+      <div class="qopts" id="qOpts"></div>
+    </div>
+    <div class="qnav">
+      <button class="btn ghost small" id="qPrev" type="button">← Sebelumnya</button>
+      <button class="btn ghost small" id="qNext" type="button">Berikutnya →</button>
+    </div>
+    <div class="qgrid" id="qGrid"></div>
+  </section>
+
+  <section class="quiz-result" id="qResult" hidden></section>
+</div>
+<script id="quizData" type="application/json">{"cert": "ckad", "minutes": 90, "pass": 66, "passLabel": "ambang latihan (ujian asli 66%)", "domTitles": {"desain": "Application Design and Build", "deployment": "Application Deployment", "observability": "Application Observability and Maintenance", "config": "Application Environment, Configuration and Security", "services": "Services and Networking"}, "questions": [{"d": "desain", "q": "Perintah membuat YAML Deployment tanpa menerapkannya adalah...", "o": ["kubectl create deploy web --image=nginx --dry-run=client -o yaml", "kubectl apply --dry-run", "kubectl get deploy -o yaml", "kubectl describe deploy"], "a": 0, "e": "Dry-run client mencetak manifest."}, {"d": "desain", "q": "Init container berjalan...", "o": ["paralel dengan container utama", "berurutan sampai sukses sebelum container utama", "setelah container utama", "hanya saat gagal"], "a": 1, "e": "Init harus selesai dulu."}, {"d": "desain", "q": "Dua container dalam satu Pod berkomunikasi lewat...", "o": ["nama container", "localhost", "service", "node IP"], "a": 1, "e": "Berbagi network namespace."}, {"d": "desain", "q": "restartPolicy yang valid untuk Job adalah...", "o": ["Always", "Never atau OnFailure", "OnFailure saja", "Always atau Never"], "a": 1, "e": "Always tidak valid pada Job."}, {"d": "desain", "q": "CronJob dengan concurrencyPolicy Forbid berarti...", "o": ["jalankan bersamaan", "lewati jika job sebelumnya masih berjalan", "hapus job lama", "batalkan job baru"], "a": 1, "e": "Mencegah tumpang tindih."}, {"d": "desain", "q": "Volume yang hilang saat Pod dihapus adalah...", "o": ["PVC", "emptyDir", "hostPath", "configMap"], "a": 1, "e": "Umurnya sebatas Pod."}, {"d": "desain", "q": "Mount ConfigMap ke satu berkas spesifik memakai...", "o": ["subPath", "items", "projected", "hostPath"], "a": 0, "e": "subPath mencegah direktori tertimpa."}, {"d": "desain", "q": "Perintah memfilter Pod dengan label env=prod adalah...", "o": ["kubectl get pods env=prod", "kubectl get pods -l env=prod", "kubectl get pods --label env", "kubectl get pods -n env:prod"], "a": 1, "e": "Flag -l untuk selector."}, {"d": "desain", "q": "Selector Service yang tidak cocok dengan label Pod menyebabkan...", "o": ["Pod restart", "endpoint kosong", "Service gagal dibuat", "Ingress error"], "a": 1, "e": "Tidak ada backend."}, {"d": "desain", "q": "Image dengan tag latest memakai imagePullPolicy default...", "o": ["IfNotPresent", "Always", "Never", "selalu menanyakan"], "a": 1, "e": "latest default Always."}, {"d": "desain", "q": "Menambah container ke Pod yang sudah berjalan...", "o": ["bisa dengan kubectl edit", "tidak bisa, Pod immutable untuk daftar container", "bisa dengan kubectl set image", "bisa dengan scale"], "a": 1, "e": "Perubahan struktur butuh recreate."}, {"d": "deployment", "q": "Deployment membuat objek per revisi berupa...", "o": ["Pod langsung", "ReplicaSet", "StatefulSet", "Job"], "a": 1, "e": "RS per revisi."}, {"d": "deployment", "q": "Field yang immutable pada Deployment adalah...", "o": ["replicas", "selector", "image", "labels template"], "a": 1, "e": "Selector tidak bisa diubah."}, {"d": "deployment", "q": "maxSurge 1 dan maxUnavailable 0 berarti...", "o": ["semua Pod diganti sekaligus", "satu Pod tambahan dibuat sebelum yang lama dihapus", "tidak ada downtime jaminan", "update berhenti"], "a": 1, "e": "Zero unavailable, satu ekstra."}, {"d": "deployment", "q": "kubectl rollout undo --to-revision=1 akan...", "o": ["menghapus revisi 1", "membuat revisi baru dari isi revisi 1", "menghentikan rollout", "mengubah selector"], "a": 1, "e": "Rollback menambah revisi."}, {"d": "deployment", "q": "HPA CPU memerlukan container memiliki...", "o": ["limits.memory", "requests.cpu", "nodeSelector", "readinessProbe"], "a": 1, "e": "Dasar perhitungan utilisasi."}, {"d": "deployment", "q": "Tanpa metrics-server, HPA menampilkan...", "o": ["0%", "unknown", "error pembuatan", "100%"], "a": 1, "e": "Tidak ada metrik."}, {"d": "deployment", "q": "Perintah scaling cepat dari CLI adalah...", "o": ["kubectl set replicas", "kubectl scale deployment web --replicas=5", "kubectl edit replicas", "kubectl rollout scale"], "a": 1, "e": "kubectl scale."}, {"d": "deployment", "q": "helm upgrade --install berguna karena...", "o": ["selalu membuat namespace", "idempotent: install bila belum ada, upgrade bila sudah", "menghapus release lama", "mengabaikan values"], "a": 1, "e": "Aman di pipeline."}, {"d": "deployment", "q": "helm rollback memerlukan...", "o": ["nama chart", "nomor revisi", "file values", "namespace baru"], "a": 1, "e": "Argumen revisi."}, {"d": "deployment", "q": "namePrefix pada Kustomize mengubah...", "o": ["hanya nama file", "nama resource (dan referensi yang dikenali)", "namespace", "image tag"], "a": 1, "e": "Prefiks resource."}, {"d": "deployment", "q": "kubectl apply -k dipakai untuk...", "o": ["menerapkan Kustomize overlay", "menerapkan Helm chart", "membuat secret", "melihat log"], "a": 0, "e": "-k = kustomize."}, {"d": "observability", "q": "Probe yang mengeluarkan Pod dari endpoint tanpa restart adalah...", "o": ["liveness", "readiness", "startup", "exec"], "a": 1, "e": "Readiness mengatur trafik."}, {"d": "observability", "q": "Probe untuk aplikasi dengan waktu start lama adalah...", "o": ["readinessProbe", "livenessProbe", "startupProbe", "tcpSocket"], "a": 2, "e": "Menahan liveness selama start."}, {"d": "observability", "q": "Liveness gagal berulang menyebabkan...", "o": ["Pod dihapus", "container restart", "trafik berhenti", "Pod Pending"], "a": 1, "e": "Kubelet me-restart container."}, {"d": "observability", "q": "kubectl logs --previous berguna untuk...", "o": ["log Pod lain", "log instance container sebelum restart", "log node", "log ingress"], "a": 1, "e": "Instance sebelumnya."}, {"d": "observability", "q": "Pod dengan dua container, log salah satu dibaca dengan...", "o": ["kubectl logs pod", "kubectl logs pod -c nama", "kubectl describe pod", "kubectl exec"], "a": 1, "e": "Wajib -c."}, {"d": "observability", "q": "Status CreateContainerConfigError menandakan...", "o": ["image tidak ada", "ConfigMap/Secret yang dirujuk tidak ada", "resource kurang", "probe gagal"], "a": 1, "e": "Referensi konfigurasi hilang."}, {"d": "observability", "q": "Kelas QoS ketika request = limit untuk CPU dan memori adalah...", "o": ["BestEffort", "Burstable", "Guaranteed", "Premium"], "a": 2, "e": "Semua container harus sama."}, {"d": "observability", "q": "Container melebihi limit memori akan...", "o": ["di-throttle", "di-OOMKill", "diabaikan", "dipindah node"], "a": 1, "e": "Exit 137."}, {"d": "config", "q": "ConfigMap dari file tunggal dibuat dengan...", "o": ["--from-literal", "--from-file", "--from-env-file", "--from-dir"], "a": 1, "e": "Satu key per file."}, {"d": "config", "q": "Mengonsumsi semua key ConfigMap sebagai env memakai...", "o": ["env", "envFrom", "valueFrom", "volumeMount"], "a": 1, "e": "envFrom dengan configMapRef."}, {"d": "config", "q": "Perubahan ConfigMap pada env Pod...", "o": ["langsung berlaku", "berlaku setelah Pod dibuat ulang", "tidak pernah", "memicu restart otomatis"], "a": 1, "e": "Env dibaca saat start."}, {"d": "config", "q": "Secret secara default bersifat...", "o": ["terenkripsi AES", "base64 saja", "plaintext", "hash"], "a": 1, "e": "Bukan enkripsi."}, {"d": "config", "q": "Field untuk menulis nilai Secret sebagai plaintext di YAML adalah...", "o": ["data", "stringData", "binaryData", "value"], "a": 1, "e": "stringData dikonversi otomatis."}, {"d": "config", "q": "Secret TLS dibuat dengan...", "o": ["kubectl create secret generic", "kubectl create secret tls", "kubectl create cm tls", "kubectl create secret docker-registry"], "a": 1, "e": "Tipe tls."}, {"d": "config", "q": "Bila nama env sama muncul di env dan envFrom, yang menang adalah...", "o": ["envFrom", "env eksplisit", "yang lebih dulu", "error"], "a": 1, "e": "env menimpa."}, {"d": "config", "q": "fsGroup pada securityContext mengatur...", "o": ["user proses", "grup pemilik volume", "capability", "seccomp"], "a": 1, "e": "Kepemilikan volume."}, {"d": "config", "q": "readOnlyRootFilesystem true membuat aplikasi yang menulis ke /var/cache gagal kecuali...", "o": ["dijalankan sebagai root", "dipasang volume pada path tersebut", "capability ditambah", "probe dimatikan"], "a": 1, "e": "Perlu emptyDir/PVC."}, {"d": "config", "q": "allowPrivilegeEscalation false mencegah...", "o": ["network access", "eskalasi lewat setuid", "mount volume", "exec"], "a": 1, "e": "Mencegah setuid escalation."}, {"d": "config", "q": "RoleBinding ke ServiceAccount menuliskan subject dengan format...", "o": ["nama saja", "namespace:nama", "sa/nama", "system:nama"], "a": 1, "e": "namespace:serviceaccount."}, {"d": "config", "q": "Izin lintas namespace memerlukan...", "o": ["Role + RoleBinding", "ClusterRole + ClusterRoleBinding", "ServiceAccount saja", "NetworkPolicy"], "a": 1, "e": "Cluster-scope."}, {"d": "config", "q": "Namespace dengan quota requests.cpu mewajibkan Pod...", "o": ["punya limits", "punya requests", "punya nodeSelector", "punya probe"], "a": 1, "e": "Jika tidak, pembuatan ditolak."}, {"d": "config", "q": "LimitRange tipe Container berfungsi...", "o": ["membatasi total namespace", "menetapkan default/maksimum per container", "membatasi pod count", "mengatur QoS"], "a": 1, "e": "Default limit per container."}, {"d": "services", "q": "Service default di kluster adalah tipe...", "o": ["NodePort", "ClusterIP", "LoadBalancer", "ExternalName"], "a": 1, "e": "ClusterIP."}, {"d": "services", "q": "Port pada Service yang mengarah ke port container disebut...", "o": ["port", "targetPort", "nodePort", "containerPort"], "a": 1, "e": "targetPort."}, {"d": "services", "q": "Service tanpa backend dapat diperiksa lewat...", "o": ["kubectl get endpoints", "kubectl get svc -o wide", "kubectl describe pod", "kubectl logs"], "a": 0, "e": "Endpoint kosong."}, {"d": "services", "q": "Headless service dibuat dengan...", "o": ["type: None", "clusterIP: None", "selector: None", "port: None"], "a": 1, "e": "Tanpa ClusterIP."}, {"d": "services", "q": "Ingress memerlukan...", "o": ["Service LoadBalancer", "Ingress controller", "NodePort wajib", "ExternalName"], "a": 1, "e": "Tanpa controller tidak berefek."}, {"d": "services", "q": "pathType yang cocok untuk pencocokan awalan path adalah...", "o": ["Exact", "Prefix", "Regex", "Any"], "a": 1, "e": "Prefix."}, {"d": "services", "q": "NetworkPolicy tanpa aturan ingress berarti...", "o": ["semua diizinkan", "semua ingress ditolak untuk Pod terpilih", "hanya DNS diizinkan", "policy diabaikan"], "a": 1, "e": "Default deny untuk Pod itu."}, {"d": "services", "q": "Dalam satu elemen from, podSelector dan namespaceSelector digabung dengan logika...", "o": ["OR", "AND", "XOR", "NOT"], "a": 1, "e": "AND; elemen terpisah = OR."}, {"d": "services", "q": "Policy egress yang tidak mengizinkan port 53 menyebabkan...", "o": ["Pod tidak start", "DNS gagal", "Ingress gagal", "Service hilang"], "a": 1, "e": "CoreDNS tidak terjangkau."}, {"d": "services", "q": "FQDN Service db pada namespace prod adalah...", "o": ["db.prod", "db.prod.svc.cluster.local", "db.svc.prod", "prod.db.local"], "a": 1, "e": "Format baku."}, {"d": "services", "q": "Nama pendek Service hanya resolve...", "o": ["di semua namespace", "di namespace yang sama", "di kube-system", "di host"], "a": 1, "e": "Perlu FQDN lintas namespace."}]}</script>
+<script src="/devcert/situs/assets/quiz.js?v=65652c1f" defer></script></main>
+</div>
+<div id="searchWrap" class="search-wrap" hidden>
+  <div class="search-box">
+    <input id="searchInput" type="search" placeholder="Cari: JPA, servlet, JMS, batch…" autocomplete="off">
+    <button id="searchClose" type="button">tutup</button>
+  </div>
+  <ul id="searchResults" class="search-results"></ul>
+</div>
+<footer class="foot">
+  <span>DevCert — dibuat untuk belajar mandiri, dalam bahasa Indonesia.</span>
+  <span>Progres disimpan di browser kamu (localStorage).</span>
+  <span><a href="https://boyfsimbolon.netlify.app/devcert">Portofolio pembuatnya →</a></span>
+</footer>
+<script>window.__TOTAL_TOPICS__=392;window.__BASE__="/devcert/situs";</script>
+<script src="/devcert/situs/assets/app.js?v=65652c1f" defer></script>
+</body>
+</html>

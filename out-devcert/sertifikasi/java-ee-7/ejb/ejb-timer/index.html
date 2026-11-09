@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EJB timer service — Java EE 7 Application Developer</title>
+<meta name="description" content="Membuat timer programatik dan kalender, menangani timeout, dan memahami timer persistent.">
+<meta name="theme-color" content="#f2f4f7">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>try{var t=localStorage.getItem('devcert-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}</script>
+<link rel="stylesheet" href="/devcert/situs/assets/style.css?v=65652c1f">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%232460e0'/><text x='50' y='68' font-size='54' font-family='monospace' fill='white' text-anchor='middle'>D</text></svg>">
+</head>
+<body data-cert="java-ee-7" data-topic="ejb-timer">
+<a class="skip" href="#main">Lewati ke konten</a>
+<header class="top">
+  <a class="brand" href="/devcert/situs/"><span class="mark">D</span> DevCert <span class="dot" title="siap dipakai"></span></a>
+  <button id="searchBtn" class="search-open" type="button">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg>
+    <span>Cari topik…</span> <kbd>/</kbd>
+  </button>
+  <div class="progress-mini" title="Progres belajar">
+    <svg viewBox="0 0 36 36" aria-hidden="true"><circle class="bg" cx="18" cy="18" r="15.5"/><circle id="ring" class="fg" cx="18" cy="18" r="15.5"/></svg>
+    <span id="progressPct">0%</span>
+  </div>
+  <button id="themeBtn" class="icon-btn" type="button" aria-label="Ganti tema terang atau gelap" title="Ganti tema">
+    <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/></svg>
+    <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.6 6.6 0 0 0 9.8 9.8Z"/></svg>
+  </button>
+</header>
+<div class="shell">
+  <aside class="side"><nav class="nav"><a class="cert-link active" href="/devcert/situs/sertifikasi/java-ee-7/">Java EE 7 Application Developer<span class="chip">39 topik</span></a><div class="dom"><span class="dom-title">Understand Java EE Architecture</span><ul><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-ee-7/arsitektur/standar-container-api/" data-topic="java-ee-7/standar-container-api"><span class="tick" aria-hidden="true"></span>Standar, container, API, dan service Java EE 7</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-ee-7/arsitektur/komponen-per-tier/" data-topic="java-ee-7/komponen-per-tier"><span class="tick" aria-hidden="true"></span>Komponen per tier dan container</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-ee-7/arsitektur/packaging-deployment/" data-topic="java-ee-7/packaging-deployment"><span class="tick" aria-hidden="true"></span>Membuat, memaketkan, dan men-deploy aplikasi</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-ee-7/arsitektur/ejb-cdi-lifecycle/" data-topic="java-ee-7/ejb-cdi-lifecycle"><span class="tick" aria-hidden="true"></span>Lifecycle dan scope EJB serta CDI bean</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-ee-7/arsitektur/anotasi-injeksi-jndi/" data-topic="java-ee-7/anotasi-injeksi-jndi"><span class="tick" aria-hidden="true"></span>Relasi bean, anotasi, injeksi, dan JNDI</a></li></ul></div><div class="dom"><span class="dom-title">Manage Persistence using JPA Entities and Bean Validation</span><ul><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-ee-7/jpa/entity-orm/" data-topic="java-ee-7/entity-orm"><span class="tick" aria-hidden="true"></span>Entity dan pemetaan ORM</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-ee-7/jpa/entitymanager-transaksi/" data-topic="java-ee-7/entitymanager-transaksi"><span class="tick" aria-hidden="true"></span>EntityManager, transaksi, dan locking</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-ee-7/jpa/konversi-validasi-keygen/" data-topic="java-ee-7/konversi-validasi-keygen"><span class="tick" aria-hidden="true"></span>Konversi, validasi, dan key generation</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-ee-7/jpa/jpql/" data-topic="java-ee-7/jpql"><span class="tick" aria-hidden="true"></span>Menulis dan menjalankan JPQL</a></li></ul></div><div class="dom"><span class="dom-title">Implement Business Logic by Using EJBs</span><ul><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-ee-7/ejb/session-bean/" data-topic="java-ee-7/session-bean"><span class="tick" aria-hidden="true"></span>Session bean: sinkron, asinkron, dan interceptor</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-ee-7/ejb/transaksi-cmt-bmt/" data-topic="java-ee-7/transaksi-cmt-bmt"><span class="tick" aria-hidden="true"></span>Transaksi container-managed vs bean-managed</a></li><li><a class="topic-link active" href="/devcert/situs/sertifikasi/java-ee-7/ejb/ejb-timer/" data-topic="java-ee-7/ejb-timer"><span class="tick" aria-hidden="true"></span>EJB timer service</a></li></ul></div><div class="dom"><span class="dom-title">Use Java Message Service API</span><ul><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-ee-7/jms/model-jms/" data-topic="java-ee-7/model-jms"><span class="tick" aria-hidden="true"></span>Model messaging JMS dan message-driven bean</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-ee-7/jms/transaksi-jms/" data-topic="java-ee-7/transaksi-jms"><span class="tick" aria-hidden="true"></span>Transaksi pada JMS API</a></li></ul></div><div class="dom"><span class="dom-title">Implement SOAP Services by Using JAX-WS and JAXB APIs</span><ul><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-ee-7/soap/jaxws/" data-topic="java-ee-7/jaxws"><span class="tick" aria-hidden="true"></span>SOAP service dan client dengan JAX-WS</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-ee-7/soap/jaxb/" data-topic="java-ee-7/jaxb"><span class="tick" aria-hidden="true"></span>Pemetaan Java ke XML dengan JAXB</a></li></ul></div><div class="dom"><span class="dom-title">Create Java Web Applications using Servlets</span><ul><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-ee-7/servlet/servlet-dasar/" data-topic="java-ee-7/servlet-dasar"><span class="tick" aria-hidden="true"></span>Servlet, URL mapping, dan metode HTTP</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-ee-7/servlet/header-parameter-cookie/" data-topic="java-ee-7/header-parameter-cookie"><span class="tick" aria-hidden="true"></span>Header, parameter, dan cookie</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-ee-7/servlet/lifecycle-filter/" data-topic="java-ee-7/lifecycle-filter"><span class="tick" aria-hidden="true"></span>Lifecycle servlet, filter, dan listener</a></li></ul></div><div class="dom"><span class="dom-title">Create Java Web Applications using JSPs</span><ul><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-ee-7/jsp/jsp-lifecycle/" data-topic="java-ee-7/jsp-lifecycle"><span class="tick" aria-hidden="true"></span>Siklus hidup JSP</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-ee-7/jsp/jsp-sintaks-jstl-el/" data-topic="java-ee-7/jsp-sintaks-jstl-el"><span class="tick" aria-hidden="true"></span>Sintaks JSP, JSTL, dan Expression Language</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-ee-7/jsp/error-handling/" data-topic="java-ee-7/error-handling"><span class="tick" aria-hidden="true"></span>Penanganan error di servlet dan JSP</a></li></ul></div><div class="dom"><span class="dom-title">Implement REST Services using JAX-RS API</span><ul><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-ee-7/jax-rs/rest-konvensi/" data-topic="java-ee-7/rest-konvensi"><span class="tick" aria-hidden="true"></span>Konvensi REST dan desain resource</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-ee-7/jax-rs/jaxrs-service-client/" data-topic="java-ee-7/jaxrs-service-client"><span class="tick" aria-hidden="true"></span>Service dan client JAX-RS</a></li></ul></div><div class="dom"><span class="dom-title">Create Java Applications using WebSockets</span><ul><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-ee-7/websocket/websocket-konsep/" data-topic="java-ee-7/websocket-konsep"><span class="tick" aria-hidden="true"></span>Konsep dan gaya komunikasi WebSocket</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-ee-7/websocket/endpoint-handler/" data-topic="java-ee-7/endpoint-handler"><span class="tick" aria-hidden="true"></span>Endpoint server dan klien JSR 356</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-ee-7/websocket/encoder-decoder/" data-topic="java-ee-7/encoder-decoder"><span class="tick" aria-hidden="true"></span>Encoder dan decoder pesan WebSocket</a></li></ul></div><div class="dom"><span class="dom-title">Develop Web Applications using JSFs</span><ul><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-ee-7/jsf/jsf-arsitektur-lifecycle/" data-topic="java-ee-7/jsf-arsitektur-lifecycle"><span class="tick" aria-hidden="true"></span>Arsitektur dan lifecycle JSF</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-ee-7/jsf/jsf-sintaks-taglib/" data-topic="java-ee-7/jsf-sintaks-taglib"><span class="tick" aria-hidden="true"></span>Sintaks JSF dan tag library</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-ee-7/jsf/jsf-lokalisasi-pesan/" data-topic="java-ee-7/jsf-lokalisasi-pesan"><span class="tick" aria-hidden="true"></span>Lokalisasi dan pesan di JSF</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-ee-7/jsf/jsf-el-cdi/" data-topic="java-ee-7/jsf-el-cdi"><span class="tick" aria-hidden="true"></span>EL dan integrasi JSF dengan CDI</a></li></ul></div><div class="dom"><span class="dom-title">Secure Java EE 7 Applications</span><ul><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-ee-7/security/security-declarative-programmatic/" data-topic="java-ee-7/security-declarative-programmatic"><span class="tick" aria-hidden="true"></span>Security deklaratif dan programatik</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-ee-7/security/ws-security/" data-topic="java-ee-7/ws-security"><span class="tick" aria-hidden="true"></span>Standar keamanan web service</a></li></ul></div><div class="dom"><span class="dom-title">Use CDI Beans</span><ul><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-ee-7/cdi/qualifier-producer-disposer/" data-topic="java-ee-7/qualifier-producer-disposer"><span class="tick" aria-hidden="true"></span>Qualifier, producer, dan disposer</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-ee-7/cdi/interceptor-event-stereotype/" data-topic="java-ee-7/interceptor-event-stereotype"><span class="tick" aria-hidden="true"></span>Interceptor, event, dan stereotype CDI</a></li></ul></div><div class="dom"><span class="dom-title">Use Concurrency API in Java EE 7 Applications</span><ul><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-ee-7/concurrency/concurrency-utilities/" data-topic="java-ee-7/concurrency-utilities"><span class="tick" aria-hidden="true"></span>Concurrency utilities di Java EE</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-ee-7/concurrency/managed-executor/" data-topic="java-ee-7/managed-executor"><span class="tick" aria-hidden="true"></span>Managed executor dan pola asinkron</a></li></ul></div><div class="dom"><span class="dom-title">Use Batch API in Java EE 7 Applications</span><ul><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-ee-7/batch/batch-jsl/" data-topic="java-ee-7/batch-jsl"><span class="tick" aria-hidden="true"></span>Job batch dengan JSL</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-ee-7/batch/batch-api-jsr352/" data-topic="java-ee-7/batch-api-jsr352"><span class="tick" aria-hidden="true"></span>Batch API dan JobOperator</a></li></ul></div><a class="cert-link" href="/devcert/situs/sertifikasi/toefl-ibt/">TOEFL iBT<span class="chip">30 skill</span></a><a class="cert-link" href="/devcert/situs/sertifikasi/mysql-8-dba/">MySQL 8.0 Database Administrator<span class="chip">47 topik</span></a><a class="cert-link" href="/devcert/situs/sertifikasi/mysql-8-dev/">MySQL 8.0 Database Developer<span class="chip">32 topik</span></a><a class="cert-link" href="/devcert/situs/sertifikasi/mysql-impl/">MySQL Implementation Associate<span class="chip">22 topik</span></a><a class="cert-link" href="/devcert/situs/sertifikasi/oracle-sql/">Oracle Database SQL<span class="chip">59 topik</span></a><a class="cert-link" href="/devcert/situs/sertifikasi/oracle-19c-tune/">Oracle 19c Performance Management &amp; Tuning<span class="chip">46 topik</span></a><a class="cert-link" href="/devcert/situs/sertifikasi/oracle-aws-arch/">Oracle AI Database@AWS Architect Professional<span class="chip">24 topik</span></a><a class="cert-link" href="/devcert/situs/sertifikasi/java-se-17/">Oracle Java SE 17 Developer<span class="chip">28 topik</span></a><a class="cert-link" href="/devcert/situs/sertifikasi/docker-dca/">Docker Certified Associate<span class="chip">40 topik</span></a><a class="cert-link" href="/devcert/situs/sertifikasi/ckad/">Certified Kubernetes Application Developer<span class="chip">25 topik</span></a></nav></aside>
+  <main id="main">
+<div class="crumbs"><a href="/devcert/situs/">Beranda</a> / <a href="/devcert/situs/sertifikasi/java-ee-7/">Java EE 7 Application Developer</a> / <span>Implement Business Logic by Using EJBs</span></div>
+<article class="doc">
+  <div class="doc-head">
+    <div class="meta-row"><span class="badge b-lengkap" title="Kelayakan materi, bukan progres belajar">materi lengkap</span><span class="meta">⏱ 20 menit</span><span class="meta">📊 Menengah</span></div>
+    <h1>EJB timer service</h1>
+    <p class="domain-tag">Implement Business Logic by Using EJBs</p>
+  </div>
+  <div class="objectives"><h2>Tujuan pembelajaran</h2><ul><li>Menulis @Schedule dan @Timeout</li><li>Membuat timer programatik dengan TimerService</li><li>Menjelaskan perilaku timer persistent saat restart</li></ul></div>
+  <div class="prose"><h2 id="kenapa-topik-ini-diuji">Kenapa topik ini diuji</h2>
+<p>Timer adalah satu-satunya mekanisme penjadwalan bawaan Java EE. Soal menanyakan siapa yang membuat thread, apa yang terjadi saat aplikasi restart, dan bagaimana memakai <code>TimerHandle</code>.</p>
+<h2 id="konsep-inti">Konsep inti</h2>
+<p>Dua gaya: deklaratif (<code>@Schedule</code>/<code>@Schedules</code>) dan programatik (<code>TimerService.createCalendarTimer</code> / <code>createSingleActionTimer</code> / <code>createIntervalTimer</code>).</p>
+<div class="code" data-lang="java"><div class="code-head"><span>java</span><button class="copy" type="button">copy</button></div><pre><code>@Singleton
+@Startup
+public class Penjadwal {
+
+    @Resource TimerService timerService;
+
+    @Schedule(minute = &quot;0&quot;, hour = &quot;2&quot;, dayOfWeek = &quot;*&quot;, persistent = true)
+    public void bersihkanHarian(Timer timer) {
+        // dipanggil container sesuai jadwal
+    }
+
+    public void jadwalkanSekali(long delayMs, String id) {
+        timerService.createSingleActionTimer(delayMs, new TimerConfig(id, true));
+    }
+
+    @Timeout
+    public void padaWaktu(Timer timer) {
+        Object info = timer.getInfo();
+        if (timer.getTimeRemaining() == 0) { /* sudah waktunya */ }
+    }
+}</code></pre></div>
+<ul><li>Timer dijalankan oleh thread container, sehingga ikut aturan transaksi EJB (default <code>REQUIRED</code>).</li><li><code>TimerConfig(persistent=true)</code> menyimpan timer di DB sehingga bertahan setelah restart; <code>false</code> hilang saat JVM mati.</li><li><code>TimerHandle</code> memungkinkan pembatalan dari waktu ke waktu: <code>timer.cancel()</code> atau <code>getHandle().cancel()</code>.</li><li>Timeout method boleh menerima parameter <code>Timer</code>; <code>@Schedule</code> menerima parameter apa pun (diabaikan) atau <code>Timer</code>.</li></ul>
+<h2 id="jebakan-ujian">Jebakan ujian</h2>
+<ul><li><code>@Schedule</code> dengan <code>persistent = true</code> membutuhkan dukungan timer store DB; bila tidak, container bisa menolak deploy.</li><li>Timer pada <code>@Singleton</code> dengan <code>@Lock(WRITE)</code> akan memblokir method lain selama timeout berjalan.</li><li><code>TimerService</code> tidak tersedia di servlet/JSP - hanya di EJB.</li><li>Timer yang dilempar exception tidak otomatis dijadwalkan ulang untuk one-shot.</li><li>Zona waktu: <code>timezone = "Asia/Jakarta"</code> pada <code>@Schedule</code> mencegah kejutan UTC.</li></ul>
+<h2 id="latihan">Latihan</h2>
+<ol><li>Bagaimana memastikan job terhapus saat aplikasi berhenti?</li><li>Apa parameter tambahan yang boleh diterima method <code>@Timeout</code>?</li></ol>
+<details><summary>Jawaban</summary>
+<p><b>1.</b> Buat timer dengan <code>persistent = false</code>, atau batalkan lewat <code>@PreDestroy</code> dengan <code>timer.cancel()</code>.</p>
+<p><b>2.</b> <code>Timer</code> (dan opsional parameter lain yang tidak dipakai) pada <code>@Schedule</code>; pada <code>@Timeout</code> umumnya <code>Timer</code>.</p>
+</details></div>
+  <div class="done-box">
+    <button id="markDone" class="btn-done" type="button">Tandai sudah dipelajari</button>
+    <span class="hint">Progres tersimpan di browser ini.</span>
+  </div>
+  <nav class="pager"><a class="prev" href="/devcert/situs/sertifikasi/java-ee-7/ejb/transaksi-cmt-bmt/"><span>← Sebelumnya</span><b>Transaksi container-managed vs bean-managed</b></a><a class="next" href="/devcert/situs/sertifikasi/java-ee-7/jms/model-jms/"><span>Selanjutnya →</span><b>Model messaging JMS dan message-driven bean</b></a></nav>
+</article></main>
+</div>
+<div id="searchWrap" class="search-wrap" hidden>
+  <div class="search-box">
+    <input id="searchInput" type="search" placeholder="Cari: JPA, servlet, JMS, batch…" autocomplete="off">
+    <button id="searchClose" type="button">tutup</button>
+  </div>
+  <ul id="searchResults" class="search-results"></ul>
+</div>
+<footer class="foot">
+  <span>DevCert — dibuat untuk belajar mandiri, dalam bahasa Indonesia.</span>
+  <span>Progres disimpan di browser kamu (localStorage).</span>
+  <span><a href="https://boyfsimbolon.netlify.app/devcert">Portofolio pembuatnya →</a></span>
+</footer>
+<script>window.__TOTAL_TOPICS__=392;window.__BASE__="/devcert/situs";</script>
+<script src="/devcert/situs/assets/app.js?v=65652c1f" defer></script>
+</body>
+</html>

@@ -1,0 +1,572 @@
+{
+ "cert": "oracle-aws-arch",
+ "minutes": 75,
+ "pass": 68,
+ "passLabel": "nilai lulus",
+ "questions": [
+  {
+   "d": "multicloud",
+   "q": "Multicloud didefinisikan sebagai...",
+   "o": [
+    "cloud + on-premises",
+    "dua atau lebih cloud publik",
+    "satu cloud dengan banyak region",
+    "cloud privat saja"
+   ],
+   "a": 1,
+   "e": "Hybrid melibatkan on-premises; multicloud ≥2 cloud publik."
+  },
+  {
+   "d": "multicloud",
+   "q": "Contoh multicloud di tingkat infrastruktur adalah...",
+   "o": [
+    "Exadata di data center pelanggan",
+    "Oracle Database@AWS",
+    "VPC peering biasa",
+    "S3 Glacier"
+   ],
+   "a": 1,
+   "e": "Perangkat Oracle berjalan di dalam data center AWS, dikelola OCI."
+  },
+  {
+   "d": "multicloud",
+   "q": "Tantangan utama multicloud adalah...",
+   "o": [
+    "tidak ada tantangan",
+    "identitas, jaringan, observability, dan biaya lintas penyedia",
+    "hanya lisensi",
+    "hanya latensi"
+   ],
+   "a": 1,
+   "e": "Kompleksitas tersebar di beberapa lapisan."
+  },
+  {
+   "d": "arsitektur",
+   "q": "Oracle Database@AWS menyediakan Exadata yang secara fisik berada di...",
+   "o": [
+    "region OCI",
+    "data center AWS",
+    "data center pelanggan",
+    "region ketiga"
+   ],
+   "a": 1,
+   "e": "Dikelola OCI, tetapi berlokasi di data center AWS."
+  },
+  {
+   "d": "arsitektur",
+   "q": "Permintaan provisioning dari konsol AWS diteruskan melalui...",
+   "o": [
+    "API OCI langsung tanpa perantara",
+    "API AWS odb: yang memanggil API OCI",
+    "SSH ke Exadata",
+    "VPN manual"
+   ],
+   "a": 1,
+   "e": "Pengguna memakai alat AWS, eksekusi di OCI."
+  },
+  {
+   "d": "arsitektur",
+   "q": "Layanan tanpa kebutuhan Exadata infrastructure/VM cluster adalah...",
+   "o": [
+    "Exadata Database Service dedicated",
+    "ExaDB-XS",
+    "Autonomous Database Serverless",
+    "RAC"
+   ],
+   "a": 2,
+   "e": "ADB-S dibuat langsung setelah ODB network."
+  },
+  {
+   "d": "arsitektur",
+   "q": "Kapasitas minimum ExaDB-XS adalah...",
+   "o": [
+    "2 ECPU/100 GB",
+    "8 ECPU/300 GB",
+    "16 ECPU/1 TB",
+    "tidak ada minimum"
+   ],
+   "a": 1,
+   "e": "Elastis dan bisa mulai kecil."
+  },
+  {
+   "d": "arsitektur",
+   "q": "Jalur pembelian yang memerlukan negosiasi dengan Oracle adalah...",
+   "o": [
+    "public offer",
+    "private offer",
+    "self-service gratis",
+    "trial otomatis"
+   ],
+   "a": 1,
+   "e": "Private offer ditujukan ke akun AWS tertentu."
+  },
+  {
+   "d": "arsitektur",
+   "q": "Saat private offer kedaluwarsa, pelanggan...",
+   "o": [
+    "tetap dengan harga lama",
+    "pindah ke harga publik atau berhenti berlangganan",
+    "otomatis gratis",
+    "diblokir permanen"
+   ],
+   "a": 1,
+   "e": "Perlu perencanaan perpanjangan."
+  },
+  {
+   "d": "arsitektur",
+   "q": "Izin AWS yang wajib agar layanan dapat diinisialisasi adalah...",
+   "o": [
+    "s3:GetObject",
+    "odb:GetOciOnboardingStatus",
+    "ec2:RunInstances",
+    "iam:CreateUser"
+   ],
+   "a": 1,
+   "e": "Tanpa itu inisialisasi layanan gagal."
+  },
+  {
+   "d": "arsitektur",
+   "q": "Mengapa SCP bisa menggagalkan onboarding?",
+   "o": [
+    "Karena SCP menonaktifkan VPC",
+    "Karena layanan memanggil API di us-east-1 yang diblokir SCP",
+    "Karena SCP menghapus IAM",
+    "Karena SCP memblokir DNS"
+   ],
+   "a": 1,
+   "e": "Izin harus diizinkan di region tersebut."
+  },
+  {
+   "d": "arsitektur",
+   "q": "Database pada Exadata Database Service dibuat menggunakan...",
+   "o": [
+    "konsol AWS saja",
+    "alat/API OCI",
+    "CloudFormation",
+    "Route 53"
+   ],
+   "a": 1,
+   "e": "Infrastruktur di AWS, database via OCI."
+  },
+  {
+   "d": "jaringan",
+   "q": "ODB network adalah...",
+   "o": [
+    "VPC milik pelanggan",
+    "jaringan privat dalam satu AZ tempat Exadata berada",
+    "subnet publik AWS",
+    "VPN ke OCI"
+   ],
+   "a": 1,
+   "e": "Di-peer ke VPC untuk akses aplikasi."
+  },
+  {
+   "d": "jaringan",
+   "q": "Jumlah maksimum ODB peering per ODB network adalah...",
+   "o": [
+    "10",
+    "50",
+    "125",
+    "tak terbatas"
+   ],
+   "a": 2,
+   "e": "Sesuai dokumentasi AWS."
+  },
+  {
+   "d": "jaringan",
+   "q": "Peering VPC bersifat non-transitif, artinya...",
+   "o": [
+    "tidak bisa dihapus",
+    "VPC lain tidak otomatis bisa mengakses lewat VPC yang di-peer",
+    "tidak butuh rute",
+    "hanya satu arah"
+   ],
+   "a": 1,
+   "e": "Perlu TGW atau rute khusus untuk banyak VPC."
+  },
+  {
+   "d": "jaringan",
+   "q": "Untuk 20 VPC di banyak akun, topologi yang tepat adalah...",
+   "o": [
+    "peering langsung tiap VPC",
+    "Transit Gateway atau Cloud WAN",
+    "satu subnet besar",
+    "NAT gateway"
+   ],
+   "a": 1,
+   "e": "Hub-and-spoke mengurangi jumlah koneksi."
+  },
+  {
+   "d": "jaringan",
+   "q": "Setelah ODB peering dibuat, langkah yang sering terlupa adalah...",
+   "o": [
+    "membuat S3 bucket",
+    "memperbarui route table dan konfigurasi DNS",
+    "restart Exadata",
+    "membuat IAM user"
+   ],
+   "a": 1,
+   "e": "Peering aktif tanpa rute/DNS tidak bisa dipakai."
+  },
+  {
+   "d": "jaringan",
+   "q": "Layanan DNS yang dipakai untuk resolusi pada Oracle Database@AWS adalah...",
+   "o": [
+    "Amazon Route 53",
+    "OCI DNS publik",
+    "BIND lokal",
+    "CloudFront"
+   ],
+   "a": 0,
+   "e": "Route 53 untuk routing DNS."
+  },
+  {
+   "d": "jaringan",
+   "q": "Peer network CIDR pada ODB peering menentukan...",
+   "o": [
+    "ukuran database",
+    "rentang IP peer yang diterima ODB network",
+    "jumlah cluster",
+    "versi Oracle"
+   ],
+   "a": 1,
+   "e": "Longest-prefix match berlaku bila ada overlap."
+  },
+  {
+   "d": "provisioning",
+   "q": "Urutan provisioning yang benar adalah...",
+   "o": [
+    "VM cluster -> ODB network -> infrastruktur",
+    "ODB network -> Exadata infrastructure -> VM cluster -> database",
+    "database -> VM cluster -> infrastruktur",
+    "infrastruktur -> database -> ODB network"
+   ],
+   "a": 1,
+   "e": "Jaringan dulu, lalu kapasitas, lalu database."
+  },
+  {
+   "d": "provisioning",
+   "q": "VM cluster untuk Autonomous Database dedicated disebut...",
+   "o": [
+    "Exadata VM cluster",
+    "Autonomous VM cluster",
+    "Exascale VM cluster",
+    "CDB"
+   ],
+   "a": 1,
+   "e": "Berbeda objek dari Exadata VM cluster."
+  },
+  {
+   "d": "provisioning",
+   "q": "Komponen khas ExaDB-XS sebelum membuat database adalah...",
+   "o": [
+    "Autonomous VM cluster",
+    "Exascale storage vault dan Exascale VM cluster",
+    "ACDB",
+    "ODB peering saja"
+   ],
+   "a": 1,
+   "e": "Exascale memakai storage vault."
+  },
+  {
+   "d": "provisioning",
+   "q": "Untuk memisahkan aplikasi dalam satu CDB dipakai...",
+   "o": [
+    "schema",
+    "PDB",
+    "tablespace",
+    "listener"
+   ],
+   "a": 1,
+   "e": "Pluggable database per aplikasi."
+  },
+  {
+   "d": "provisioning",
+   "q": "Enkripsi at rest yang wajib pada database cloud Oracle adalah...",
+   "o": [
+    "RMAN encryption saja",
+    "TDE",
+    "SSL",
+    "checksum"
+   ],
+   "a": 1,
+   "e": "Transparent Data Encryption."
+  },
+  {
+   "d": "provisioning",
+   "q": "Tujuan penyimpanan backup yang umum terintegrasi adalah...",
+   "o": [
+    "Amazon S3",
+    "Amazon EBS",
+    "AWS Glue",
+    "Amazon MQ"
+   ],
+   "a": 0,
+   "e": "Durabilitas tinggi dan terintegrasi."
+  },
+  {
+   "d": "provisioning",
+   "q": "Alat AWS untuk memantau metrik dan alarm adalah...",
+   "o": [
+    "CloudTrail",
+    "CloudWatch",
+    "Config",
+    "X-Ray"
+   ],
+   "a": 1,
+   "e": "CloudWatch untuk metrik/alarm."
+  },
+  {
+   "d": "provisioning",
+   "q": "Alat AWS untuk audit panggilan API adalah...",
+   "o": [
+    "CloudWatch",
+    "CloudTrail",
+    "EventBridge",
+    "VPC Flow Logs"
+   ],
+   "a": 1,
+   "e": "Catatan API, bukan query SQL."
+  },
+  {
+   "d": "provisioning",
+   "q": "Event untuk otomatisasi reaksi terhadap perubahan status memakai...",
+   "o": [
+    "EventBridge",
+    "Route 53",
+    "S3",
+    "IAM"
+   ],
+   "a": 0,
+   "e": "Meneruskan event ke target."
+  },
+  {
+   "d": "migrasi",
+   "q": "Metode fisik utama ZDM adalah...",
+   "o": [
+    "Data Pump",
+    "Data Guard atau backup/restore",
+    "GoldenGate saja",
+    "SQL*Loader"
+   ],
+   "a": 1,
+   "e": "Physical online memakai Data Guard/RMAN."
+  },
+  {
+   "d": "migrasi",
+   "q": "Migrasi logis lebih tepat ketika...",
+   "o": [
+    "tidak ada perbedaan versi",
+    "ada perbedaan versi/platform atau butuh seleksi objek",
+    "data kecil",
+    "target belum siap"
+   ],
+   "a": 1,
+   "e": "Fleksibel lintas versi/endian."
+  },
+  {
+   "d": "migrasi",
+   "q": "Fase setelah replikasi pada ZDM adalah...",
+   "o": [
+    "cutover langsung",
+    "validasi",
+    "dekomisioning",
+    "backup"
+   ],
+   "a": 1,
+   "e": "Validasi sebelum cutover."
+  },
+  {
+   "d": "migrasi",
+   "q": "Syarat jaringan untuk ZDM adalah...",
+   "o": [
+    "internet publik terbuka",
+    "host ZDM dapat menjangkau sumber dan target secara privat",
+    "cukup DNS publik",
+    "tanpa konektivitas"
+   ],
+   "a": 1,
+   "e": "Butuh bandwidth memadai untuk sinkronisasi."
+  },
+  {
+   "d": "migrasi",
+   "q": "ZDM tidak digunakan untuk...",
+   "o": [
+    "database Oracle ke Exadata",
+    "database Oracle ke ADB",
+    "migrasi non-Oracle",
+    "migrasi lintas versi"
+   ],
+   "a": 2,
+   "e": "Khusus database Oracle."
+  },
+  {
+   "d": "migrasi",
+   "q": "Risiko cutover tanpa uji aplikasi adalah...",
+   "o": [
+    "tidak ada",
+    "masalah muncul setelah produksi pindah",
+    "backup gagal",
+    "DNS berubah"
+   ],
+   "a": 1,
+   "e": "Uji aplikasi sebelum memindahkan beban."
+  },
+  {
+   "d": "migrasi",
+   "q": "Batasan ADB yang perlu diperiksa sebelum migrasi mencakup...",
+   "o": [
+    "warna konsol",
+    "kontrol parameter dan privilege yang terbatas",
+    "jumlah user AWS",
+    "region AWS"
+   ],
+   "a": 1,
+   "e": "ADB membatasi beberapa fitur/parameter."
+  },
+  {
+   "d": "hadr",
+   "q": "High availability di dalam satu VM cluster Exadata disediakan oleh...",
+   "o": [
+    "Data Guard",
+    "RAC",
+    "Flashback",
+    "RMAN"
+   ],
+   "a": 1,
+   "e": "Instance ganda pada satu cluster."
+  },
+  {
+   "d": "hadr",
+   "q": "Karena ODB network berada di satu AZ, perlindungan terhadap kegagalan AZ memerlukan...",
+   "o": [
+    "RAC saja",
+    "Data Guard ke AZ/region lain",
+    "backup harian saja",
+    "lebih banyak PDB"
+   ],
+   "a": 1,
+   "e": "RAC tidak melindungi dari kegagalan zona."
+  },
+  {
+   "d": "hadr",
+   "q": "Switchover berbeda dari failover karena...",
+   "o": [
+    "tidak kehilangan data dan terencana",
+    "lebih cepat",
+    "tidak butuh standby",
+    "dilakukan otomatis"
+   ],
+   "a": 0,
+   "e": "Switchover direncanakan; failover darurat."
+  },
+  {
+   "d": "hadr",
+   "q": "Mode proteksi Data Guard paling ketat adalah...",
+   "o": [
+    "maximum performance",
+    "maximum availability",
+    "maximum protection",
+    "minimum latency"
+   ],
+   "a": 2,
+   "e": "Bisa menghentikan primary bila standby gagal."
+  },
+  {
+   "d": "hadr",
+   "q": "Standby di region kedua dengan kapasitas lebih kecil berisiko...",
+   "o": [
+    "tidak bisa dibuat",
+    "tidak mampu menanggung beban penuh saat failover",
+    "lebih murah otomatis",
+    "tidak masalah"
+   ],
+   "a": 1,
+   "e": "Perhitungkan kapasitas DR untuk beban produksi."
+  },
+  {
+   "d": "keamanan",
+   "q": "Berbagi resource Oracle Database@AWS antar akun AWS memakai...",
+   "o": [
+    "IAM role saja",
+    "AWS RAM",
+    "S3 bucket policy",
+    "Route 53"
+   ],
+   "a": 1,
+   "e": "Resource Access Manager."
+  },
+  {
+   "d": "keamanan",
+   "q": "Izin AWS pada layanan ini...",
+   "o": [
+    "otomatis memberi izin OCI",
+    "tidak otomatis memberi izin pada resource OCI",
+    "tidak diperlukan",
+    "menggantikan IAM OCI"
+   ],
+   "a": 1,
+   "e": "Dua lapis kontrol terpisah."
+  },
+  {
+   "d": "keamanan",
+   "q": "Layanan untuk penilaian keamanan dan masking data adalah...",
+   "o": [
+    "Oracle Data Safe",
+    "Oracle GoldenGate",
+    "RMAN",
+    "Data Pump"
+   ],
+   "a": 0,
+   "e": "Termasuk audit dan security assessment."
+  },
+  {
+   "d": "keamanan",
+   "q": "Kehilangan akses ke kunci enkripsi berarti...",
+   "o": [
+    "tidak berdampak",
+    "data dan backup tidak dapat dibuka",
+    "database restart otomatis",
+    "TDE mati"
+   ],
+   "a": 1,
+   "e": "Kunci adalah bagian dari rencana DR."
+  },
+  {
+   "d": "keamanan",
+   "q": "Kontrol untuk melacak perubahan konfigurasi API adalah...",
+   "o": [
+    "VPC Flow Logs",
+    "AWS CloudTrail",
+    "CloudWatch alarm",
+    "S3 versioning"
+   ],
+   "a": 1,
+   "e": "Mencatat siapa melakukan apa."
+  },
+  {
+   "d": "keamanan",
+   "q": "Kontrol untuk mengurangi penyalahgunaan hak akses adalah...",
+   "o": [
+    "satu akun admin untuk semua",
+    "least privilege dan pemisahan tugas",
+    "mematikan audit",
+    "membuka endpoint publik"
+   ],
+   "a": 1,
+   "e": "Batasi dan pisahkan peran."
+  },
+  {
+   "d": "keamanan",
+   "q": "Pilar Well-Architected yang mencakup uji failover dan backup teruji adalah...",
+   "o": [
+    "cost optimization",
+    "reliability",
+    "performance efficiency",
+    "sustainability"
+   ],
+   "a": 1,
+   "e": "Reliability mencakup pemulihan dan ketahanan."
+  }
+ ]
+}

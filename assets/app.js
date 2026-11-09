@@ -142,7 +142,7 @@
     input.focus();
     if (!idx && !loading) {
       loading = true;
-      fetch("/search.json").then(function (r) { return r.json(); }).then(function (d) {
+      fetch((window.__BASE__ || "") + "/search.json").then(function (r) { return r.json(); }).then(function (d) {
         idx = d; loading = false;
         if (input.value) render(input.value);   // render ulang setelah index siap
       }).catch(function () { loading = false; });

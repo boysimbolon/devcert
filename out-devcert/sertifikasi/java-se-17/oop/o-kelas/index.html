@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Class, record, field, dan initializer — Oracle Java SE 17 Developer</title>
+<meta name="description" content="Urutan inisialisasi, static vs instance, constructor, dan aturan record.">
+<meta name="theme-color" content="#f2f4f7">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>try{var t=localStorage.getItem('devcert-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}</script>
+<link rel="stylesheet" href="/devcert/situs/assets/style.css?v=65652c1f">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%232460e0'/><text x='50' y='68' font-size='54' font-family='monospace' fill='white' text-anchor='middle'>D</text></svg>">
+</head>
+<body data-cert="java-se-17" data-topic="o-kelas">
+<a class="skip" href="#main">Lewati ke konten</a>
+<header class="top">
+  <a class="brand" href="/devcert/situs/"><span class="mark">D</span> DevCert <span class="dot" title="siap dipakai"></span></a>
+  <button id="searchBtn" class="search-open" type="button">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg>
+    <span>Cari topik…</span> <kbd>/</kbd>
+  </button>
+  <div class="progress-mini" title="Progres belajar">
+    <svg viewBox="0 0 36 36" aria-hidden="true"><circle class="bg" cx="18" cy="18" r="15.5"/><circle id="ring" class="fg" cx="18" cy="18" r="15.5"/></svg>
+    <span id="progressPct">0%</span>
+  </div>
+  <button id="themeBtn" class="icon-btn" type="button" aria-label="Ganti tema terang atau gelap" title="Ganti tema">
+    <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/></svg>
+    <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.6 6.6 0 0 0 9.8 9.8Z"/></svg>
+  </button>
+</header>
+<div class="shell">
+  <aside class="side"><nav class="nav"><a class="cert-link" href="/devcert/situs/sertifikasi/java-ee-7/">Java EE 7 Application Developer<span class="chip">39 topik</span></a><a class="cert-link" href="/devcert/situs/sertifikasi/toefl-ibt/">TOEFL iBT<span class="chip">30 skill</span></a><a class="cert-link" href="/devcert/situs/sertifikasi/mysql-8-dba/">MySQL 8.0 Database Administrator<span class="chip">47 topik</span></a><a class="cert-link" href="/devcert/situs/sertifikasi/mysql-8-dev/">MySQL 8.0 Database Developer<span class="chip">32 topik</span></a><a class="cert-link" href="/devcert/situs/sertifikasi/mysql-impl/">MySQL Implementation Associate<span class="chip">22 topik</span></a><a class="cert-link" href="/devcert/situs/sertifikasi/oracle-sql/">Oracle Database SQL<span class="chip">59 topik</span></a><a class="cert-link" href="/devcert/situs/sertifikasi/oracle-19c-tune/">Oracle 19c Performance Management &amp; Tuning<span class="chip">46 topik</span></a><a class="cert-link" href="/devcert/situs/sertifikasi/oracle-aws-arch/">Oracle AI Database@AWS Architect Professional<span class="chip">24 topik</span></a><a class="cert-link active" href="/devcert/situs/sertifikasi/java-se-17/">Oracle Java SE 17 Developer<span class="chip">28 topik</span></a><div class="dom"><span class="dom-title">Handling date, time, text, numeric and boolean values</span><ul><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-se-17/nilai/v-primitif/" data-topic="java-se-17/v-primitif"><span class="tick" aria-hidden="true"></span>Primitif, wrapper, Math, dan casting</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-se-17/nilai/v-string/" data-topic="java-se-17/v-string"><span class="tick" aria-hidden="true"></span>String, text block, dan StringBuilder</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-se-17/nilai/v-datetime/" data-topic="java-se-17/v-datetime"><span class="tick" aria-hidden="true"></span>Date-Time API</a></li></ul></div><div class="dom"><span class="dom-title">Controlling Program Flow</span><ul><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-se-17/alur/f-alur/" data-topic="java-se-17/f-alur"><span class="tick" aria-hidden="true"></span>if/else, switch, loop, break, continue</a></li></ul></div><div class="dom"><span class="dom-title">Utilizing Java Object-Oriented Approach</span><ul><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-se-17/oop/o-objek/" data-topic="java-se-17/o-objek"><span class="tick" aria-hidden="true"></span>Objek, nested class, dan siklus hidup</a></li><li><a class="topic-link active" href="/devcert/situs/sertifikasi/java-se-17/oop/o-kelas/" data-topic="java-se-17/o-kelas"><span class="tick" aria-hidden="true"></span>Class, record, field, dan initializer</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-se-17/oop/o-overload/" data-topic="java-se-17/o-overload"><span class="tick" aria-hidden="true"></span>Overloading dan var-args</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-se-17/oop/o-scope/" data-topic="java-se-17/o-scope"><span class="tick" aria-hidden="true"></span>Scope, var, encapsulation, immutability</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-se-17/oop/o-inherit/" data-topic="java-se-17/o-inherit"><span class="tick" aria-hidden="true"></span>Inheritance, abstract, sealed, polymorphism</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-se-17/oop/o-interface/" data-topic="java-se-17/o-interface"><span class="tick" aria-hidden="true"></span>Interface dan functional interface</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-se-17/oop/o-enum/" data-topic="java-se-17/o-enum"><span class="tick" aria-hidden="true"></span>Enum dengan field, method, constructor</a></li></ul></div><div class="dom"><span class="dom-title">Handling Exceptions</span><ul><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-se-17/exception/e-exception/" data-topic="java-se-17/e-exception"><span class="tick" aria-hidden="true"></span>try/catch/finally, try-with-resources, multi-catch</a></li></ul></div><div class="dom"><span class="dom-title">Working with Arrays and Collections</span><ul><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-se-17/koleksi/k-koleksi/" data-topic="java-se-17/k-koleksi"><span class="tick" aria-hidden="true"></span>Array, List, Set, Map, Deque</a></li></ul></div><div class="dom"><span class="dom-title">Working with Streams and Lambda expressions</span><ul><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-se-17/stream/s-stream/" data-topic="java-se-17/s-stream"><span class="tick" aria-hidden="true"></span>Stream dan lambda</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-se-17/stream/s-collector/" data-topic="java-se-17/s-collector"><span class="tick" aria-hidden="true"></span>Collectors: grouping, partitioning, reduction</a></li></ul></div><div class="dom"><span class="dom-title">Packaging, deploying and JPMS</span><ul><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-se-17/modul/m-modul/" data-topic="java-se-17/m-modul"><span class="tick" aria-hidden="true"></span>Java Platform Module System</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-se-17/modul/m-package/" data-topic="java-se-17/m-package"><span class="tick" aria-hidden="true"></span>Compile, jar modular, runtime image, migrasi</a></li></ul></div><div class="dom"><span class="dom-title">Managing concurrent code execution</span><ul><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-se-17/concurrency/c-thread/" data-topic="java-se-17/c-thread"><span class="tick" aria-hidden="true"></span>Thread, Runnable, Callable, executor</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-se-17/concurrency/c-lock/" data-topic="java-se-17/c-lock"><span class="tick" aria-hidden="true"></span>Thread-safe code dan locking</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-se-17/concurrency/c-koleksi/" data-topic="java-se-17/c-koleksi"><span class="tick" aria-hidden="true"></span>Koleksi konkuren dan stream paralel</a></li></ul></div><div class="dom"><span class="dom-title">Using Java I/O API</span><ul><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-se-17/io/i-stream/" data-topic="java-se-17/i-stream"><span class="tick" aria-hidden="true"></span>I/O Streams dan console</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-se-17/io/i-serial/" data-topic="java-se-17/i-serial"><span class="tick" aria-hidden="true"></span>Serialisasi objek</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-se-17/io/i-nio/" data-topic="java-se-17/i-nio"><span class="tick" aria-hidden="true"></span>java.nio.file: Path dan Files</a></li></ul></div><div class="dom"><span class="dom-title">Accessing databases using JDBC</span><ul><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-se-17/jdbc/j-jdbc/" data-topic="java-se-17/j-jdbc"><span class="tick" aria-hidden="true"></span>JDBC: connection, statement, resultset, transaksi</a></li></ul></div><div class="dom"><span class="dom-title">Implementing Localization</span><ul><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-se-17/lokalisasi/l-locale/" data-topic="java-se-17/l-locale"><span class="tick" aria-hidden="true"></span>Locale, ResourceBundle, format</a></li></ul></div><div class="dom"><span class="dom-title">Tambahan yang diuji (logging, anotasi, generics)</span><ul><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-se-17/tambahan/t-logging/" data-topic="java-se-17/t-logging"><span class="tick" aria-hidden="true"></span>Dasar Java Logging API</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-se-17/tambahan/t-anotasi/" data-topic="java-se-17/t-anotasi"><span class="tick" aria-hidden="true"></span>Anotasi standar</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/java-se-17/tambahan/t-generics/" data-topic="java-se-17/t-generics"><span class="tick" aria-hidden="true"></span>Generics dan wildcard</a></li></ul></div><a class="cert-link" href="/devcert/situs/sertifikasi/docker-dca/">Docker Certified Associate<span class="chip">40 topik</span></a><a class="cert-link" href="/devcert/situs/sertifikasi/ckad/">Certified Kubernetes Application Developer<span class="chip">25 topik</span></a></nav></aside>
+  <main id="main">
+<div class="crumbs"><a href="/devcert/situs/">Beranda</a> / <a href="/devcert/situs/sertifikasi/java-se-17/">Oracle Java SE 17 Developer</a> / <span>Utilizing Java Object-Oriented Approach</span></div>
+<article class="doc">
+  <div class="doc-head">
+    <div class="meta-row"><span class="badge b-lengkap" title="Kelayakan materi, bukan progres belajar">materi lengkap</span><span class="meta">⏱ 24 menit</span><span class="meta">📊 Menengah</span></div>
+    <h1>Class, record, field, dan initializer</h1>
+    <p class="domain-tag">Utilizing Java Object-Oriented Approach</p>
+  </div>
+  <div class="objectives"><h2>Tujuan pembelajaran</h2><ul><li>Memprediksi urutan inisialisasi kelas</li><li>Menulis record dengan compact constructor</li><li>Membedakan static dan instance initializer</li></ul></div>
+  <div class="prose"><h2 id="kenapa-topik-ini-diuji">Kenapa topik ini diuji</h2>
+<p>Urutan eksekusi static → instance → constructor adalah soal klasik.</p>
+<h2 id="konsep-inti">Konsep inti</h2>
+<div class="code" data-lang="java"><div class="code-head"><span>java</span><button class="copy" type="button">copy</button></div><pre><code>class A {
+    static { System.out.println(&quot;static A&quot;); }
+    { System.out.println(&quot;init A&quot;); }
+    A() { System.out.println(&quot;ctor A&quot;); }
+}
+
+record Point(int x, int y) {
+    Point {                       // compact constructor
+        if (x &lt; 0) throw new IllegalArgumentException();
+    }
+    int sum() { return x + y; }
+}</code></pre></div>
+<p>Urutan: static field &amp; static block (sekali per kelas, saat pertama dipakai) → instance field &amp; instance block (per objek, sebelum constructor) → body constructor.</p>
+<p>Record: field otomatis <code>private final</code>, accessor <code>x()</code>, <code>equals/hashCode/toString</code>, tidak bisa <code>extends</code> kelas lain, boleh implement interface, tidak boleh punya field instance tambahan.</p>
+<h2 id="jebakan">Jebakan</h2>
+<ul><li>Static block berjalan saat kelas <em>diinisialisasi</em>, bukan saat objek dibuat/dideklarasikan.</li><li>Record tidak bisa mendeklarasikan field instance tambahan; static field boleh.</li><li>Compact constructor tidak boleh menulis <code>this.x = x</code>.</li><li>Constructor <code>this(...)</code> dan <code>super(...)</code> harus baris pertama.</li></ul>
+<h2 id="latihan">Latihan</h2>
+<ol><li>Berapa kali static block berjalan untuk 3 objek?</li><li>Apakah record boleh menambah field instance?</li></ol>
+<details><summary>Jawaban</summary>
+<p><b>1.</b> Sekali (per classloader).</p>
+<p><b>2.</b> Tidak; hanya komponen record dan field static.</p>
+</details></div>
+  <div class="done-box">
+    <button id="markDone" class="btn-done" type="button">Tandai sudah dipelajari</button>
+    <span class="hint">Progres tersimpan di browser ini.</span>
+  </div>
+  <nav class="pager"><a class="prev" href="/devcert/situs/sertifikasi/java-se-17/oop/o-objek/"><span>← Sebelumnya</span><b>Objek, nested class, dan siklus hidup</b></a><a class="next" href="/devcert/situs/sertifikasi/java-se-17/oop/o-overload/"><span>Selanjutnya →</span><b>Overloading dan var-args</b></a></nav>
+</article></main>
+</div>
+<div id="searchWrap" class="search-wrap" hidden>
+  <div class="search-box">
+    <input id="searchInput" type="search" placeholder="Cari: JPA, servlet, JMS, batch…" autocomplete="off">
+    <button id="searchClose" type="button">tutup</button>
+  </div>
+  <ul id="searchResults" class="search-results"></ul>
+</div>
+<footer class="foot">
+  <span>DevCert — dibuat untuk belajar mandiri, dalam bahasa Indonesia.</span>
+  <span>Progres disimpan di browser kamu (localStorage).</span>
+  <span><a href="https://boyfsimbolon.netlify.app/devcert">Portofolio pembuatnya →</a></span>
+</footer>
+<script>window.__TOTAL_TOPICS__=392;window.__BASE__="/devcert/situs";</script>
+<script src="/devcert/situs/assets/app.js?v=65652c1f" defer></script>
+</body>
+</html>

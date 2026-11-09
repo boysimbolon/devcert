@@ -1,0 +1,500 @@
+{
+ "cert": "mysql-impl",
+ "minutes": 45,
+ "pass": 62,
+ "passLabel": "ambang latihan",
+ "questions": [
+  {
+   "d": "ee",
+   "q": "Fitur yang TIDAK tersedia di MySQL Community adalah...",
+   "o": [
+    "InnoDB",
+    "MySQL Enterprise Backup",
+    "utf8mb4",
+    "replikasi"
+   ],
+   "a": 1,
+   "e": "Enterprise Backup, Audit, Firewall, Monitor, Thread Pool hanya di edisi berbayar."
+  },
+  {
+   "d": "ee",
+   "q": "Produk Enterprise yang butuh agent di host MySQL adalah...",
+   "o": [
+    "Enterprise Backup",
+    "Enterprise Monitor",
+    "Enterprise Audit",
+    "Enterprise Firewall"
+   ],
+   "a": 1,
+   "e": "MEM memakai Service Manager pusat + agent di host."
+  },
+  {
+   "d": "ee",
+   "q": "Thread Pool diaktifkan dengan variabel...",
+   "o": [
+    "thread_cache_size",
+    "thread_handling=pool-of-threads",
+    "max_connections",
+    "innodb_thread_concurrency"
+   ],
+   "a": 1,
+   "e": "Thread Pool mengganti model thread per koneksi."
+  },
+  {
+   "d": "arsitektur",
+   "q": "Transaksi dan lock baris ditangani oleh...",
+   "o": [
+    "server layer",
+    "storage engine (InnoDB)",
+    "connection layer",
+    "binlog"
+   ],
+   "a": 1,
+   "e": "InnoDB bertanggung jawab atas transaksi, lock, dan MVCC."
+  },
+  {
+   "d": "arsitektur",
+   "q": "Binlog dibuat oleh...",
+   "o": [
+    "InnoDB",
+    "server layer",
+    "replica",
+    "storage engine"
+   ],
+   "a": 1,
+   "e": "Binlog adalah log logis di server layer sehingga konsisten lintas engine."
+  },
+  {
+   "d": "arsitektur",
+   "q": "Cara cepat memastikan edisi server adalah...",
+   "o": [
+    "SHOW ENGINES",
+    "SELECT @@version_comment",
+    "SHOW DATABASES",
+    "SHOW PROCESSLIST"
+   ],
+   "a": 1,
+   "e": "@@version_comment memuat keterangan edisi (Community/Enterprise)."
+  },
+  {
+   "d": "arsitektur",
+   "q": "thread_pool_size sebaiknya disetel mendekati...",
+   "o": [
+    "jumlah koneksi",
+    "jumlah core CPU",
+    "ukuran buffer pool",
+    "jumlah tabel"
+   ],
+   "a": 1,
+   "e": "Thread pool bekerja optimal bila jumlah thread mendekati kapasitas CPU."
+  },
+  {
+   "d": "desain",
+   "q": "Charset yang mendukung emoji adalah...",
+   "o": [
+    "utf8",
+    "utf8mb3",
+    "utf8mb4",
+    "latin1"
+   ],
+   "a": 2,
+   "e": "utf8mb4 mendukung karakter 4 byte (emoji)."
+  },
+  {
+   "d": "desain",
+   "q": "Tipe untuk nilai uang...",
+   "o": [
+    "FLOAT",
+    "DOUBLE",
+    "DECIMAL",
+    "INT"
+   ],
+   "a": 2,
+   "e": "DECIMAL menyimpan presisi desimal eksak."
+  },
+  {
+   "d": "desain",
+   "q": "Index untuk pencarian kata di dalam artikel adalah...",
+   "o": [
+    "B-tree",
+    "FULLTEXT",
+    "SPATIAL",
+    "prefix"
+   ],
+   "a": 1,
+   "e": "FULLTEXT untuk pencarian teks; SPATIAL untuk geometri."
+  },
+  {
+   "d": "desain",
+   "q": "Pada LEFT JOIN, menambahkan kondisi kolom kanan di WHERE mengakibatkan...",
+   "o": [
+    "hasil sama",
+    "berperilaku seperti INNER JOIN",
+    "error",
+    "duplikasi baris"
+   ],
+   "a": 1,
+   "e": "Baris tanpa pasangan (NULL) tersaring sehingga hasilnya setara INNER."
+  },
+  {
+   "d": "desain",
+   "q": "MySQL tidak mendukung...",
+   "o": [
+    "INNER JOIN",
+    "LEFT JOIN",
+    "FULL OUTER JOIN",
+    "CROSS JOIN"
+   ],
+   "a": 2,
+   "e": "FULL OUTER JOIN tidak ada; tiru dengan UNION."
+  },
+  {
+   "d": "desain",
+   "q": "TIMESTAMP tidak cocok untuk tanggal lahir karena...",
+   "o": [
+    "tidak bisa NULL",
+    "berakhir 2038 dan dikonversi zona waktu",
+    "hanya 2 byte",
+    "tidak bisa di-index"
+   ],
+   "a": 1,
+   "e": "Rentang TIMESTAMP terbatas dan nilainya bergantung zona waktu sesi."
+  },
+  {
+   "d": "security",
+   "q": "Privilege level kolom disimpan di tabel...",
+   "o": [
+    "mysql.user",
+    "mysql.db",
+    "mysql.columns_priv",
+    "mysql.global_grants"
+   ],
+   "a": 2,
+   "e": "Kolom: mysql.columns_priv."
+  },
+  {
+   "d": "security",
+   "q": "Melihat izin termasuk dari role memakai...",
+   "o": [
+    "SHOW GRANTS FOR user",
+    "SHOW GRANTS FOR user USING role",
+    "SHOW PRIVILEGES",
+    "SELECT * FROM mysql.user"
+   ],
+   "a": 1,
+   "e": "Tambahkan USING role agar privilege role ikut ditampilkan."
+  },
+  {
+   "d": "security",
+   "q": "Mengunci akun tanpa menghapusnya...",
+   "o": [
+    "DROP USER",
+    "ALTER USER ... ACCOUNT LOCK",
+    "REVOKE ALL",
+    "SET PASSWORD"
+   ],
+   "a": 1,
+   "e": "ACCOUNT LOCK menonaktifkan login tanpa menghapus akun."
+  },
+  {
+   "d": "security",
+   "q": "REQUIRE SSL pada akun berarti...",
+   "o": [
+    "wajib sertifikat klien",
+    "wajib koneksi TLS",
+    "wajib password kuat",
+    "wajib host tertentu"
+   ],
+   "a": 1,
+   "e": "Koneksi tanpa TLS ditolak server untuk akun itu."
+  },
+  {
+   "d": "security-tools",
+   "q": "Plugin untuk login memakai Active Directory langsung...",
+   "o": [
+    "auth_socket",
+    "authentication_ldap_simple",
+    "mysql_native_password",
+    "caching_sha2_password"
+   ],
+   "a": 1,
+   "e": "Plugin LDAP Enterprise memakai server LDAP/AD sebagai sumber identitas."
+  },
+  {
+   "d": "security-tools",
+   "q": "Urutan mode Enterprise Firewall yang benar...",
+   "o": [
+    "PROTECTING lalu RECORDING",
+    "RECORDING lalu PROTECTING",
+    "DETECTING lalu OFF",
+    "hanya PROTECTING"
+   ],
+   "a": 1,
+   "e": "Rekam pola sah dulu, baru tegakkan."
+  },
+  {
+   "d": "security-tools",
+   "q": "Variabel rotasi audit log berdasarkan ukuran...",
+   "o": [
+    "audit_log_file",
+    "audit_log_rotate_on_size",
+    "audit_log_policy",
+    "audit_log_format"
+   ],
+   "a": 1,
+   "e": "Bersama audit_log_rotations untuk jumlah file yang disimpan."
+  },
+  {
+   "d": "backup",
+   "q": "Fungsi apply-log pada MEB...",
+   "o": [
+    "mengompresi",
+    "menerapkan redo/undo agar konsisten",
+    "menghapus binlog",
+    "membuat index"
+   ],
+   "a": 1,
+   "e": "Tanpa apply-log backup belum konsisten."
+  },
+  {
+   "d": "backup",
+   "q": "Privilege minimal untuk MEB adalah...",
+   "o": [
+    "SELECT",
+    "BACKUP_ADMIN",
+    "SUPER",
+    "EVENT"
+   ],
+   "a": 1,
+   "e": "BACKUP_ADMIN adalah dynamic privilege yang diperlukan MEB."
+  },
+  {
+   "d": "backup",
+   "q": "Komponen yang dibutuhkan untuk RPO beberapa menit...",
+   "o": [
+    "backup harian",
+    "binlog yang diarsipkan terus",
+    "replica tunggal",
+    "audit log"
+   ],
+   "a": 1,
+   "e": "PITR memakai binlog untuk mencapai titik waktu tertentu."
+  },
+  {
+   "d": "replikasi",
+   "q": "Thread pada replica yang menulis relay log adalah...",
+   "o": [
+    "applier",
+    "receiver (IO)",
+    "dump",
+    "coordinator"
+   ],
+   "a": 1,
+   "e": "Receiver mengambil binlog dari source dan menulis relay log."
+  },
+  {
+   "d": "replikasi",
+   "q": "Semi-sinkron menjamin...",
+   "o": [
+    "transaksi sudah diterapkan",
+    "transaksi sudah diterima minimal satu replica",
+    "tidak ada lag",
+    "tidak ada konflik"
+   ],
+   "a": 1,
+   "e": "Jaminan hanya sampai diterima, belum diterapkan."
+  },
+  {
+   "d": "replikasi",
+   "q": "Topologi untuk melindungi dari DROP TABLE tak sengaja...",
+   "o": [
+    "chain",
+    "delayed replica",
+    "multi-source",
+    "multi-primary"
+   ],
+   "a": 1,
+   "e": "Replica tertinggal (SOURCE_DELAY) bisa dihentikan sebelum event merusak diterapkan."
+  },
+  {
+   "d": "replikasi",
+   "q": "Multi-source tanpa pemisahan skema berisiko...",
+   "o": [
+    "lag",
+    "konflik primary key",
+    "kehilangan binlog",
+    "quorum hilang"
+   ],
+   "a": 1,
+   "e": "Dua source menulis PK yang sama ke tabel yang sama."
+  },
+  {
+   "d": "ha",
+   "q": "Komponen yang menghadap aplikasi pada InnoDB Cluster adalah...",
+   "o": [
+    "MySQL Shell",
+    "Group Replication",
+    "MySQL Router",
+    "Enterprise Monitor"
+   ],
+   "a": 2,
+   "e": "Router mengarahkan koneksi ke primary/secondary."
+  },
+  {
+   "d": "ha",
+   "q": "Cluster tiga anggota dapat menoleransi...",
+   "o": [
+    "dua kegagalan",
+    "satu kegagalan",
+    "nol kegagalan",
+    "semua"
+   ],
+   "a": 1,
+   "e": "Mayoritas 2 dari 3 harus hidup."
+  },
+  {
+   "d": "ha",
+   "q": "Syarat tabel pada InnoDB Cluster...",
+   "o": [
+    "harus MyISAM",
+    "harus punya primary key",
+    "harus tanpa index",
+    "harus JSON"
+   ],
+   "a": 1,
+   "e": "Group Replication mensyaratkan primary key untuk replikasi baris."
+  },
+  {
+   "d": "ha",
+   "q": "Fitur Enterprise untuk banyak koneksi bersamaan...",
+   "o": [
+    "Thread Pool",
+    "Buffer Pool",
+    "Change Buffer",
+    "Log Buffer"
+   ],
+   "a": 0,
+   "e": "Thread Pool mengelola koneksi dengan jumlah thread terbatas."
+  },
+  {
+   "d": "monitoring",
+   "q": "Metrik untuk menilai efektivitas buffer pool...",
+   "o": [
+    "Threads_running",
+    "hit rate reads/read_requests",
+    "Questions",
+    "Slow_queries"
+   ],
+   "a": 1,
+   "e": "Hit rate mendekati 1 (99%+) menandakan buffer pool memadai."
+  },
+  {
+   "d": "monitoring",
+   "q": "Sumber historis + advisory adalah...",
+   "o": [
+    "performance_schema",
+    "MySQL Enterprise Monitor",
+    "slow log",
+    "sys schema"
+   ],
+   "a": 1,
+   "e": "MEM menyimpan histori dan menjalankan advisor."
+  },
+  {
+   "d": "heatwave",
+   "q": "Data analitik pada HeatWave disimpan di...",
+   "o": [
+    "disk DB system",
+    "in-memory column store pada node HeatWave",
+    "binlog",
+    "replica"
+   ],
+   "a": 1,
+   "e": "Node HeatWave menyimpan data di memori untuk eksekusi paralel."
+  },
+  {
+   "d": "heatwave",
+   "q": "Perintah memuat tabel ke HeatWave...",
+   "o": [
+    "ALTER TABLE ... SECONDARY_LOAD",
+    "CREATE INDEX",
+    "ANALYZE TABLE",
+    "FLUSH TABLES"
+   ],
+   "a": 0,
+   "e": "Diawali SECONDARY_ENGINE=RAPID, lalu SECONDARY_LOAD."
+  },
+  {
+   "d": "desain",
+   "q": "Tipe data yang tepat untuk menyimpan nilai uang dengan presisi tetap adalah...",
+   "o": [
+    "FLOAT",
+    "DOUBLE",
+    "DECIMAL",
+    "REAL"
+   ],
+   "a": 2,
+   "e": "DECIMAL menyimpan desimal eksak; FLOAT/DOUBLE membulatkan."
+  },
+  {
+   "d": "monitoring",
+   "q": "Sumber data untuk melihat query yang sedang berjalan lebih dari 5 detik adalah...",
+   "o": [
+    "SHOW ENGINE INNODB STATUS",
+    "performance_schema.events_statements_current",
+    "SHOW TABLES",
+    "EXPLAIN FORMAT=JSON"
+   ],
+   "a": 1,
+   "e": "performance_schema menyimpan event statement aktif per thread."
+  },
+  {
+   "d": "backup",
+   "q": "Mode backup MySQL Enterprise Backup secara default bersifat...",
+   "o": [
+    "offline dan mengunci tabel",
+    "online (hot) tanpa mengunci tabel",
+    "hanya untuk MyISAM",
+    "hanya logis"
+   ],
+   "a": 1,
+   "e": "MEB melakukan hot backup secara default."
+  },
+  {
+   "d": "ha",
+   "q": "Komponen InnoDB Cluster yang mengarahkan koneksi ke primary adalah...",
+   "o": [
+    "MySQL Router",
+    "ProxySQL",
+    "Group Replication sendiri",
+    "mysqladmin"
+   ],
+   "a": 0,
+   "e": "MySQL Router mengarahkan trafik baca/tulis."
+  },
+  {
+   "d": "replikasi",
+   "q": "Replikasi multisource berguna untuk...",
+   "o": [
+    "mempercepat join",
+    "menggabungkan data dari beberapa primary ke satu replica",
+    "membuat backup",
+    "memisahkan user"
+   ],
+   "a": 1,
+   "e": "Banyak channel dari beberapa sumber ke satu server."
+  },
+  {
+   "d": "security-tools",
+   "q": "MySQL Enterprise Firewall menyimpan aturan sebagai...",
+   "o": [
+    "tabel user",
+    "whitelist per user dengan mode RECORDING/PROTECTING/DETECTING",
+    "file my.cnf",
+    "view information_schema"
+   ],
+   "a": 1,
+   "e": "Firewall memakai whitelist statement per user dengan tiga mode."
+  }
+ ]
+}

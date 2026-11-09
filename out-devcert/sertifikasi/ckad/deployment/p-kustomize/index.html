@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kustomize — Certified Kubernetes Application Developer</title>
+<meta name="description" content="Overlay, patch, dan penamaan tanpa template.">
+<meta name="theme-color" content="#f2f4f7">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>try{var t=localStorage.getItem('devcert-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}</script>
+<link rel="stylesheet" href="/devcert/situs/assets/style.css?v=65652c1f">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%232460e0'/><text x='50' y='68' font-size='54' font-family='monospace' fill='white' text-anchor='middle'>D</text></svg>">
+</head>
+<body data-cert="ckad" data-topic="p-kustomize">
+<a class="skip" href="#main">Lewati ke konten</a>
+<header class="top">
+  <a class="brand" href="/devcert/situs/"><span class="mark">D</span> DevCert <span class="dot" title="siap dipakai"></span></a>
+  <button id="searchBtn" class="search-open" type="button">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg>
+    <span>Cari topik…</span> <kbd>/</kbd>
+  </button>
+  <div class="progress-mini" title="Progres belajar">
+    <svg viewBox="0 0 36 36" aria-hidden="true"><circle class="bg" cx="18" cy="18" r="15.5"/><circle id="ring" class="fg" cx="18" cy="18" r="15.5"/></svg>
+    <span id="progressPct">0%</span>
+  </div>
+  <button id="themeBtn" class="icon-btn" type="button" aria-label="Ganti tema terang atau gelap" title="Ganti tema">
+    <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/></svg>
+    <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.6 6.6 0 0 0 9.8 9.8Z"/></svg>
+  </button>
+</header>
+<div class="shell">
+  <aside class="side"><nav class="nav"><a class="cert-link" href="/devcert/situs/sertifikasi/java-ee-7/">Java EE 7 Application Developer<span class="chip">39 topik</span></a><a class="cert-link" href="/devcert/situs/sertifikasi/toefl-ibt/">TOEFL iBT<span class="chip">30 skill</span></a><a class="cert-link" href="/devcert/situs/sertifikasi/mysql-8-dba/">MySQL 8.0 Database Administrator<span class="chip">47 topik</span></a><a class="cert-link" href="/devcert/situs/sertifikasi/mysql-8-dev/">MySQL 8.0 Database Developer<span class="chip">32 topik</span></a><a class="cert-link" href="/devcert/situs/sertifikasi/mysql-impl/">MySQL Implementation Associate<span class="chip">22 topik</span></a><a class="cert-link" href="/devcert/situs/sertifikasi/oracle-sql/">Oracle Database SQL<span class="chip">59 topik</span></a><a class="cert-link" href="/devcert/situs/sertifikasi/oracle-19c-tune/">Oracle 19c Performance Management &amp; Tuning<span class="chip">46 topik</span></a><a class="cert-link" href="/devcert/situs/sertifikasi/oracle-aws-arch/">Oracle AI Database@AWS Architect Professional<span class="chip">24 topik</span></a><a class="cert-link" href="/devcert/situs/sertifikasi/java-se-17/">Oracle Java SE 17 Developer<span class="chip">28 topik</span></a><a class="cert-link" href="/devcert/situs/sertifikasi/docker-dca/">Docker Certified Associate<span class="chip">40 topik</span></a><a class="cert-link active" href="/devcert/situs/sertifikasi/ckad/">Certified Kubernetes Application Developer<span class="chip">25 topik</span></a><div class="dom"><span class="dom-title">Application Design and Build</span><ul><li><a class="topic-link" href="/devcert/situs/sertifikasi/ckad/desain/d-image/" data-topic="ckad/d-image"><span class="tick" aria-hidden="true"></span>Image container untuk Kubernetes</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/ckad/desain/d-pod/" data-topic="ckad/d-pod"><span class="tick" aria-hidden="true"></span>Pod, init container, dan pola multi-container</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/ckad/desain/d-job/" data-topic="ckad/d-job"><span class="tick" aria-hidden="true"></span>Job dan CronJob</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/ckad/desain/d-volume/" data-topic="ckad/d-volume"><span class="tick" aria-hidden="true"></span>Volume untuk aplikasi</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/ckad/desain/d-label/" data-topic="ckad/d-label"><span class="tick" aria-hidden="true"></span>Label, selector, dan namespace</a></li></ul></div><div class="dom"><span class="dom-title">Application Deployment</span><ul><li><a class="topic-link" href="/devcert/situs/sertifikasi/ckad/deployment/p-deploy/" data-topic="ckad/p-deploy"><span class="tick" aria-hidden="true"></span>Deployment dan ReplicaSet</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/ckad/deployment/p-rollout/" data-topic="ckad/p-rollout"><span class="tick" aria-hidden="true"></span>Rolling update dan rollback</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/ckad/deployment/p-hpa/" data-topic="ckad/p-hpa"><span class="tick" aria-hidden="true"></span>Scaling manual dan HPA</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/ckad/deployment/p-helm/" data-topic="ckad/p-helm"><span class="tick" aria-hidden="true"></span>Dasar Helm</a></li><li><a class="topic-link active" href="/devcert/situs/sertifikasi/ckad/deployment/p-kustomize/" data-topic="ckad/p-kustomize"><span class="tick" aria-hidden="true"></span>Kustomize</a></li></ul></div><div class="dom"><span class="dom-title">Application Observability and Maintenance</span><ul><li><a class="topic-link" href="/devcert/situs/sertifikasi/ckad/observability/o-probe/" data-topic="ckad/o-probe"><span class="tick" aria-hidden="true"></span>Probe: liveness, readiness, startup</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/ckad/observability/o-log/" data-topic="ckad/o-log"><span class="tick" aria-hidden="true"></span>Log dan event</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/ckad/observability/o-debug/" data-topic="ckad/o-debug"><span class="tick" aria-hidden="true"></span>Debugging dengan kubectl</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/ckad/observability/o-resource/" data-topic="ckad/o-resource"><span class="tick" aria-hidden="true"></span>Request, limit, dan kelas QoS</a></li></ul></div><div class="dom"><span class="dom-title">Application Environment, Configuration and Security</span><ul><li><a class="topic-link" href="/devcert/situs/sertifikasi/ckad/config/c-cm/" data-topic="ckad/c-cm"><span class="tick" aria-hidden="true"></span>ConfigMap</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/ckad/config/c-secret/" data-topic="ckad/c-secret"><span class="tick" aria-hidden="true"></span>Secret</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/ckad/config/c-env/" data-topic="ckad/c-env"><span class="tick" aria-hidden="true"></span>Environment variable lanjutan</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/ckad/config/c-secctx/" data-topic="ckad/c-secctx"><span class="tick" aria-hidden="true"></span>SecurityContext</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/ckad/config/c-rbac/" data-topic="ckad/c-rbac"><span class="tick" aria-hidden="true"></span>ServiceAccount dan RBAC dasar</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/ckad/config/c-quota/" data-topic="ckad/c-quota"><span class="tick" aria-hidden="true"></span>ResourceQuota dan LimitRange</a></li></ul></div><div class="dom"><span class="dom-title">Services and Networking</span><ul><li><a class="topic-link" href="/devcert/situs/sertifikasi/ckad/services/s-svc/" data-topic="ckad/s-svc"><span class="tick" aria-hidden="true"></span>Service: ClusterIP, NodePort, LoadBalancer, headless</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/ckad/services/s-ingress/" data-topic="ckad/s-ingress"><span class="tick" aria-hidden="true"></span>Ingress</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/ckad/services/s-netpol/" data-topic="ckad/s-netpol"><span class="tick" aria-hidden="true"></span>NetworkPolicy</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/ckad/services/s-dns/" data-topic="ckad/s-dns"><span class="tick" aria-hidden="true"></span>DNS dan service discovery</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/ckad/services/s-trouble/" data-topic="ckad/s-trouble"><span class="tick" aria-hidden="true"></span>Troubleshooting jaringan aplikasi</a></li></ul></div></nav></aside>
+  <main id="main">
+<div class="crumbs"><a href="/devcert/situs/">Beranda</a> / <a href="/devcert/situs/sertifikasi/ckad/">Certified Kubernetes Application Developer</a> / <span>Application Deployment</span></div>
+<article class="doc">
+  <div class="doc-head">
+    <div class="meta-row"><span class="badge b-lengkap" title="Kelayakan materi, bukan progres belajar">materi lengkap</span><span class="meta">⏱ 20 menit</span><span class="meta">📊 Menengah</span></div>
+    <h1>Kustomize</h1>
+    <p class="domain-tag">Application Deployment</p>
+  </div>
+  <div class="objectives"><h2>Tujuan pembelajaran</h2><ul><li>Membuat kustomization dasar</li><li>Menambal manifest dengan patch</li><li>Menerapkan dengan kubectl -k</li></ul></div>
+  <div class="prose"><h2 id="konsep-inti">Konsep inti</h2>
+<div class="code" data-lang="yaml"><div class="code-head"><span>yaml</span><button class="copy" type="button">copy</button></div><pre><code># kustomization.yaml (overlay prod)
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: prod
+namePrefix: prod-
+resources:
+  - ../../base
+images:
+  - name: nginx
+    newTag: &quot;1.28&quot;
+commonLabels:
+  env: prod
+patches:
+  - path: replica-patch.yaml</code></pre></div>
+<div class="code" data-lang="yaml"><div class="code-head"><span>yaml</span><button class="copy" type="button">copy</button></div><pre><code># replica-patch.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata: { name: web }
+spec: { replicas: 6 }</code></pre></div>
+<div class="code" data-lang="bash"><div class="code-head"><span>bash</span><button class="copy" type="button">copy</button></div><pre><code>kubectl kustomize overlays/prod      # render
+kubectl apply -k overlays/prod</code></pre></div>
+<h2 id="jebakan">Jebakan</h2>
+<ul><li><code>namePrefix</code> mengubah nama resource; selector pada Service ikut disesuaikan otomatis, tetapi referensi manual di ConfigMap tidak.</li><li>Patch tanpa <code>metadata.name</code> yang cocok tidak berefek.</li><li><code>kubectl apply -k</code> butuh direktori berisi <code>kustomization.yaml</code>.</li><li>Field <code>commonLabels</code> juga menambah label ke selector (hati-hati pada Deployment yang sudah ada).</li></ul>
+<h2 id="latihan">Latihan</h2>
+<ol><li>Perintah menerapkan overlay Kustomize?</li><li>Apa efek <code>namePrefix</code> pada Service dan Deployment?</li></ol>
+<details><summary>Jawaban</summary>
+<p><b>1.</b> <code>kubectl apply -k &lt;direktori&gt;</code>.</p>
+<p><b>2.</b> Nama objek diberi prefiks dan referensi internal yang dikenal Kustomize ikut disesuaikan.</p>
+</details></div>
+  <div class="done-box">
+    <button id="markDone" class="btn-done" type="button">Tandai sudah dipelajari</button>
+    <span class="hint">Progres tersimpan di browser ini.</span>
+  </div>
+  <nav class="pager"><a class="prev" href="/devcert/situs/sertifikasi/ckad/deployment/p-helm/"><span>← Sebelumnya</span><b>Dasar Helm</b></a><a class="next" href="/devcert/situs/sertifikasi/ckad/observability/o-probe/"><span>Selanjutnya →</span><b>Probe: liveness, readiness, startup</b></a></nav>
+</article></main>
+</div>
+<div id="searchWrap" class="search-wrap" hidden>
+  <div class="search-box">
+    <input id="searchInput" type="search" placeholder="Cari: JPA, servlet, JMS, batch…" autocomplete="off">
+    <button id="searchClose" type="button">tutup</button>
+  </div>
+  <ul id="searchResults" class="search-results"></ul>
+</div>
+<footer class="foot">
+  <span>DevCert — dibuat untuk belajar mandiri, dalam bahasa Indonesia.</span>
+  <span>Progres disimpan di browser kamu (localStorage).</span>
+  <span><a href="https://boyfsimbolon.netlify.app/devcert">Portofolio pembuatnya →</a></span>
+</footer>
+<script>window.__TOTAL_TOPICS__=392;window.__BASE__="/devcert/situs";</script>
+<script src="/devcert/situs/assets/app.js?v=65652c1f" defer></script>
+</body>
+</html>

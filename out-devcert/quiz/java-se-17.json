@@ -1,0 +1,668 @@
+{
+ "cert": "java-se-17",
+ "minutes": 90,
+ "pass": 68,
+ "passLabel": "nilai lulus",
+ "questions": [
+  {
+   "d": "nilai",
+   "q": "Hasil dari 5 / 2 pada int adalah...",
+   "o": [
+    "2.5",
+    "2",
+    "3",
+    "error"
+   ],
+   "a": 1,
+   "e": "Pembagian int memotong desimal."
+  },
+  {
+   "d": "nilai",
+   "q": "char c = 'A'; int x = c + 1; menghasilkan...",
+   "o": [
+    "'B'",
+    "66",
+    "65",
+    "error"
+   ],
+   "a": 1,
+   "e": "char+int dipromosikan ke int."
+  },
+  {
+   "d": "nilai",
+   "q": "Integer a=127,b=127; a==b menghasilkan...",
+   "o": [
+    "true",
+    "false",
+    "error",
+    "null"
+   ],
+   "a": 0,
+   "e": "Cache Integer -128..127."
+  },
+  {
+   "d": "nilai",
+   "q": "Math.round(-2.5) menghasilkan...",
+   "o": [
+    "-3",
+    "-2",
+    "-2.0",
+    "3"
+   ],
+   "a": 1,
+   "e": "Pembulatan ke atas untuk .5 negatif."
+  },
+  {
+   "d": "nilai",
+   "q": "Dengan byte a = 10, b = 20; maka byte z = a + b; akan...",
+   "o": [
+    "compile error karena butuh cast",
+    "valid",
+    "overflow",
+    "menghasilkan 60"
+   ],
+   "a": 0,
+   "e": "Operasi dua variabel byte dipromosikan ke int, jadi butuh cast. (Konstanta 10 + 20 tetap boleh karena constant narrowing.)"
+  },
+  {
+   "d": "nilai",
+   "q": "\"abc\".substring(1,2) menghasilkan...",
+   "o": [
+    "ab",
+    "b",
+    "bc",
+    "error"
+   ],
+   "a": 1,
+   "e": "End index eksklusif."
+  },
+  {
+   "d": "nilai",
+   "q": "String pada Java bersifat...",
+   "o": [
+    "mutable",
+    "immutable",
+    "thread-local",
+    "primitive"
+   ],
+   "a": 1,
+   "e": "Operasi menghasilkan objek baru."
+  },
+  {
+   "d": "nilai",
+   "q": "Text block dibuka dengan \"\"\" yang harus diikuti...",
+   "o": [
+    "teks segera",
+    "newline",
+    "spasi",
+    "komentar"
+   ],
+   "a": 1,
+   "e": "Newline wajib setelah pembuka."
+  },
+  {
+   "d": "nilai",
+   "q": "LocalDate.of(2026,1,31).plusMonths(1) menghasilkan...",
+   "o": [
+    "2026-02-31",
+    "2026-02-28",
+    "2026-03-03",
+    "error"
+   ],
+   "a": 1,
+   "e": "Disesuaikan ke akhir bulan."
+  },
+  {
+   "d": "nilai",
+   "q": "Kelas untuk selisih jam/menit adalah...",
+   "o": [
+    "Period",
+    "Duration",
+    "ChronoUnit",
+    "Instant"
+   ],
+   "a": 1,
+   "e": "Duration berbasis waktu."
+  },
+  {
+   "d": "nilai",
+   "q": "LocalDate.plus(Duration.ofHours(1)) akan...",
+   "o": [
+    "menambah 1 hari",
+    "melempar UnsupportedTemporalTypeException",
+    "menambah 1 jam",
+    "compile error"
+   ],
+   "a": 1,
+   "e": "LocalDate tidak mendukung jam."
+  },
+  {
+   "d": "alur",
+   "q": "Switch expression wajib...",
+   "o": [
+    "memakai break",
+    "exhaustive",
+    "memakai default selalu",
+    "bertipe int"
+   ],
+   "a": 1,
+   "e": "Semua kemungkinan harus tertutup."
+  },
+  {
+   "d": "alur",
+   "q": "yield dipakai ketika...",
+   "o": [
+    "cabang memakai blok dan mengembalikan nilai",
+    "selalu",
+    "di dalam loop",
+    "pada case null"
+   ],
+   "a": 0,
+   "e": "Menggantikan return pada switch expression."
+  },
+  {
+   "d": "alur",
+   "q": "Panah -> pada switch berarti...",
+   "o": [
+    "fall-through",
+    "tidak fall-through",
+    "wajib default",
+    "hanya untuk enum"
+   ],
+   "a": 1,
+   "e": "Titik dua yang fall-through."
+  },
+  {
+   "d": "oop",
+   "q": "Membuat instance inner class memakai...",
+   "o": [
+    "new Outer.Inner()",
+    "outer.new Inner()",
+    "Outer.new Inner()",
+    "new Inner()"
+   ],
+   "a": 1,
+   "e": "Butuh instance outer."
+  },
+  {
+   "d": "oop",
+   "q": "Static block dijalankan...",
+   "o": [
+    "per objek",
+    "sekali saat kelas diinisialisasi",
+    "setiap method dipanggil",
+    "tidak pernah"
+   ],
+   "a": 1,
+   "e": "Sekali per classloader."
+  },
+  {
+   "d": "oop",
+   "q": "Record tidak boleh memiliki...",
+   "o": [
+    "method biasa",
+    "field instance tambahan",
+    "static field",
+    "constructor compact"
+   ],
+   "a": 1,
+   "e": "Hanya komponen dan static."
+  },
+  {
+   "d": "oop",
+   "q": "Compact constructor record tidak boleh...",
+   "o": [
+    "memvalidasi parameter",
+    "menulis this.x = x",
+    "melempar exception",
+    "memanggil method"
+   ],
+   "a": 1,
+   "e": "Assignment otomatis."
+  },
+  {
+   "d": "oop",
+   "q": "Dengan m(int), m(long), m(Integer), panggilan m(5) memilih...",
+   "o": [
+    "m(int)",
+    "m(long)",
+    "m(Integer)",
+    "ambigu"
+   ],
+   "a": 0,
+   "e": "Exact match prioritas tertinggi."
+  },
+  {
+   "d": "oop",
+   "q": "var tidak boleh dipakai untuk...",
+   "o": [
+    "variabel lokal",
+    "parameter method",
+    "enhanced for",
+    "lambda parameter bertipe"
+   ],
+   "a": 1,
+   "e": "Hanya lokal/for/lambda."
+  },
+  {
+   "d": "oop",
+   "q": "Shape s = new Circle(2); s.r(); gagal karena...",
+   "o": [
+    "r() bukan anggota Shape",
+    "Circle final",
+    "butuh cast ke Object",
+    "Shape abstract"
+   ],
+   "a": 0,
+   "e": "Tipe referensi menentukan method yang tersedia."
+  },
+  {
+   "d": "oop",
+   "q": "Subclass dari sealed class harus...",
+   "o": [
+    "final, sealed, atau non-sealed",
+    "abstract",
+    "static",
+    "interface"
+   ],
+   "a": 0,
+   "e": "Aturan JPMS-era sealed."
+  },
+  {
+   "d": "oop",
+   "q": "Konflik dua default method harus diselesaikan dengan...",
+   "o": [
+    "membiarkan",
+    "override dan memanggil Interface.super.method()",
+    "menghapus interface",
+    "menggunakan static import"
+   ],
+   "a": 1,
+   "e": "Wajib override eksplisit."
+  },
+  {
+   "d": "oop",
+   "q": "@FunctionalInterface mewajibkan...",
+   "o": [
+    "tepat satu abstract method",
+    "minimal satu default",
+    "tepat satu static method",
+    "tidak ada method"
+   ],
+   "a": 0,
+   "e": "Default tidak dihitung."
+  },
+  {
+   "d": "oop",
+   "q": "Constructor enum selalu...",
+   "o": [
+    "public",
+    "private",
+    "protected",
+    "final"
+   ],
+   "a": 1,
+   "e": "Konstanta dibuat di dalam kelas."
+  },
+  {
+   "d": "exception",
+   "q": "return di blok finally...",
+   "o": [
+    "diabaikan",
+    "menimpa return dari try",
+    "menyebabkan compile error",
+    "menjalankan dua kali"
+   ],
+   "a": 1,
+   "e": "Nilai return finally menang."
+  },
+  {
+   "d": "exception",
+   "q": "Exception yang dilempar saat close() menjadi...",
+   "o": [
+    "exception utama",
+    "suppressed exception",
+    "dibuang",
+    "menyebabkan hang"
+   ],
+   "a": 1,
+   "e": "Dapat diakses via getSuppressed()."
+  },
+  {
+   "d": "exception",
+   "q": "Multi-catch tidak boleh memiliki...",
+   "o": [
+    "dua tipe",
+    "hubungan subclass-superclass",
+    "tipe checked",
+    "variabel"
+   ],
+   "a": 1,
+   "e": "Subclass/superclass bersamaan tidak boleh."
+  },
+  {
+   "d": "koleksi",
+   "q": "List.of(\"x\") lalu .add(...) menghasilkan...",
+   "o": [
+    "menambah biasa",
+    "UnsupportedOperationException",
+    "compile error",
+    "null"
+   ],
+   "a": 1,
+   "e": "Koleksi immutable."
+  },
+  {
+   "d": "koleksi",
+   "q": "List<Integer> l; l.remove(1) menghapus...",
+   "o": [
+    "elemen bernilai 1",
+    "elemen pada indeks 1",
+    "semua 1",
+    "error"
+   ],
+   "a": 1,
+   "e": "Overload remove(int) = indeks."
+  },
+  {
+   "d": "koleksi",
+   "q": "Koleksi untuk antrean dua ujung adalah...",
+   "o": [
+    "ArrayList",
+    "ArrayDeque",
+    "TreeSet",
+    "HashMap"
+   ],
+   "a": 1,
+   "e": "Deque dua ujung."
+  },
+  {
+   "d": "stream",
+   "q": "Tanpa terminal operation, stream...",
+   "o": [
+    "tetap berjalan",
+    "tidak dieksekusi",
+    "error",
+    "mengembalikan null"
+   ],
+   "a": 1,
+   "e": "Lazy evaluation."
+  },
+  {
+   "d": "stream",
+   "q": "Memakai stream yang sudah dikonsumsi menghasilkan...",
+   "o": [
+    "hasil sama",
+    "IllegalStateException",
+    "hasil kosong",
+    "error compile"
+   ],
+   "a": 1,
+   "e": "Stream sekali pakai."
+  },
+  {
+   "d": "stream",
+   "q": "peek termasuk operasi...",
+   "o": [
+    "terminal",
+    "intermediate",
+    "source",
+    "collector"
+   ],
+   "a": 1,
+   "e": "Tidak memicu eksekusi."
+  },
+  {
+   "d": "stream",
+   "q": "partitioningBy selalu menghasilkan...",
+   "o": [
+    "satu kunci",
+    "dua kunci true/false",
+    "kunci dinamis",
+    "list"
+   ],
+   "a": 1,
+   "e": "Beda dari groupingBy."
+  },
+  {
+   "d": "stream",
+   "q": "toMap dengan kunci duplikat tanpa merge function menghasilkan...",
+   "o": [
+    "nilai terakhir",
+    "IllegalStateException",
+    "nilai pertama",
+    "map kosong"
+   ],
+   "a": 1,
+   "e": "Perlu merge function."
+  },
+  {
+   "d": "modul",
+   "q": "Framework reflection butuh direktif...",
+   "o": [
+    "exports",
+    "opens",
+    "requires",
+    "uses"
+   ],
+   "a": 1,
+   "e": "exports tidak membuka reflection."
+  },
+  {
+   "d": "modul",
+   "q": "requires transitive berarti...",
+   "o": [
+    "hanya compile-time",
+    "dependensi terlihat oleh pemakai modul",
+    "tidak wajib",
+    "hanya test"
+   ],
+   "a": 1,
+   "e": "Meneruskan keterlihatan."
+  },
+  {
+   "d": "modul",
+   "q": "Jar tanpa module-info di module path menjadi...",
+   "o": [
+    "named module",
+    "automatic module",
+    "unnamed module",
+    "error"
+   ],
+   "a": 1,
+   "e": "Semua paket diekspor."
+  },
+  {
+   "d": "concurrency",
+   "q": "t.run() dibanding t.start()...",
+   "o": [
+    "sama",
+    "run berjalan di thread pemanggil",
+    "start lebih lambat",
+    "run membuat thread baru"
+   ],
+   "a": 1,
+   "e": "Hanya start yang membuat thread baru."
+  },
+  {
+   "d": "concurrency",
+   "q": "Tugas yang mengembalikan nilai memakai...",
+   "o": [
+    "Runnable",
+    "Callable",
+    "Thread",
+    "Supplier langsung"
+   ],
+   "a": 1,
+   "e": "Callable.call() mengembalikan nilai."
+  },
+  {
+   "d": "concurrency",
+   "q": "volatile menjamin...",
+   "o": [
+    "atomicity",
+    "visibility",
+    "mutual exclusion",
+    "ordering penuh"
+   ],
+   "a": 1,
+   "e": "Bukan atomik."
+  },
+  {
+   "d": "concurrency",
+   "q": "ConcurrentHashMap menolak...",
+   "o": [
+    "duplikat key",
+    "null key/value",
+    "lebih dari 1000 entri",
+    "update paralel"
+   ],
+   "a": 1,
+   "e": "Tidak mengizinkan null."
+  },
+  {
+   "d": "io",
+   "q": "InputStream.read() mengembalikan -1 saat...",
+   "o": [
+    "error",
+    "EOF",
+    "buffer penuh",
+    "stream dibuka"
+   ],
+   "a": 1,
+   "e": "Penanda akhir stream."
+  },
+  {
+   "d": "io",
+   "q": "Field transient setelah deserialisasi bernilai...",
+   "o": [
+    "nilai lama",
+    "null/0",
+    "error",
+    "acak"
+   ],
+   "a": 1,
+   "e": "Tidak diserialisasi."
+  },
+  {
+   "d": "io",
+   "q": "Files.copy gagal bila target ada kecuali...",
+   "o": [
+    "selalu berhasil",
+    "memakai REPLACE_EXISTING",
+    "memakai ATOMIC_MOVE",
+    "memakai NOFOLLOW"
+   ],
+   "a": 1,
+   "e": "Opsi diperlukan."
+  },
+  {
+   "d": "jdbc",
+   "q": "ResultSet indeks kolom dimulai dari...",
+   "o": [
+    "0",
+    "1",
+    "-1",
+    "terserah"
+   ],
+   "a": 1,
+   "e": "JDBC 1-based."
+  },
+  {
+   "d": "jdbc",
+   "q": "Untuk memanggil stored procedure dipakai...",
+   "o": [
+    "Statement",
+    "PreparedStatement",
+    "CallableStatement",
+    "ResultSet"
+   ],
+   "a": 2,
+   "e": "CallableStatement."
+  },
+  {
+   "d": "lokalisasi",
+   "q": "Bundle untuk id_ID adalah...",
+   "o": [
+    "Messages.properties",
+    "Messages_id_ID.properties",
+    "Messages-id-ID.properties",
+    "Messages_ID.properties"
+   ],
+   "a": 1,
+   "e": "Format underscore."
+  },
+  {
+   "d": "lokalisasi",
+   "q": "NumberFormat bersifat...",
+   "o": [
+    "thread-safe",
+    "tidak thread-safe",
+    "immutable",
+    "static"
+   ],
+   "a": 1,
+   "e": "Jangan dibagi antar thread."
+  },
+  {
+   "d": "tambahan",
+   "q": "@SafeVarargs hanya boleh pada method...",
+   "o": [
+    "static/final/private",
+    "abstract",
+    "interface default",
+    "synchronized"
+   ],
+   "a": 0,
+   "e": "Agar tidak bisa di-override."
+  },
+  {
+   "d": "tambahan",
+   "q": "@Override pada static method...",
+   "o": [
+    "valid",
+    "compile error",
+    "hanya warning",
+    "mengabaikan"
+   ],
+   "a": 1,
+   "e": "Static bukan override."
+  },
+  {
+   "d": "tambahan",
+   "q": "Untuk List<? extends Number> kita bisa...",
+   "o": [
+    "menambah Integer",
+    "membaca sebagai Number",
+    "menambah null saja",
+    "mengubah menjadi List<Object>"
+   ],
+   "a": 1,
+   "e": "PECS: producer extends."
+  },
+  {
+   "d": "tambahan",
+   "q": "new T() tidak bisa karena...",
+   "o": [
+    "T final",
+    "type erasure",
+    "T harus interface",
+    "butuh cast"
+   ],
+   "a": 1,
+   "e": "Tidak diketahui saat runtime."
+  },
+  {
+   "d": "tambahan",
+   "q": "Level logging tertinggi (paling parah) adalah...",
+   "o": [
+    "FINEST",
+    "INFO",
+    "WARNING",
+    "SEVERE"
+   ],
+   "a": 3,
+   "e": "SEVERE paling tinggi."
+  }
+ ]
+}

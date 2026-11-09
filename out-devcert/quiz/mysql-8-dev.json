@@ -1,0 +1,560 @@
+{
+ "cert": "mysql-8-dev",
+ "minutes": 60,
+ "pass": 62,
+ "passLabel": "nilai lulus",
+ "questions": [
+  {
+   "d": "connectors",
+   "q": "Aplikasi C# dengan Entity Framework memakai konektor...",
+   "o": [
+    "Connector/J",
+    "Connector/NET",
+    "Connector/ODBC",
+    "Connector/Python"
+   ],
+   "a": 1,
+   "e": "Connector/NET menyediakan ADO.NET yang dipakai Entity Framework."
+  },
+  {
+   "d": "connectors",
+   "q": "Port default protokol X untuk X DevAPI adalah...",
+   "o": [
+    "3306",
+    "33060",
+    "3307",
+    "6033"
+   ],
+   "a": 1,
+   "e": "3306 protokol klasik (SQL); 33060 protokol X untuk document store."
+  },
+  {
+   "d": "connectors",
+   "q": "Parameter JDBC untuk mewajibkan verifikasi identitas server adalah...",
+   "o": [
+    "sslMode=PREFERRED",
+    "sslMode=REQUIRED",
+    "sslMode=VERIFY_IDENTITY",
+    "useSSL=true"
+   ],
+   "a": 2,
+   "e": "VERIFY_IDENTITY memeriksa sertifikat dan hostname server."
+  },
+  {
+   "d": "connectors",
+   "q": "Risiko connection pool terlalu besar adalah...",
+   "o": [
+    "koneksi lebih cepat",
+    "melebihi max_connections server dan menambah kontensi",
+    "driver gagal start",
+    "TLS mati"
+   ],
+   "a": 1,
+   "e": "Total pool semua instance harus di bawah kapasitas server."
+  },
+  {
+   "d": "connectors",
+   "q": "Parameter pool agar koneksi tidak diputus server adalah...",
+   "o": [
+    "set maxLifetime lebih pendek dari wait_timeout",
+    "set autocommit=false",
+    "set fetchSize besar",
+    "set useSSL=false"
+   ],
+   "a": 0,
+   "e": "Koneksi dirotasi sebelum server memutusnya karena idle."
+  },
+  {
+   "d": "connectors",
+   "q": "Setelah rs.getInt() pada kolom NULL, cara mendeteksinya adalah...",
+   "o": [
+    "rs.wasNull()",
+    "rs.getObject()==0",
+    "nilai == -1",
+    "tidak bisa dideteksi"
+   ],
+   "a": 0,
+   "e": "getInt mengembalikan 0 untuk NULL; wasNull() membedakannya."
+  },
+  {
+   "d": "aplikasi",
+   "q": "Mengapa nama tabel tidak bisa dijadikan parameter prepared statement?",
+   "o": [
+    "Bukan nilai melainkan identifier",
+    "Tipe datanya salah",
+    "Butuh TLS",
+    "Butuh index"
+   ],
+   "a": 0,
+   "e": "Parameter hanya untuk nilai; identifier harus divalidasi whitelist."
+  },
+  {
+   "d": "aplikasi",
+   "q": "Mode SQL yang membuat nilai tidak valid menjadi error (bukan dipotong) adalah...",
+   "o": [
+    "ANSI_QUOTES",
+    "STRICT_TRANS_TABLES",
+    "PIPES_AS_CONCAT",
+    "NO_AUTO_VALUE_ON_ZERO"
+   ],
+   "a": 1,
+   "e": "Strict mode menolak data yang tidak valid alih-alih memotongnya."
+  },
+  {
+   "d": "aplikasi",
+   "q": "Dengan ANSI_QUOTES aktif, tanda kutip ganda berfungsi sebagai...",
+   "o": [
+    "string",
+    "identifier (nama kolom/tabel)",
+    "komentar",
+    "escape"
+   ],
+   "a": 1,
+   "e": "ANSI_QUOTES membuat \" menjadi pembungkus identifier, seperti backtick."
+  },
+  {
+   "d": "aplikasi",
+   "q": "SQLSTATE untuk deadlock adalah...",
+   "o": [
+    "40001",
+    "23000",
+    "42000",
+    "HY000"
+   ],
+   "a": 0,
+   "e": "Deadlock = errno 1213, SQLSTATE 40001."
+  },
+  {
+   "d": "aplikasi",
+   "q": "Perintah untuk melihat error terakhir di sesi adalah...",
+   "o": [
+    "SHOW WARNINGS",
+    "SHOW ERRORS",
+    "SHOW STATUS",
+    "SHOW ENGINE INNODB STATUS"
+   ],
+   "a": 1,
+   "e": "SHOW ERRORS menampilkan error; SHOW WARNINGS menampilkan warning."
+  },
+  {
+   "d": "aplikasi",
+   "q": "Fungsi untuk memfilter hasil agregasi adalah...",
+   "o": [
+    "WHERE",
+    "HAVING",
+    "ORDER BY",
+    "LIMIT"
+   ],
+   "a": 1,
+   "e": "WHERE memfilter baris sebelum agregasi; HAVING memfilter hasil agregat."
+  },
+  {
+   "d": "aplikasi",
+   "q": "COUNT(kolom) berbeda dari COUNT(*) karena...",
+   "o": [
+    "lebih cepat",
+    "mengabaikan NULL",
+    "menghitung duplikat",
+    "tidak bisa dipakai GROUP BY"
+   ],
+   "a": 1,
+   "e": "COUNT(kolom) hanya menghitung nilai non-NULL."
+  },
+  {
+   "d": "aplikasi",
+   "q": "Untuk subtotal per grup sekaligus total keseluruhan dipakai...",
+   "o": [
+    "GROUP BY ... WITH ROLLUP",
+    "UNION ALL",
+    "HAVING",
+    "DISTINCT"
+   ],
+   "a": 0,
+   "e": "WITH ROLLUP menambahkan baris ringkasan untuk tiap tingkat pengelompokan."
+  },
+  {
+   "d": "skema",
+   "q": "View dengan GROUP BY...",
+   "o": [
+    "bisa di-update",
+    "tidak bisa di-update",
+    "hanya bisa INSERT",
+    "hanya bisa DELETE"
+   ],
+   "a": 1,
+   "e": "Agregasi memutus pemetaan satu baris view ke satu baris tabel."
+  },
+  {
+   "d": "skema",
+   "q": "WITH CHECK OPTION pada view berfungsi...",
+   "o": [
+    "mempercepat query",
+    "menolak baris yang tidak memenuhi WHERE view",
+    "mengunci tabel",
+    "menyimpan hasil"
+   ],
+   "a": 1,
+   "e": "Baris hasil INSERT/UPDATE harus tetap terlihat oleh view."
+  },
+  {
+   "d": "skema",
+   "q": "Tipe yang tepat untuk uang adalah...",
+   "o": [
+    "FLOAT",
+    "DOUBLE",
+    "DECIMAL",
+    "INT"
+   ],
+   "a": 2,
+   "e": "DECIMAL menyimpan nilai desimal eksak, menghindari galat biner."
+  },
+  {
+   "d": "skema",
+   "q": "Mengapa 0.1 + 0.2 != 0.3 pada DOUBLE?",
+   "o": [
+    "Bug MySQL",
+    "Desimal tidak selalu bisa direpresentasikan tepat dalam biner",
+    "Karena collation",
+    "Karena auto_increment"
+   ],
+   "a": 1,
+   "e": "Floating point menyimpan aproksimasi biner."
+  },
+  {
+   "d": "skema",
+   "q": "Tipe temporal yang dikonversi mengikuti zona waktu sesi adalah...",
+   "o": [
+    "DATE",
+    "DATETIME",
+    "TIMESTAMP",
+    "TIME"
+   ],
+   "a": 2,
+   "e": "TIMESTAMP disimpan UTC dan ditampilkan menurut time_zone sesi."
+  },
+  {
+   "d": "skema",
+   "q": "Akhiran _ci pada collation berarti...",
+   "o": [
+    "case-insensitive",
+    "case-sensitive",
+    "binary",
+    "case-insensitive dan accent-sensitive"
+   ],
+   "a": 0,
+   "e": "_ci = case-insensitive; _bin = biner."
+  },
+  {
+   "d": "skema",
+   "q": "CHAR berbeda dari VARCHAR karena...",
+   "o": [
+    "CHAR panjang tetap dengan padding",
+    "CHAR lebih hemat",
+    "VARCHAR tidak bisa di-index",
+    "CHAR hanya untuk angka"
+   ],
+   "a": 0,
+   "e": "CHAR menyimpan panjang tetap dan memangkas spasi saat dibaca."
+  },
+  {
+   "d": "skema",
+   "q": "Fungsi untuk jarak dalam meter antara dua POINT adalah...",
+   "o": [
+    "ST_Distance",
+    "ST_Distance_Sphere",
+    "ST_Contains",
+    "ST_AsText"
+   ],
+   "a": 1,
+   "e": "ST_Distance memakai satuan derajat; ST_Distance_Sphere memberi meter."
+  },
+  {
+   "d": "transaksi",
+   "q": "Pernyataan yang memicu commit implisit adalah...",
+   "o": [
+    "UPDATE",
+    "INSERT",
+    "CREATE TABLE",
+    "SELECT"
+   ],
+   "a": 2,
+   "e": "DDL seperti CREATE/ALTER/DROP/TRUNCATE memicu commit implisit."
+  },
+  {
+   "d": "transaksi",
+   "q": "Apakah TRUNCATE bisa di-rollback?",
+   "o": [
+    "Bisa",
+    "Tidak, karena DDL dan commit implisit",
+    "Hanya di InnoDB",
+    "Hanya dengan SAVEPOINT"
+   ],
+   "a": 1,
+   "e": "TRUNCATE bukan DML transaksional dalam arti rollback."
+  },
+  {
+   "d": "transaksi",
+   "q": "Perintah membatalkan sebagian transaksi adalah...",
+   "o": [
+    "ROLLBACK",
+    "ROLLBACK TO SAVEPOINT",
+    "COMMIT",
+    "UNLOCK TABLES"
+   ],
+   "a": 1,
+   "e": "Savepoint memungkinkan rollback parsial."
+  },
+  {
+   "d": "transaksi",
+   "q": "Default isolation level MySQL adalah...",
+   "o": [
+    "READ UNCOMMITTED",
+    "READ COMMITTED",
+    "REPEATABLE READ",
+    "SERIALIZABLE"
+   ],
+   "a": 2,
+   "e": "InnoDB default REPEATABLE READ."
+  },
+  {
+   "d": "transaksi",
+   "q": "Pada REPEATABLE READ, phantom read dicegah terutama oleh...",
+   "o": [
+    "snapshot saja",
+    "gap locking",
+    "full table lock",
+    "autocommit"
+   ],
+   "a": 1,
+   "e": "MySQL memakai gap lock sehingga insert di rentang yang dibaca terblokir."
+  },
+  {
+   "d": "transaksi",
+   "q": "Perintah mengunci baris secara eksklusif adalah...",
+   "o": [
+    "SELECT ... FOR SHARE",
+    "SELECT ... FOR UPDATE",
+    "LOCK TABLES READ",
+    "SET autocommit=0"
+   ],
+   "a": 1,
+   "e": "FOR UPDATE memberi exclusive lock pada baris yang dibaca."
+  },
+  {
+   "d": "transaksi",
+   "q": "SKIP LOCKED berguna untuk...",
+   "o": [
+    "laporan konsisten",
+    "antrean job agar tidak menunggu baris terkunci",
+    "mempercepat commit",
+    "mengunci tabel"
+   ],
+   "a": 1,
+   "e": "Worker bisa mengambil baris lain tanpa menunggu lock."
+  },
+  {
+   "d": "optimasi",
+   "q": "Index untuk WHERE a=? AND b>? ORDER BY c paling tepat...",
+   "o": [
+    "(c)",
+    "(a, b, c)",
+    "(b, a, c)",
+    "(a, c, b)"
+   ],
+   "a": 1,
+   "e": "Kolom equality dulu, lalu range, lalu kolom pengurutan."
+  },
+  {
+   "d": "optimasi",
+   "q": "Kolom type=ALL pada EXPLAIN menandakan...",
+   "o": [
+    "index unik",
+    "full table scan",
+    "join const",
+    "range scan"
+   ],
+   "a": 1,
+   "e": "ALL = memindai seluruh tabel."
+  },
+  {
+   "d": "optimasi",
+   "q": "Covering index terlihat pada Extra sebagai...",
+   "o": [
+    "Using filesort",
+    "Using temporary",
+    "Using index",
+    "Using where"
+   ],
+   "a": 2,
+   "e": "Semua kolom diambil dari index sehingga tabel tidak dibaca."
+  },
+  {
+   "d": "optimasi",
+   "q": "Mengapa WHERE DATE(kolom) = '2026-01-01' tidak memakai index?",
+   "o": [
+    "Fungsi diterapkan pada kolom",
+    "Tipe data tidak cocok",
+    "Index harus unik",
+    "Butuh FULLTEXT"
+   ],
+   "a": 0,
+   "e": "Gunakan rentang >= dan < agar index terpakai."
+  },
+  {
+   "d": "optimasi",
+   "q": "Paginasi keyset lebih baik daripada OFFSET besar karena...",
+   "o": [
+    "lebih mudah ditulis",
+    "tidak memindai baris yang dilewati",
+    "tidak butuh index",
+    "mengunci baris"
+   ],
+   "a": 1,
+   "e": "Keyset memakai WHERE id > nilai_terakhir sehingga langsung melompat."
+  },
+  {
+   "d": "optimasi",
+   "q": "NOT IN dengan subquery yang mengandung NULL menghasilkan...",
+   "o": [
+    "semua baris",
+    "nol baris",
+    "error",
+    "baris duplikat"
+   ],
+   "a": 1,
+   "e": "Perbandingan dengan NULL menjadi UNKNOWN sehingga tidak ada baris lolos."
+  },
+  {
+   "d": "stored",
+   "q": "Perbedaan procedure dan function adalah...",
+   "o": [
+    "tidak ada",
+    "function bisa dipakai dalam ekspresi SQL, procedure dipanggil CALL",
+    "procedure tidak punya parameter",
+    "function tidak bisa SELECT"
+   ],
+   "a": 1,
+   "e": "Function mengembalikan nilai dan bisa dipakai di query."
+  },
+  {
+   "d": "stored",
+   "q": "Urutan deklarasi yang benar dalam blok routine adalah...",
+   "o": [
+    "cursor, variabel, handler",
+    "variabel, kondisi, cursor, handler",
+    "handler, cursor, variabel",
+    "bebas"
+   ],
+   "a": 1,
+   "e": "MySQL mensyaratkan urutan variabel → kondisi → cursor → handler."
+  },
+  {
+   "d": "stored",
+   "q": "Trigger yang bisa mengubah nilai kolom baru adalah...",
+   "o": [
+    "AFTER INSERT",
+    "BEFORE INSERT",
+    "AFTER UPDATE",
+    "semua trigger"
+   ],
+   "a": 1,
+   "e": "Hanya BEFORE yang boleh mengubah NEW."
+  },
+  {
+   "d": "stored",
+   "q": "Variabel untuk mengaktifkan penjadwal event adalah...",
+   "o": [
+    "event_scheduler",
+    "autocommit",
+    "event_enabled",
+    "scheduler_on"
+   ],
+   "a": 0,
+   "e": "event_scheduler = ON mengaktifkan penjadwal."
+  },
+  {
+   "d": "stored",
+   "q": "ON COMPLETION PRESERVE membuat event...",
+   "o": [
+    "dihapus setelah jalan",
+    "tetap disimpan setelah selesai",
+    "berjalan tiap detik",
+    "tidak bisa diubah"
+   ],
+   "a": 1,
+   "e": "Tanpa PRESERVE, event sekali jalan dihapus setelah dieksekusi."
+  },
+  {
+   "d": "json",
+   "q": "Perbedaan -> dan ->> adalah...",
+   "o": [
+    "tidak ada",
+    "-> mengembalikan JSON, ->> mengembalikan teks",
+    "-> untuk array, ->> untuk objek",
+    "-> lebih lambat"
+   ],
+   "a": 1,
+   "e": "->> melakukan unquote sehingga hasilnya string."
+  },
+  {
+   "d": "json",
+   "q": "Fungsi untuk memecah array JSON menjadi baris adalah...",
+   "o": [
+    "JSON_EXTRACT",
+    "JSON_TABLE",
+    "JSON_SET",
+    "JSON_LENGTH"
+   ],
+   "a": 1,
+   "e": "JSON_TABLE memetakan dokumen ke kolom dan baris."
+  },
+  {
+   "d": "json",
+   "q": "JSON_CONTAINS pada array string membutuhkan argumen...",
+   "o": [
+    "'arabika'",
+    "'\"arabika\"'",
+    "arabika",
+    "ARRAY('arabika')"
+   ],
+   "a": 1,
+   "e": "Argumen harus JSON valid; string JSON butuh tanda kutip ganda di dalamnya."
+  },
+  {
+   "d": "json",
+   "q": "Cara mengindeks field JSON adalah...",
+   "o": [
+    "CREATE INDEX pada kolom JSON",
+    "generated column dari ekspresi JSON lalu index",
+    "tidak bisa",
+    "pakai FULLTEXT"
+   ],
+   "a": 1,
+   "e": "Index harus pada kolom hasil ekspresi atau multi-valued index untuk array."
+  },
+  {
+   "d": "json",
+   "q": "Padanan tabel pada document store adalah...",
+   "o": [
+    "collection",
+    "schema",
+    "view",
+    "index"
+   ],
+   "a": 0,
+   "e": "Document store menyimpan dokumen dalam collection."
+  },
+  {
+   "d": "json",
+   "q": "Perintah MySQL Shell untuk berpindah ke mode JavaScript adalah...",
+   "o": [
+    "\\sql",
+    "\\js",
+    "\\py",
+    "\\status"
+   ],
+   "a": 1,
+   "e": "\\js mengaktifkan mode JavaScript."
+  }
+ ]
+}

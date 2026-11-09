@@ -1,0 +1,668 @@
+{
+ "cert": "ckad",
+ "minutes": 90,
+ "pass": 66,
+ "passLabel": "ambang latihan (ujian asli 66%)",
+ "questions": [
+  {
+   "d": "desain",
+   "q": "Perintah membuat YAML Deployment tanpa menerapkannya adalah...",
+   "o": [
+    "kubectl create deploy web --image=nginx --dry-run=client -o yaml",
+    "kubectl apply --dry-run",
+    "kubectl get deploy -o yaml",
+    "kubectl describe deploy"
+   ],
+   "a": 0,
+   "e": "Dry-run client mencetak manifest."
+  },
+  {
+   "d": "desain",
+   "q": "Init container berjalan...",
+   "o": [
+    "paralel dengan container utama",
+    "berurutan sampai sukses sebelum container utama",
+    "setelah container utama",
+    "hanya saat gagal"
+   ],
+   "a": 1,
+   "e": "Init harus selesai dulu."
+  },
+  {
+   "d": "desain",
+   "q": "Dua container dalam satu Pod berkomunikasi lewat...",
+   "o": [
+    "nama container",
+    "localhost",
+    "service",
+    "node IP"
+   ],
+   "a": 1,
+   "e": "Berbagi network namespace."
+  },
+  {
+   "d": "desain",
+   "q": "restartPolicy yang valid untuk Job adalah...",
+   "o": [
+    "Always",
+    "Never atau OnFailure",
+    "OnFailure saja",
+    "Always atau Never"
+   ],
+   "a": 1,
+   "e": "Always tidak valid pada Job."
+  },
+  {
+   "d": "desain",
+   "q": "CronJob dengan concurrencyPolicy Forbid berarti...",
+   "o": [
+    "jalankan bersamaan",
+    "lewati jika job sebelumnya masih berjalan",
+    "hapus job lama",
+    "batalkan job baru"
+   ],
+   "a": 1,
+   "e": "Mencegah tumpang tindih."
+  },
+  {
+   "d": "desain",
+   "q": "Volume yang hilang saat Pod dihapus adalah...",
+   "o": [
+    "PVC",
+    "emptyDir",
+    "hostPath",
+    "configMap"
+   ],
+   "a": 1,
+   "e": "Umurnya sebatas Pod."
+  },
+  {
+   "d": "desain",
+   "q": "Mount ConfigMap ke satu berkas spesifik memakai...",
+   "o": [
+    "subPath",
+    "items",
+    "projected",
+    "hostPath"
+   ],
+   "a": 0,
+   "e": "subPath mencegah direktori tertimpa."
+  },
+  {
+   "d": "desain",
+   "q": "Perintah memfilter Pod dengan label env=prod adalah...",
+   "o": [
+    "kubectl get pods env=prod",
+    "kubectl get pods -l env=prod",
+    "kubectl get pods --label env",
+    "kubectl get pods -n env:prod"
+   ],
+   "a": 1,
+   "e": "Flag -l untuk selector."
+  },
+  {
+   "d": "desain",
+   "q": "Selector Service yang tidak cocok dengan label Pod menyebabkan...",
+   "o": [
+    "Pod restart",
+    "endpoint kosong",
+    "Service gagal dibuat",
+    "Ingress error"
+   ],
+   "a": 1,
+   "e": "Tidak ada backend."
+  },
+  {
+   "d": "desain",
+   "q": "Image dengan tag latest memakai imagePullPolicy default...",
+   "o": [
+    "IfNotPresent",
+    "Always",
+    "Never",
+    "selalu menanyakan"
+   ],
+   "a": 1,
+   "e": "latest default Always."
+  },
+  {
+   "d": "desain",
+   "q": "Menambah container ke Pod yang sudah berjalan...",
+   "o": [
+    "bisa dengan kubectl edit",
+    "tidak bisa, Pod immutable untuk daftar container",
+    "bisa dengan kubectl set image",
+    "bisa dengan scale"
+   ],
+   "a": 1,
+   "e": "Perubahan struktur butuh recreate."
+  },
+  {
+   "d": "deployment",
+   "q": "Deployment membuat objek per revisi berupa...",
+   "o": [
+    "Pod langsung",
+    "ReplicaSet",
+    "StatefulSet",
+    "Job"
+   ],
+   "a": 1,
+   "e": "RS per revisi."
+  },
+  {
+   "d": "deployment",
+   "q": "Field yang immutable pada Deployment adalah...",
+   "o": [
+    "replicas",
+    "selector",
+    "image",
+    "labels template"
+   ],
+   "a": 1,
+   "e": "Selector tidak bisa diubah."
+  },
+  {
+   "d": "deployment",
+   "q": "maxSurge 1 dan maxUnavailable 0 berarti...",
+   "o": [
+    "semua Pod diganti sekaligus",
+    "satu Pod tambahan dibuat sebelum yang lama dihapus",
+    "tidak ada downtime jaminan",
+    "update berhenti"
+   ],
+   "a": 1,
+   "e": "Zero unavailable, satu ekstra."
+  },
+  {
+   "d": "deployment",
+   "q": "kubectl rollout undo --to-revision=1 akan...",
+   "o": [
+    "menghapus revisi 1",
+    "membuat revisi baru dari isi revisi 1",
+    "menghentikan rollout",
+    "mengubah selector"
+   ],
+   "a": 1,
+   "e": "Rollback menambah revisi."
+  },
+  {
+   "d": "deployment",
+   "q": "HPA CPU memerlukan container memiliki...",
+   "o": [
+    "limits.memory",
+    "requests.cpu",
+    "nodeSelector",
+    "readinessProbe"
+   ],
+   "a": 1,
+   "e": "Dasar perhitungan utilisasi."
+  },
+  {
+   "d": "deployment",
+   "q": "Tanpa metrics-server, HPA menampilkan...",
+   "o": [
+    "0%",
+    "unknown",
+    "error pembuatan",
+    "100%"
+   ],
+   "a": 1,
+   "e": "Tidak ada metrik."
+  },
+  {
+   "d": "deployment",
+   "q": "Perintah scaling cepat dari CLI adalah...",
+   "o": [
+    "kubectl set replicas",
+    "kubectl scale deployment web --replicas=5",
+    "kubectl edit replicas",
+    "kubectl rollout scale"
+   ],
+   "a": 1,
+   "e": "kubectl scale."
+  },
+  {
+   "d": "deployment",
+   "q": "helm upgrade --install berguna karena...",
+   "o": [
+    "selalu membuat namespace",
+    "idempotent: install bila belum ada, upgrade bila sudah",
+    "menghapus release lama",
+    "mengabaikan values"
+   ],
+   "a": 1,
+   "e": "Aman di pipeline."
+  },
+  {
+   "d": "deployment",
+   "q": "helm rollback memerlukan...",
+   "o": [
+    "nama chart",
+    "nomor revisi",
+    "file values",
+    "namespace baru"
+   ],
+   "a": 1,
+   "e": "Argumen revisi."
+  },
+  {
+   "d": "deployment",
+   "q": "namePrefix pada Kustomize mengubah...",
+   "o": [
+    "hanya nama file",
+    "nama resource (dan referensi yang dikenali)",
+    "namespace",
+    "image tag"
+   ],
+   "a": 1,
+   "e": "Prefiks resource."
+  },
+  {
+   "d": "deployment",
+   "q": "kubectl apply -k dipakai untuk...",
+   "o": [
+    "menerapkan Kustomize overlay",
+    "menerapkan Helm chart",
+    "membuat secret",
+    "melihat log"
+   ],
+   "a": 0,
+   "e": "-k = kustomize."
+  },
+  {
+   "d": "observability",
+   "q": "Probe yang mengeluarkan Pod dari endpoint tanpa restart adalah...",
+   "o": [
+    "liveness",
+    "readiness",
+    "startup",
+    "exec"
+   ],
+   "a": 1,
+   "e": "Readiness mengatur trafik."
+  },
+  {
+   "d": "observability",
+   "q": "Probe untuk aplikasi dengan waktu start lama adalah...",
+   "o": [
+    "readinessProbe",
+    "livenessProbe",
+    "startupProbe",
+    "tcpSocket"
+   ],
+   "a": 2,
+   "e": "Menahan liveness selama start."
+  },
+  {
+   "d": "observability",
+   "q": "Liveness gagal berulang menyebabkan...",
+   "o": [
+    "Pod dihapus",
+    "container restart",
+    "trafik berhenti",
+    "Pod Pending"
+   ],
+   "a": 1,
+   "e": "Kubelet me-restart container."
+  },
+  {
+   "d": "observability",
+   "q": "kubectl logs --previous berguna untuk...",
+   "o": [
+    "log Pod lain",
+    "log instance container sebelum restart",
+    "log node",
+    "log ingress"
+   ],
+   "a": 1,
+   "e": "Instance sebelumnya."
+  },
+  {
+   "d": "observability",
+   "q": "Pod dengan dua container, log salah satu dibaca dengan...",
+   "o": [
+    "kubectl logs pod",
+    "kubectl logs pod -c nama",
+    "kubectl describe pod",
+    "kubectl exec"
+   ],
+   "a": 1,
+   "e": "Wajib -c."
+  },
+  {
+   "d": "observability",
+   "q": "Status CreateContainerConfigError menandakan...",
+   "o": [
+    "image tidak ada",
+    "ConfigMap/Secret yang dirujuk tidak ada",
+    "resource kurang",
+    "probe gagal"
+   ],
+   "a": 1,
+   "e": "Referensi konfigurasi hilang."
+  },
+  {
+   "d": "observability",
+   "q": "Kelas QoS ketika request = limit untuk CPU dan memori adalah...",
+   "o": [
+    "BestEffort",
+    "Burstable",
+    "Guaranteed",
+    "Premium"
+   ],
+   "a": 2,
+   "e": "Semua container harus sama."
+  },
+  {
+   "d": "observability",
+   "q": "Container melebihi limit memori akan...",
+   "o": [
+    "di-throttle",
+    "di-OOMKill",
+    "diabaikan",
+    "dipindah node"
+   ],
+   "a": 1,
+   "e": "Exit 137."
+  },
+  {
+   "d": "config",
+   "q": "ConfigMap dari file tunggal dibuat dengan...",
+   "o": [
+    "--from-literal",
+    "--from-file",
+    "--from-env-file",
+    "--from-dir"
+   ],
+   "a": 1,
+   "e": "Satu key per file."
+  },
+  {
+   "d": "config",
+   "q": "Mengonsumsi semua key ConfigMap sebagai env memakai...",
+   "o": [
+    "env",
+    "envFrom",
+    "valueFrom",
+    "volumeMount"
+   ],
+   "a": 1,
+   "e": "envFrom dengan configMapRef."
+  },
+  {
+   "d": "config",
+   "q": "Perubahan ConfigMap pada env Pod...",
+   "o": [
+    "langsung berlaku",
+    "berlaku setelah Pod dibuat ulang",
+    "tidak pernah",
+    "memicu restart otomatis"
+   ],
+   "a": 1,
+   "e": "Env dibaca saat start."
+  },
+  {
+   "d": "config",
+   "q": "Secret secara default bersifat...",
+   "o": [
+    "terenkripsi AES",
+    "base64 saja",
+    "plaintext",
+    "hash"
+   ],
+   "a": 1,
+   "e": "Bukan enkripsi."
+  },
+  {
+   "d": "config",
+   "q": "Field untuk menulis nilai Secret sebagai plaintext di YAML adalah...",
+   "o": [
+    "data",
+    "stringData",
+    "binaryData",
+    "value"
+   ],
+   "a": 1,
+   "e": "stringData dikonversi otomatis."
+  },
+  {
+   "d": "config",
+   "q": "Secret TLS dibuat dengan...",
+   "o": [
+    "kubectl create secret generic",
+    "kubectl create secret tls",
+    "kubectl create cm tls",
+    "kubectl create secret docker-registry"
+   ],
+   "a": 1,
+   "e": "Tipe tls."
+  },
+  {
+   "d": "config",
+   "q": "Bila nama env sama muncul di env dan envFrom, yang menang adalah...",
+   "o": [
+    "envFrom",
+    "env eksplisit",
+    "yang lebih dulu",
+    "error"
+   ],
+   "a": 1,
+   "e": "env menimpa."
+  },
+  {
+   "d": "config",
+   "q": "fsGroup pada securityContext mengatur...",
+   "o": [
+    "user proses",
+    "grup pemilik volume",
+    "capability",
+    "seccomp"
+   ],
+   "a": 1,
+   "e": "Kepemilikan volume."
+  },
+  {
+   "d": "config",
+   "q": "readOnlyRootFilesystem true membuat aplikasi yang menulis ke /var/cache gagal kecuali...",
+   "o": [
+    "dijalankan sebagai root",
+    "dipasang volume pada path tersebut",
+    "capability ditambah",
+    "probe dimatikan"
+   ],
+   "a": 1,
+   "e": "Perlu emptyDir/PVC."
+  },
+  {
+   "d": "config",
+   "q": "allowPrivilegeEscalation false mencegah...",
+   "o": [
+    "network access",
+    "eskalasi lewat setuid",
+    "mount volume",
+    "exec"
+   ],
+   "a": 1,
+   "e": "Mencegah setuid escalation."
+  },
+  {
+   "d": "config",
+   "q": "RoleBinding ke ServiceAccount menuliskan subject dengan format...",
+   "o": [
+    "nama saja",
+    "namespace:nama",
+    "sa/nama",
+    "system:nama"
+   ],
+   "a": 1,
+   "e": "namespace:serviceaccount."
+  },
+  {
+   "d": "config",
+   "q": "Izin lintas namespace memerlukan...",
+   "o": [
+    "Role + RoleBinding",
+    "ClusterRole + ClusterRoleBinding",
+    "ServiceAccount saja",
+    "NetworkPolicy"
+   ],
+   "a": 1,
+   "e": "Cluster-scope."
+  },
+  {
+   "d": "config",
+   "q": "Namespace dengan quota requests.cpu mewajibkan Pod...",
+   "o": [
+    "punya limits",
+    "punya requests",
+    "punya nodeSelector",
+    "punya probe"
+   ],
+   "a": 1,
+   "e": "Jika tidak, pembuatan ditolak."
+  },
+  {
+   "d": "config",
+   "q": "LimitRange tipe Container berfungsi...",
+   "o": [
+    "membatasi total namespace",
+    "menetapkan default/maksimum per container",
+    "membatasi pod count",
+    "mengatur QoS"
+   ],
+   "a": 1,
+   "e": "Default limit per container."
+  },
+  {
+   "d": "services",
+   "q": "Service default di kluster adalah tipe...",
+   "o": [
+    "NodePort",
+    "ClusterIP",
+    "LoadBalancer",
+    "ExternalName"
+   ],
+   "a": 1,
+   "e": "ClusterIP."
+  },
+  {
+   "d": "services",
+   "q": "Port pada Service yang mengarah ke port container disebut...",
+   "o": [
+    "port",
+    "targetPort",
+    "nodePort",
+    "containerPort"
+   ],
+   "a": 1,
+   "e": "targetPort."
+  },
+  {
+   "d": "services",
+   "q": "Service tanpa backend dapat diperiksa lewat...",
+   "o": [
+    "kubectl get endpoints",
+    "kubectl get svc -o wide",
+    "kubectl describe pod",
+    "kubectl logs"
+   ],
+   "a": 0,
+   "e": "Endpoint kosong."
+  },
+  {
+   "d": "services",
+   "q": "Headless service dibuat dengan...",
+   "o": [
+    "type: None",
+    "clusterIP: None",
+    "selector: None",
+    "port: None"
+   ],
+   "a": 1,
+   "e": "Tanpa ClusterIP."
+  },
+  {
+   "d": "services",
+   "q": "Ingress memerlukan...",
+   "o": [
+    "Service LoadBalancer",
+    "Ingress controller",
+    "NodePort wajib",
+    "ExternalName"
+   ],
+   "a": 1,
+   "e": "Tanpa controller tidak berefek."
+  },
+  {
+   "d": "services",
+   "q": "pathType yang cocok untuk pencocokan awalan path adalah...",
+   "o": [
+    "Exact",
+    "Prefix",
+    "Regex",
+    "Any"
+   ],
+   "a": 1,
+   "e": "Prefix."
+  },
+  {
+   "d": "services",
+   "q": "NetworkPolicy tanpa aturan ingress berarti...",
+   "o": [
+    "semua diizinkan",
+    "semua ingress ditolak untuk Pod terpilih",
+    "hanya DNS diizinkan",
+    "policy diabaikan"
+   ],
+   "a": 1,
+   "e": "Default deny untuk Pod itu."
+  },
+  {
+   "d": "services",
+   "q": "Dalam satu elemen from, podSelector dan namespaceSelector digabung dengan logika...",
+   "o": [
+    "OR",
+    "AND",
+    "XOR",
+    "NOT"
+   ],
+   "a": 1,
+   "e": "AND; elemen terpisah = OR."
+  },
+  {
+   "d": "services",
+   "q": "Policy egress yang tidak mengizinkan port 53 menyebabkan...",
+   "o": [
+    "Pod tidak start",
+    "DNS gagal",
+    "Ingress gagal",
+    "Service hilang"
+   ],
+   "a": 1,
+   "e": "CoreDNS tidak terjangkau."
+  },
+  {
+   "d": "services",
+   "q": "FQDN Service db pada namespace prod adalah...",
+   "o": [
+    "db.prod",
+    "db.prod.svc.cluster.local",
+    "db.svc.prod",
+    "prod.db.local"
+   ],
+   "a": 1,
+   "e": "Format baku."
+  },
+  {
+   "d": "services",
+   "q": "Nama pendek Service hanya resolve...",
+   "o": [
+    "di semua namespace",
+    "di namespace yang sama",
+    "di kube-system",
+    "di host"
+   ],
+   "a": 1,
+   "e": "Perlu FQDN lintas namespace."
+  }
+ ]
+}

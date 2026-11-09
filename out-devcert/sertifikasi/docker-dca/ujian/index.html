@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ujian latihan Docker Certified Associate — DevCert</title>
+<meta name="description" content="Simulasi ujian DCA dengan soal pilihan ganda dan pembahasan.">
+<meta name="theme-color" content="#f2f4f7">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>try{var t=localStorage.getItem('devcert-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}</script>
+<link rel="stylesheet" href="/devcert/situs/assets/style.css?v=65652c1f">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%232460e0'/><text x='50' y='68' font-size='54' font-family='monospace' fill='white' text-anchor='middle'>D</text></svg>">
+</head>
+<body data-cert="docker-dca" data-topic="">
+<a class="skip" href="#main">Lewati ke konten</a>
+<header class="top">
+  <a class="brand" href="/devcert/situs/"><span class="mark">D</span> DevCert <span class="dot" title="siap dipakai"></span></a>
+  <button id="searchBtn" class="search-open" type="button">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg>
+    <span>Cari topik…</span> <kbd>/</kbd>
+  </button>
+  <div class="progress-mini" title="Progres belajar">
+    <svg viewBox="0 0 36 36" aria-hidden="true"><circle class="bg" cx="18" cy="18" r="15.5"/><circle id="ring" class="fg" cx="18" cy="18" r="15.5"/></svg>
+    <span id="progressPct">0%</span>
+  </div>
+  <button id="themeBtn" class="icon-btn" type="button" aria-label="Ganti tema terang atau gelap" title="Ganti tema">
+    <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/></svg>
+    <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.6 6.6 0 0 0 9.8 9.8Z"/></svg>
+  </button>
+</header>
+<div class="shell no-side">
+  <aside class="side"></aside>
+  <main id="main">
+<div class="crumbs"><a href="/devcert/situs/">Beranda</a> / <a href="/devcert/situs/sertifikasi/docker-dca/">Docker Certified Associate</a> / <span>Ujian latihan</span></div>
+<header class="cert-hero">
+  <div class="cert-vendor">Simulasi ujian · DCA</div>
+  <h1>Ujian latihan: Docker Certified Associate</h1>
+  <p class="lede">55 soal pilihan ganda dari 14 domain, waktu 90 menit, nilai lulus (65–67%) 65%. Sama seperti ujian aslinya: tidak ada pembahasan sampai kamu submit.</p>
+</header>
+
+<div class="quiz" id="quiz">
+  <section class="quiz-start" id="qStart">
+    <div class="facts">
+      <div class="fact"><span>Soal</span><b>55</b></div>
+      <div class="fact"><span>Durasi</span><b>90 menit</b></div>
+      <div class="fact"><span>Nilai lulus (65–67%)</span><b>65%</b></div>
+      <div class="fact"><span>Domain</span><b>6</b></div>
+    </div>
+    <div class="qmeta"><div class="qmeta-row"><span>Orchestration</span><b>14 soal</b></div><div class="qmeta-row"><span>Image Creation, Management, and Registry</span><b>11 soal</b></div><div class="qmeta-row"><span>Installation and Configuration</span><b>8 soal</b></div><div class="qmeta-row"><span>Networking</span><b>8 soal</b></div><div class="qmeta-row"><span>Security</span><b>8 soal</b></div><div class="qmeta-row"><span>Storage and Volumes</span><b>6 soal</b></div></div>
+    <button class="btn primary" id="startQuiz" type="button">Mulai ujian</button>
+    <p class="hint">Jawaban bisa diubah sebelum submit. Waktu berjalan otomatis; saat habis, ujian dikumpulkan sendiri.</p>
+  </section>
+
+  <section class="quiz-run" id="qRun" hidden>
+    <div class="qbar">
+      <span class="qcount" id="qCount">Soal 1 / 55</span>
+      <span class="qtimer" id="qTimer">--:--</span>
+      <button class="btn ghost small" id="qSubmit" type="button">Kumpulkan</button>
+    </div>
+    <div class="qbody">
+      <p class="qdom" id="qDom"></p>
+      <h2 class="qtext" id="qText"></h2>
+      <div class="qopts" id="qOpts"></div>
+    </div>
+    <div class="qnav">
+      <button class="btn ghost small" id="qPrev" type="button">← Sebelumnya</button>
+      <button class="btn ghost small" id="qNext" type="button">Berikutnya →</button>
+    </div>
+    <div class="qgrid" id="qGrid"></div>
+  </section>
+
+  <section class="quiz-result" id="qResult" hidden></section>
+</div>
+<script id="quizData" type="application/json">{"cert": "docker-dca", "minutes": 90, "pass": 65, "passLabel": "nilai lulus (65–67%)", "domTitles": {"orkestrasi": "Orchestration", "image": "Image Creation, Management, and Registry", "instalasi": "Installation and Configuration", "networking": "Networking", "security": "Security", "storage": "Storage and Volumes"}, "questions": [{"d": "orkestrasi", "q": "Port yang dipakai untuk manajemen swarm adalah...", "o": ["2375", "2376", "2377", "4789"], "a": 2, "e": "2377 untuk kontrol plane swarm."}, {"d": "orkestrasi", "q": "Trafik overlay VXLAN memakai port...", "o": ["UDP 4789", "TCP 4789", "UDP 7946", "TCP 2377"], "a": 0, "e": "VXLAN 4789 UDP."}, {"d": "orkestrasi", "q": "Dengan 5 manajer, kegagalan yang masih ditoleransi adalah...", "o": ["0", "1", "2", "3"], "a": 2, "e": "Kuorum 3 dari 5."}, {"d": "orkestrasi", "q": "Perintah menambahkan node sebagai manajer adalah...", "o": ["docker node accept", "docker node promote", "docker swarm join --manager", "docker node role manager"], "a": 1, "e": "Promote menaikkan worker."}, {"d": "orkestrasi", "q": "Service dengan satu task per node memakai mode...", "o": ["replicated", "global", "job", "daemon"], "a": 1, "e": "Global = satu task per node."}, {"d": "orkestrasi", "q": "Nama service web pada stack mystack adalah...", "o": ["web", "mystack-web", "mystack_web", "stack_web"], "a": 2, "e": "Prefiks stack dipisah underscore."}, {"d": "orkestrasi", "q": "docker stack deploy tidak mendukung kunci...", "o": ["image", "ports", "build", "deploy"], "a": 2, "e": "Build harus dilakukan sebelum deploy."}, {"d": "orkestrasi", "q": "Secret dipasang di dalam container pada...", "o": ["/etc/secrets", "/run/secrets/<nama>", "/var/secrets", "environment"], "a": 1, "e": "File tmpfs di /run/secrets."}, {"d": "orkestrasi", "q": "Perintah mengosongkan node untuk maintenance adalah...", "o": ["docker node rm", "docker node update --availability drain", "docker node pause", "docker service rm"], "a": 1, "e": "Drain memindahkan task keluar."}, {"d": "orkestrasi", "q": "Constraint penempatan ditulis dengan format...", "o": ["node.labels.tier==db", "label:tier=db", "--on tier=db", "placement=tier:db"], "a": 0, "e": "Sintaks constraint node.labels."}, {"d": "orkestrasi", "q": "Aksi default bila task update gagal adalah...", "o": ["rollback otomatis", "pause", "continue", "ignore"], "a": 1, "e": "Default pause; rollback harus diminta."}, {"d": "orkestrasi", "q": "Urutan update start-first berarti...", "o": ["hentikan lama lalu mulai baru", "mulai baru lalu hentikan lama", "update paralel semua", "tanpa downtime jaminan"], "a": 1, "e": "Task baru dinyalakan lebih dulu."}, {"d": "orkestrasi", "q": "Secret dapat diubah di tempat dengan...", "o": ["docker secret update", "tidak bisa, buat baru", "docker secret set", "docker config update"], "a": 1, "e": "Secret immutable."}, {"d": "orkestrasi", "q": "Bila kuorum manajer hilang, maka...", "o": ["container berhenti", "perubahan state ditolak", "node keluar dari swarm", "volume hilang"], "a": 1, "e": "Kontrol plane membeku."}, {"d": "image", "q": "Instruksi yang tidak membuat layer adalah...", "o": ["RUN", "COPY", "ENV", "ADD"], "a": 2, "e": "ENV mengubah metadata, bukan filesystem."}, {"d": "image", "q": "Instruksi untuk executable utama yang sulit ditimpa adalah...", "o": ["CMD", "ENTRYPOINT", "RUN", "SHELL"], "a": 1, "e": "CMD hanya default argumen."}, {"d": "image", "q": "ADD berbeda dari COPY karena...", "o": ["lebih cepat", "bisa URL dan ekstrak tar lokal", "butuh BuildKit", "tidak bisa multi-stage"], "a": 1, "e": "ADD punya perilaku tambahan."}, {"d": "image", "q": "ARG berbeda dari ENV karena...", "o": ["ARG hanya saat build", "ARG lebih aman", "ENV tidak bisa di-override", "ARG tersimpan di image"], "a": 0, "e": "ARG tidak tersedia runtime."}, {"d": "image", "q": "Untuk cache yang awet, instruksi COPY kode sebaiknya...", "o": ["di awal", "setelah instalasi dependensi", "sebelum FROM", "dihindari"], "a": 1, "e": "Agar perubahan kode tidak membatalkan cache."}, {"d": "image", "q": "Menyalin artefak dari tahap sebelumnya memakai...", "o": ["COPY --from=builder", "ADD --stage", "RUN cp", "FROM builder"], "a": 0, "e": "Referensi nama tahap."}, {"d": "image", "q": "Image tanpa tag eksplisit mendapat tag...", "o": ["stable", "latest", "dev", "v1"], "a": 1, "e": "Default latest."}, {"d": "image", "q": "Cara paling kuat memastikan image identik adalah...", "o": ["tag versi", "digest sha256", "label", "nama repo"], "a": 1, "e": "Digest immutable."}, {"d": "image", "q": "docker image prune tanpa -a menghapus...", "o": ["semua image", "hanya dangling", "image yang dipakai", "volume"], "a": 1, "e": "Hanya dangling."}, {"d": "image", "q": "Endpoint katalog registry v2 adalah...", "o": ["/v2/repositories", "/v2/_catalog", "/catalog", "/v2/images"], "a": 1, "e": "_catalog."}, {"d": "image", "q": "DOCKER_CONTENT_TRUST=1 membuat pull...", "o": ["lebih cepat", "hanya menerima image bertanda tangan", "mengabaikan tag", "butuh root"], "a": 1, "e": "Verifikasi tanda tangan."}, {"d": "instalasi", "q": "Konfigurasi daemon pada Linux berada di...", "o": ["/etc/docker/daemon.json", "/etc/default/docker", "/var/lib/docker/config.json", "/etc/containerd/config.toml"], "a": 0, "e": "daemon.json."}, {"d": "instalasi", "q": "Untuk memuat ulang sebagian konfigurasi daemon dipakai...", "o": ["systemctl restart docker", "systemctl reload docker", "docker reload", "kill -9"], "a": 1, "e": "Reload mengirim SIGHUP."}, {"d": "instalasi", "q": "Opsi agar container tetap berjalan saat daemon restart adalah...", "o": ["restart=always", "live-restore", "--init", "no-new-privileges"], "a": 1, "e": "live-restore true."}, {"d": "instalasi", "q": "Storage driver default pada mayoritas instalasi Linux adalah...", "o": ["vfs", "overlay2", "btrfs", "devicemapper"], "a": 1, "e": "Overlay family (dilaporkan overlayfs di versi baru)."}, {"d": "instalasi", "q": "Driver yang boros karena tanpa copy-on-write adalah...", "o": ["overlay2", "vfs", "zfs", "fuse-overlayfs"], "a": 1, "e": "Setiap layer disalin penuh."}, {"d": "instalasi", "q": "Logging driver default Docker adalah...", "o": ["syslog", "json-file", "journald", "fluentd"], "a": 1, "e": "json-file."}, {"d": "instalasi", "q": "docker logs tidak menampilkan apa pun bila driver...", "o": ["json-file", "local", "syslog", "journald"], "a": 2, "e": "Log dikirim keluar."}, {"d": "instalasi", "q": "Port Docker API tanpa TLS adalah...", "o": ["2375", "2376", "2377", "5000"], "a": 0, "e": "2375 tanpa TLS, 2376 dengan TLS."}, {"d": "networking", "q": "DNS internal Docker berjalan pada alamat...", "o": ["127.0.0.1", "127.0.0.11", "169.254.169.254", "10.0.0.1"], "a": 1, "e": "Resolver 127.0.0.11."}, {"d": "networking", "q": "Resolusi nama otomatis tersedia pada...", "o": ["default bridge", "user-defined network", "network none", "host network"], "a": 1, "e": "Default bridge tidak punya DNS."}, {"d": "networking", "q": "Mode jaringan agar container tampil sebagai perangkat LAN adalah...", "o": ["host", "macvlan", "overlay", "none"], "a": 1, "e": "macvlan memberi MAC/IP sendiri."}, {"d": "networking", "q": "Opsi -p diabaikan pada network mode...", "o": ["bridge", "host", "overlay", "macvlan"], "a": 1, "e": "Host memakai port langsung; muncul peringatan."}, {"d": "networking", "q": "Routing mesh membuat port service tersedia di...", "o": ["hanya node task", "semua node swarm", "hanya manager", "hanya leader"], "a": 1, "e": "Ingress mesh di semua node."}, {"d": "networking", "q": "Mode publish host dipakai untuk...", "o": ["menyembunyikan port", "membuka port hanya di node task", "enkripsi trafik", "load balancing L7"], "a": 1, "e": "Bypass ingress."}, {"d": "networking", "q": "Network overlay biasa harus dibuat dengan driver...", "o": ["bridge", "overlay", "macvlan", "ipvlan"], "a": 1, "e": "Butuh swarm manager."}, {"d": "networking", "q": "Aplikasi yang listen di 127.0.0.1 dalam container...", "o": ["bisa diakses via -p", "tidak bisa diakses via -p", "butuh macvlan", "butuh host mode"], "a": 1, "e": "Publish diarahkan ke IP container."}, {"d": "security", "q": "Profil seccomp default Docker...", "o": ["nonaktif", "menolak sejumlah syscall berisiko", "hanya untuk swarm", "butuh plugin"], "a": 1, "e": "Profil default aktif."}, {"d": "security", "q": "Flag yang memberi hampir semua hak host adalah...", "o": ["--cap-add=CHOWN", "--privileged", "--user root", "--read-only"], "a": 1, "e": "Privileged melonggarkan banyak proteksi."}, {"d": "security", "q": "Untuk mencegah eskalasi lewat setuid dipakai...", "o": ["--security-opt no-new-privileges", "--cap-drop=ALL", "--read-only", "--userns"], "a": 0, "e": "no-new-privileges."}, {"d": "security", "q": "Opsi volume :Z memberi...", "o": ["label SELinux privat", "izin baca semua", "enkripsi", "backup"], "a": 0, "e": "Z = private label."}, {"d": "security", "q": "TLS antar node swarm...", "o": ["harus dikonfigurasi manual", "otomatis aktif (mTLS)", "hanya manager", "opsional via daemon.json"], "a": 1, "e": "Swarm memakai mTLS internal."}, {"d": "security", "q": "Merotasi token worker memakai...", "o": ["docker swarm join-token --rotate worker", "docker swarm init ulang", "docker node rm semua", "docker secret create"], "a": 0, "e": "Rotate token."}, {"d": "security", "q": "Rahasia di ARG/ENV Dockerfile berisiko karena...", "o": ["tidak tersimpan", "terlihat di layer/history dan inspect", "tidak bisa dibaca", "hanya untuk ARM"], "a": 1, "e": "Tersimpan permanen di image."}, {"d": "security", "q": "Mengaktifkan userns-remap membuat container lama...", "o": ["tetap jalan", "tidak terlihat pada data-root baru", "lebih cepat", "privileged"], "a": 1, "e": "Data-root terpisah per remap."}, {"d": "storage", "q": "Volume bernama (named volume) setelah container dihapus...", "o": ["hilang", "tetap ada", "menjadi dangling image", "berubah jadi bind"], "a": 1, "e": "Siklus hidup terpisah."}, {"d": "storage", "q": "Mount di memori yang hilang saat container berhenti adalah...", "o": ["volume", "bind mount", "tmpfs", "nfs"], "a": 2, "e": "tmpfs di RAM."}, {"d": "storage", "q": "Perbedaan -v dan --mount saat source tidak ada adalah...", "o": ["sama", "-v membuat direktori, --mount gagal", "--mount membuat direktori", "keduanya gagal"], "a": 1, "e": "--mount lebih eksplisit."}, {"d": "storage", "q": "Volume lokal pada swarm bermasalah karena...", "o": ["tidak bisa dibuat", "data hanya ada di node tersebut", "tidak mendukung NFS", "butuh root"], "a": 1, "e": "Tidak ikut pindah node."}, {"d": "storage", "q": "Backup volume biasanya memakai...", "o": ["docker volume export", "container bantu dengan tar", "docker cp langsung dari host", "docker save"], "a": 1, "e": "Container alpine + tar."}, {"d": "storage", "q": "docker system prune tanpa --volumes...", "o": ["menghapus volume", "tidak menghapus volume", "menghapus network saja", "gagal"], "a": 1, "e": "Volume aman kecuali --volumes."}]}</script>
+<script src="/devcert/situs/assets/quiz.js?v=65652c1f" defer></script></main>
+</div>
+<div id="searchWrap" class="search-wrap" hidden>
+  <div class="search-box">
+    <input id="searchInput" type="search" placeholder="Cari: JPA, servlet, JMS, batch…" autocomplete="off">
+    <button id="searchClose" type="button">tutup</button>
+  </div>
+  <ul id="searchResults" class="search-results"></ul>
+</div>
+<footer class="foot">
+  <span>DevCert — dibuat untuk belajar mandiri, dalam bahasa Indonesia.</span>
+  <span>Progres disimpan di browser kamu (localStorage).</span>
+  <span><a href="https://boyfsimbolon.netlify.app/devcert">Portofolio pembuatnya →</a></span>
+</footer>
+<script>window.__TOTAL_TOPICS__=392;window.__BASE__="/devcert/situs";</script>
+<script src="/devcert/situs/assets/app.js?v=65652c1f" defer></script>
+</body>
+</html>

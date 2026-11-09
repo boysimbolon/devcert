@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MySQL Enterprise Audit — MySQL Implementation Associate</title>
+<meta name="description" content="Pencatatan aktivitas terstruktur, filter per akun, dan rotasi file.">
+<meta name="theme-color" content="#f2f4f7">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>try{var t=localStorage.getItem('devcert-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}</script>
+<link rel="stylesheet" href="/devcert/situs/assets/style.css?v=65652c1f">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%232460e0'/><text x='50' y='68' font-size='54' font-family='monospace' fill='white' text-anchor='middle'>D</text></svg>">
+</head>
+<body data-cert="mysql-impl" data-topic="st-audit">
+<a class="skip" href="#main">Lewati ke konten</a>
+<header class="top">
+  <a class="brand" href="/devcert/situs/"><span class="mark">D</span> DevCert <span class="dot" title="siap dipakai"></span></a>
+  <button id="searchBtn" class="search-open" type="button">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg>
+    <span>Cari topik…</span> <kbd>/</kbd>
+  </button>
+  <div class="progress-mini" title="Progres belajar">
+    <svg viewBox="0 0 36 36" aria-hidden="true"><circle class="bg" cx="18" cy="18" r="15.5"/><circle id="ring" class="fg" cx="18" cy="18" r="15.5"/></svg>
+    <span id="progressPct">0%</span>
+  </div>
+  <button id="themeBtn" class="icon-btn" type="button" aria-label="Ganti tema terang atau gelap" title="Ganti tema">
+    <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/></svg>
+    <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.6 6.6 0 0 0 9.8 9.8Z"/></svg>
+  </button>
+</header>
+<div class="shell">
+  <aside class="side"><nav class="nav"><a class="cert-link" href="/devcert/situs/sertifikasi/java-ee-7/">Java EE 7 Application Developer<span class="chip">39 topik</span></a><a class="cert-link" href="/devcert/situs/sertifikasi/toefl-ibt/">TOEFL iBT<span class="chip">30 skill</span></a><a class="cert-link" href="/devcert/situs/sertifikasi/mysql-8-dba/">MySQL 8.0 Database Administrator<span class="chip">47 topik</span></a><a class="cert-link" href="/devcert/situs/sertifikasi/mysql-8-dev/">MySQL 8.0 Database Developer<span class="chip">32 topik</span></a><a class="cert-link active" href="/devcert/situs/sertifikasi/mysql-impl/">MySQL Implementation Associate<span class="chip">22 topik</span></a><div class="dom"><span class="dom-title">Introduction to MySQL Enterprise Edition</span><ul><li><a class="topic-link" href="/devcert/situs/sertifikasi/mysql-impl/ee/ee-beda/" data-topic="mysql-impl/ee-beda"><span class="tick" aria-hidden="true"></span>MySQL Enterprise vs Community/Standard</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/mysql-impl/ee/ee-produk/" data-topic="mysql-impl/ee-produk"><span class="tick" aria-hidden="true"></span>Produk dan fitur MySQL Enterprise</a></li></ul></div><div class="dom"><span class="dom-title">MySQL Installation and Architecture</span><ul><li><a class="topic-link" href="/devcert/situs/sertifikasi/mysql-impl/arsitektur/ar-arsitektur/" data-topic="mysql-impl/ar-arsitektur"><span class="tick" aria-hidden="true"></span>Arsitektur MySQL</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/mysql-impl/arsitektur/ar-install/" data-topic="mysql-impl/ar-install"><span class="tick" aria-hidden="true"></span>Memasang MySQL Enterprise Server</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/mysql-impl/arsitektur/ar-config/" data-topic="mysql-impl/ar-config"><span class="tick" aria-hidden="true"></span>Mengonfigurasi MySQL Enterprise Server</a></li></ul></div><div class="dom"><span class="dom-title">Designing Databases</span><ul><li><a class="topic-link" href="/devcert/situs/sertifikasi/mysql-impl/desain/ds-tipe/" data-topic="mysql-impl/ds-tipe"><span class="tick" aria-hidden="true"></span>Tipe data dalam database MySQL</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/mysql-impl/desain/ds-tabel/" data-topic="mysql-impl/ds-tabel"><span class="tick" aria-hidden="true"></span>Membuat database dan tabel</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/mysql-impl/desain/ds-index/" data-topic="mysql-impl/ds-index"><span class="tick" aria-hidden="true"></span>Mengonfigurasi index</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/mysql-impl/desain/ds-join/" data-topic="mysql-impl/ds-join"><span class="tick" aria-hidden="true"></span>Menggabungkan tabel (join)</a></li></ul></div><div class="dom"><span class="dom-title">Implementing MySQL Security</span><ul><li><a class="topic-link" href="/devcert/situs/sertifikasi/mysql-impl/security/sc-privilege/" data-topic="mysql-impl/sc-privilege"><span class="tick" aria-hidden="true"></span>Sistem privilege MySQL</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/mysql-impl/security/sc-user/" data-topic="mysql-impl/sc-user"><span class="tick" aria-hidden="true"></span>Mengonfigurasi user dan role</a></li></ul></div><div class="dom"><span class="dom-title">Using MySQL Enterprise Security Tools</span><ul><li><a class="topic-link" href="/devcert/situs/sertifikasi/mysql-impl/security-tools/st-auth/" data-topic="mysql-impl/st-auth"><span class="tick" aria-hidden="true"></span>MySQL Enterprise Authentication</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/mysql-impl/security-tools/st-firewall/" data-topic="mysql-impl/st-firewall"><span class="tick" aria-hidden="true"></span>MySQL Enterprise Firewall</a></li><li><a class="topic-link active" href="/devcert/situs/sertifikasi/mysql-impl/security-tools/st-audit/" data-topic="mysql-impl/st-audit"><span class="tick" aria-hidden="true"></span>MySQL Enterprise Audit</a></li></ul></div><div class="dom"><span class="dom-title">Backing Up MySQL</span><ul><li><a class="topic-link" href="/devcert/situs/sertifikasi/mysql-impl/backup/bk-proses/" data-topic="mysql-impl/bk-proses"><span class="tick" aria-hidden="true"></span>Proses MySQL Enterprise Backup</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/mysql-impl/backup/bk-config/" data-topic="mysql-impl/bk-config"><span class="tick" aria-hidden="true"></span>Mengonfigurasi backup MySQL</a></li></ul></div><div class="dom"><span class="dom-title">Implementing MySQL Replication</span><ul><li><a class="topic-link" href="/devcert/situs/sertifikasi/mysql-impl/replikasi/rp-konsep/" data-topic="mysql-impl/rp-konsep"><span class="tick" aria-hidden="true"></span>Replikasi MySQL</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/mysql-impl/replikasi/rp-topologi/" data-topic="mysql-impl/rp-topologi"><span class="tick" aria-hidden="true"></span>Topologi replikasi</a></li></ul></div><div class="dom"><span class="dom-title">Enabling MySQL High Availability</span><ul><li><a class="topic-link" href="/devcert/situs/sertifikasi/mysql-impl/ha/ha-cluster/" data-topic="mysql-impl/ha-cluster"><span class="tick" aria-hidden="true"></span>MySQL InnoDB Cluster</a></li><li><a class="topic-link" href="/devcert/situs/sertifikasi/mysql-impl/ha/ha-scalability/" data-topic="mysql-impl/ha-scalability"><span class="tick" aria-hidden="true"></span>Fitur ketersediaan tinggi dan skalabilitas</a></li></ul></div><div class="dom"><span class="dom-title">Monitoring MySQL</span><ul><li><a class="topic-link" href="/devcert/situs/sertifikasi/mysql-impl/monitoring/mo-teknik/" data-topic="mysql-impl/mo-teknik"><span class="tick" aria-hidden="true"></span>Teknik memantau MySQL</a></li></ul></div><div class="dom"><span class="dom-title">Using HeatWave cluster</span><ul><li><a class="topic-link" href="/devcert/situs/sertifikasi/mysql-impl/heatwave/hw-arsitektur/" data-topic="mysql-impl/hw-arsitektur"><span class="tick" aria-hidden="true"></span>Arsitektur MySQL HeatWave Cluster</a></li></ul></div><a class="cert-link" href="/devcert/situs/sertifikasi/oracle-sql/">Oracle Database SQL<span class="chip">59 topik</span></a><a class="cert-link" href="/devcert/situs/sertifikasi/oracle-19c-tune/">Oracle 19c Performance Management &amp; Tuning<span class="chip">46 topik</span></a><a class="cert-link" href="/devcert/situs/sertifikasi/oracle-aws-arch/">Oracle AI Database@AWS Architect Professional<span class="chip">24 topik</span></a><a class="cert-link" href="/devcert/situs/sertifikasi/java-se-17/">Oracle Java SE 17 Developer<span class="chip">28 topik</span></a><a class="cert-link" href="/devcert/situs/sertifikasi/docker-dca/">Docker Certified Associate<span class="chip">40 topik</span></a><a class="cert-link" href="/devcert/situs/sertifikasi/ckad/">Certified Kubernetes Application Developer<span class="chip">25 topik</span></a></nav></aside>
+  <main id="main">
+<div class="crumbs"><a href="/devcert/situs/">Beranda</a> / <a href="/devcert/situs/sertifikasi/mysql-impl/">MySQL Implementation Associate</a> / <span>Using MySQL Enterprise Security Tools</span></div>
+<article class="doc">
+  <div class="doc-head">
+    <div class="meta-row"><span class="badge b-lengkap" title="Kelayakan materi, bukan progres belajar">materi lengkap</span><span class="meta">⏱ 20 menit</span><span class="meta">📊 Menengah</span></div>
+    <h1>MySQL Enterprise Audit</h1>
+    <p class="domain-tag">Using MySQL Enterprise Security Tools</p>
+  </div>
+  <div class="objectives"><h2>Tujuan pembelajaran</h2><ul><li>Mengaktifkan audit plugin dan memilih format</li><li>Membuat filter untuk akun tertentu</li><li>Mengatur rotasi dan pembacaan log</li></ul></div>
+  <div class="prose"><h2 id="kenapa-topik-ini-diuji">Kenapa topik ini diuji</h2>
+<p>Audit diuji karena kepatuhan: apa yang dicatat, dan bagaimana membatasinya.</p>
+<h2 id="konsep-inti">Konsep inti</h2>
+<div class="code" data-lang="sql"><div class="code-head"><span>sql</span><button class="copy" type="button">copy</button></div><pre><code>INSTALL PLUGIN audit_log SONAME &#x27;audit_log.so&#x27;;
+
+SET GLOBAL audit_log_format = &#x27;JSON&#x27;;
+SET GLOBAL audit_log_policy = &#x27;ALL&#x27;;        -- ALL | LOGINS | QUERIES | NONE
+SET GLOBAL audit_log_file = &#x27;/var/log/mysql/audit.log&#x27;;
+SET GLOBAL audit_log_rotate_on_size = 104857600;   -- 100 MB
+SET GLOBAL audit_log_rotations = 10;</code></pre></div>
+<p>Filter:</p>
+<div class="code" data-lang="sql"><div class="code-head"><span>sql</span><button class="copy" type="button">copy</button></div><pre><code>SELECT audit_log_filter_set_filter(&#x27;log_app&#x27;,
+  &#x27;{ &quot;filter&quot;: { &quot;class&quot;: { &quot;name&quot;: &quot;general&quot; } } }&#x27;);
+SELECT audit_log_filter_set_user(&#x27;app@%&#x27;, &#x27;log_app&#x27;);</code></pre></div>
+<p>Isi log mencakup: waktu, user@host, event (connect, query, table_access), status, dan query.</p>
+<h2 id="jebakan">Jebakan</h2>
+<ul><li><code>ALL</code> tanpa filter bisa menghasilkan puluhan GB/hari.</li><li>Audit log berisi data sensitif (nilai dalam query) → perlakukan sebagai rahasia.</li><li>Rotasi dan retensi wajib disetel; tanpa itu disk penuh.</li><li>Plugin Enterprise tidak ada di Community; <code>general_log</code> bukan pengganti audit terstruktur.</li></ul>
+<h2 id="latihan">Latihan</h2>
+<ol><li>Variabel untuk rotasi berdasarkan ukuran?</li><li>Mengapa policy ALL berisiko?</li></ol>
+<details><summary>Jawaban</summary>
+<p><b>1.</b> <code>audit_log_rotate_on_size</code> (dan <code>audit_log_rotations</code>).</p>
+<p><b>2.</b> Karena mencatat semua event tanpa filter sehingga volume log sangat besar dan memuat data sensitif.</p>
+</details></div>
+  <div class="done-box">
+    <button id="markDone" class="btn-done" type="button">Tandai sudah dipelajari</button>
+    <span class="hint">Progres tersimpan di browser ini.</span>
+  </div>
+  <nav class="pager"><a class="prev" href="/devcert/situs/sertifikasi/mysql-impl/security-tools/st-firewall/"><span>← Sebelumnya</span><b>MySQL Enterprise Firewall</b></a><a class="next" href="/devcert/situs/sertifikasi/mysql-impl/backup/bk-proses/"><span>Selanjutnya →</span><b>Proses MySQL Enterprise Backup</b></a></nav>
+</article></main>
+</div>
+<div id="searchWrap" class="search-wrap" hidden>
+  <div class="search-box">
+    <input id="searchInput" type="search" placeholder="Cari: JPA, servlet, JMS, batch…" autocomplete="off">
+    <button id="searchClose" type="button">tutup</button>
+  </div>
+  <ul id="searchResults" class="search-results"></ul>
+</div>
+<footer class="foot">
+  <span>DevCert — dibuat untuk belajar mandiri, dalam bahasa Indonesia.</span>
+  <span>Progres disimpan di browser kamu (localStorage).</span>
+  <span><a href="https://boyfsimbolon.netlify.app/devcert">Portofolio pembuatnya →</a></span>
+</footer>
+<script>window.__TOTAL_TOPICS__=392;window.__BASE__="/devcert/situs";</script>
+<script src="/devcert/situs/assets/app.js?v=65652c1f" defer></script>
+</body>
+</html>
